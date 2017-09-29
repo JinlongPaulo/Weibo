@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C63848E1F7E407300F95FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C63848D1F7E407300F95FDF /* Assets.xcassets */; };
+		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
+		2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */; };
+		2C6384A61F7E4DBF00F95FDF /* JLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A51F7E4DBF00F95FDF /* JLBaseViewController.swift */; };
+		2C6384A81F7E4E0B00F95FDF /* JLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A71F7E4E0B00F95FDF /* JLHomeViewController.swift */; };
+		2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A91F7E4E3000F95FDF /* JLMessageViewController.swift */; };
+		2C6384AC1F7E4E3D00F95FDF /* JLDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384AB1F7E4E3D00F95FDF /* JLDiscoverViewController.swift */; };
+		2C6384AF1F7E4E7800F95FDF /* JLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384AE1F7E4E7800F95FDF /* JLProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +23,13 @@
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C63848D1F7E407300F95FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C6384921F7E407300F95FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLMainViewController.swift; sourceTree = "<group>"; };
+		2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNavigationController.swift; sourceTree = "<group>"; };
+		2C6384A51F7E4DBF00F95FDF /* JLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLBaseViewController.swift; sourceTree = "<group>"; };
+		2C6384A71F7E4E0B00F95FDF /* JLHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLHomeViewController.swift; sourceTree = "<group>"; };
+		2C6384A91F7E4E3000F95FDF /* JLMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLMessageViewController.swift; sourceTree = "<group>"; };
+		2C6384AB1F7E4E3D00F95FDF /* JLDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDiscoverViewController.swift; sourceTree = "<group>"; };
+		2C6384AE1F7E4E7800F95FDF /* JLProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +62,98 @@
 		2C6384851F7E407300F95FDF /* JLSina */ = {
 			isa = PBXGroup;
 			children = (
+				2C6384981F7E4CE800F95FDF /* Classes */,
 				2C6384861F7E407300F95FDF /* AppDelegate.swift */,
 				2C63848D1F7E407300F95FDF /* Assets.xcassets */,
 				2C6384921F7E407300F95FDF /* Info.plist */,
 			);
 			path = JLSina;
+			sourceTree = "<group>";
+		};
+		2C6384981F7E4CE800F95FDF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2C63849B1F7E4CE800F95FDF /* View(视图和控制器) */,
+				2C6384A01F7E4CE800F95FDF /* ViewModel(视图模型) */,
+				2C6384991F7E4CE800F95FDF /* Model(模型) */,
+				2C63849A1F7E4CE800F95FDF /* Tools(工具) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2C6384991F7E4CE800F95FDF /* Model(模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model(模型)";
+			sourceTree = "<group>";
+		};
+		2C63849A1F7E4CE800F95FDF /* Tools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tools(工具)";
+			sourceTree = "<group>";
+		};
+		2C63849B1F7E4CE800F95FDF /* View(视图和控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				2C63849E1F7E4CE800F95FDF /* Main */,
+				2C6384AD1F7E4E6900F95FDF /* Profile */,
+				2C63849C1F7E4CE800F95FDF /* Discover */,
+				2C63849D1F7E4CE800F95FDF /* Home */,
+				2C63849F1F7E4CE800F95FDF /* Message */,
+			);
+			path = "View(视图和控制器)";
+			sourceTree = "<group>";
+		};
+		2C63849C1F7E4CE800F95FDF /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				2C6384AB1F7E4E3D00F95FDF /* JLDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		2C63849D1F7E4CE800F95FDF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2C6384A71F7E4E0B00F95FDF /* JLHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2C63849E1F7E4CE800F95FDF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */,
+				2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */,
+				2C6384A51F7E4DBF00F95FDF /* JLBaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2C63849F1F7E4CE800F95FDF /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				2C6384A91F7E4E3000F95FDF /* JLMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		2C6384A01F7E4CE800F95FDF /* ViewModel(视图模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ViewModel(视图模型)";
+			sourceTree = "<group>";
+		};
+		2C6384AD1F7E4E6900F95FDF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2C6384AE1F7E4E7800F95FDF /* JLProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +228,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */,
+				2C6384A81F7E4E0B00F95FDF /* JLHomeViewController.swift in Sources */,
+				2C6384A61F7E4DBF00F95FDF /* JLBaseViewController.swift in Sources */,
+				2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */,
+				2C6384AC1F7E4E3D00F95FDF /* JLDiscoverViewController.swift in Sources */,
+				2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */,
+				2C6384AF1F7E4E7800F95FDF /* JLProfileViewController.swift in Sources */,
+				2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
