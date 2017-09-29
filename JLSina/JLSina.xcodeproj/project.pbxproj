@@ -8,19 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
-		2C6384891F7E407300F95FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384881F7E407300F95FDF /* ViewController.swift */; };
-		2C63848C1F7E407300F95FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C63848A1F7E407300F95FDF /* Main.storyboard */; };
 		2C63848E1F7E407300F95FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C63848D1F7E407300F95FDF /* Assets.xcassets */; };
-		2C6384911F7E407300F95FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C63848F1F7E407300F95FDF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C6384881F7E407300F95FDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2C63848B1F7E407300F95FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C63848D1F7E407300F95FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2C6384901F7E407300F95FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C6384921F7E407300F95FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,10 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				2C6384861F7E407300F95FDF /* AppDelegate.swift */,
-				2C6384881F7E407300F95FDF /* ViewController.swift */,
-				2C63848A1F7E407300F95FDF /* Main.storyboard */,
 				2C63848D1F7E407300F95FDF /* Assets.xcassets */,
-				2C63848F1F7E407300F95FDF /* LaunchScreen.storyboard */,
 				2C6384921F7E407300F95FDF /* Info.plist */,
 			);
 			path = JLSina;
@@ -90,6 +81,7 @@
 		2C63847B1F7E407300F95FDF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JL;
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = JinLong;
@@ -123,9 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C6384911F7E407300F95FDF /* LaunchScreen.storyboard in Resources */,
 				2C63848E1F7E407300F95FDF /* Assets.xcassets in Resources */,
-				2C63848C1F7E407300F95FDF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,31 +126,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C6384891F7E407300F95FDF /* ViewController.swift in Sources */,
 				2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2C63848A1F7E407300F95FDF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C63848B1F7E407300F95FDF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2C63848F1F7E407300F95FDF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C6384901F7E407300F95FDF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2C6384931F7E407300F95FDF /* Debug */ = {
@@ -274,14 +244,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4E4939ZHJY;
 				INFOPLIST_FILE = JLSina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hejinlong.JLSina;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -289,14 +261,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4E4939ZHJY;
 				INFOPLIST_FILE = JLSina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hejinlong.JLSina;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
