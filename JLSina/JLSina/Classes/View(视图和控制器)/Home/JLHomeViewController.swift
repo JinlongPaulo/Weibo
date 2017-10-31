@@ -15,21 +15,24 @@ class JLHomeViewController: JLBaseViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //显示好友
+    @objc private func showFriends() {
+        print(#function)
+        let vc = JLDemoViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
-    */
 
+}
+
+//MARK: - 设置界面
+extension JLHomeViewController {
+    //重写父类方法
+    override func setupUI() {
+         super.setupUI()
+        //设置导航栏按钮
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
+    }
 }

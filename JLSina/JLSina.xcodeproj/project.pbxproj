@@ -29,6 +29,7 @@
 		2CAAB5691FA821A70021B432 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB55C1FA821A70021B432 /* UIView+CZAddition.m */; };
 		2CAAB56A1FA821A70021B432 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB55E1FA821A70021B432 /* UIViewController+CZAddition.m */; };
 		2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAAB56B1FA826C20021B432 /* Images.xcassets */; };
+		2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		2CAAB55D1FA821A70021B432 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
 		2CAAB55E1FA821A70021B432 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		2CAAB56B1FA826C20021B432 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		2C63849E1F7E4CE800F95FDF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2CAAB56D1FA84F6A0021B432 /* 测试 */,
 				2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */,
 				2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */,
 				2C6384A51F7E4DBF00F95FDF /* JLBaseViewController.swift */,
@@ -237,6 +240,14 @@
 				2CAAB55E1FA821A70021B432 /* UIViewController+CZAddition.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		2CAAB56D1FA84F6A0021B432 /* 测试 */ = {
+			isa = PBXGroup;
+			children = (
+				2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */,
+			);
+			path = "测试";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 				2CAAB55F1FA821A70021B432 /* NSArray+Log.m in Sources */,
 				2CAAB5671FA821A70021B432 /* UILabel+CZAddition.m in Sources */,
 				2C6384AC1F7E4E3D00F95FDF /* JLDiscoverViewController.swift in Sources */,
+				2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */,
 				2CAAB5601FA821A70021B432 /* NSAttributedString+CZAdditon.m in Sources */,
 				2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */,
 				2CAAB5631FA821A70021B432 /* NSString+CZHash.m in Sources */,
