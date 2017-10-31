@@ -15,11 +15,11 @@
 		2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A91F7E4E3000F95FDF /* JLMessageViewController.swift */; };
 		2C6384AC1F7E4E3D00F95FDF /* JLDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384AB1F7E4E3D00F95FDF /* JLDiscoverViewController.swift */; };
 		2C6384AF1F7E4E7800F95FDF /* JLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384AE1F7E4E7800F95FDF /* JLProfileViewController.swift */; };
+		2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C1D343E1F8F05F90036902A /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
-		2C1D343F1F8F13440036902A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C1D343F1F8F13440036902A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6384921F7E407300F95FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +56,7 @@
 		2C8E1D3F1F7F3569000365A3 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
 		2C8E1D401F7F3569000365A3 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		2C8E1D471F7F3EC1000365A3 /* JLSina-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLSina-Bridging-Header.h"; sourceTree = "<group>"; };
+		2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +73,7 @@
 		2C1D343D1F8F05F90036902A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2C1D343E1F8F05F90036902A /* Bundle+Extension.swift */,
+				2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -100,7 +101,7 @@
 				2C6384861F7E407300F95FDF /* AppDelegate.swift */,
 				2C8E1D471F7F3EC1000365A3 /* JLSina-Bridging-Header.h */,
 				2C6384921F7E407300F95FDF /* Info.plist */,
-				2C1D343F1F8F13440036902A /* Assets.xcassets */,
+				2C1D343F1F8F13440036902A /* Images.xcassets */,
 			);
 			path = JLSina;
 			sourceTree = "<group>";
@@ -299,6 +300,7 @@
 				2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */,
 				2C6384A81F7E4E0B00F95FDF /* JLHomeViewController.swift in Sources */,
 				2C6384A61F7E4DBF00F95FDF /* JLBaseViewController.swift in Sources */,
+				2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */,
 				2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */,
 				2C6384AC1F7E4E3D00F95FDF /* JLDiscoverViewController.swift in Sources */,
 				2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */,

@@ -26,24 +26,55 @@ class JLMainViewController: UITabBarController {
 //MARK: - 设置界面
 extension JLMainViewController {
 
+    
+    //使用字典创建一个子控制器
+    private func controller(dict: [String: String]) -> UIViewController {
+        //1，取得字典内容
+        guard let clsName = dict["clsName"] ,
+         let title = dict["title"] ,
+         let imageName = dict["imageName"] ,
+         let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+        else {
+            
+            return UIViewController()
+        }
+        
+        let vc = cls.init()
+        vc.title = title
+        
+        vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
+        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_highlighted")?.withRenderingMode(.alwaysOriginal)
+        let nav = JLNavigationController(rootViewController: vc)
+        return nav
+        
+        
+    }
 //设置所有子控制器
+    private func setupChildControllers() {
 
-    fileprivate func setupChildControllers() {
-        addChildViewController(vc: JLHomeViewController(), title: "首页", imageName: "tabbar_home")
-        addChildViewController(vc: JLMessageViewController(), title: "消息", imageName: "tabbar_message_center")
-        addChildViewController(UIViewController())
-        addChildViewController(vc: JLDiscoverViewController(), title: "发现", imageName: "tabbar_discover")
-        addChildViewController(vc: JLProfileViewController(), title: "我", imageName: "tabbar_profile")
+        let array = [
+            ["clsName":"JLHomeViewController","title":"首页" , "imageName":"home"],
+            ["clsName":"JLMessageViewController","title":"消息" , "imageName":"message_center"],
+            ["clsName":"JLDiscoverViewController","title":"发现" , "imageName":"discover"],
+            ["clsName":"JLProfileViewController","title":"我" , "imageName":"profile"]
+        ]
+        var arrayM = [UIViewController]()
+        for dict in array {
+            arrayM.append(controller(dict: dict))
+        }
+        
+        viewControllers = arrayM
+        
     }
     
-    fileprivate func addChildViewController(vc: UIViewController, title: String, imageName: String) {
-        // 设置标题
-        vc.title = title
-        // 设置图像
-        vc.tabBarItem.image = UIImage(named: imageName)
-        // 导航控制器
-        let nav = UINavigationController(rootViewController: vc)
-        addChildViewController(nav)
-    }
+//    private func addChildViewController(vc: UIViewController, title: String, imageName: String) {
+//        // 设置标题
+//        vc.title = title
+//        // 设置图像
+//        vc.tabBarItem.image = UIImage(named: imageName)
+//        // 导航控制器
+//        let nav = UINavigationController(rootViewController: vc)
+//        addChildViewController(nav)
+//    }
 }
 
