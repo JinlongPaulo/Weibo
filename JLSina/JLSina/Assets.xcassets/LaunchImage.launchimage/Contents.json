@@ -4,7 +4,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "2436h",
-      "filename" : "marketWelcome X.png",
+      "filename" : "Default-736h@3x-1.png",
       "minimum-system-version" : "11.0",
       "orientation" : "portrait",
       "scale" : "3x"
@@ -13,16 +13,24 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "736h",
-      "filename" : "marketWelcome-7.png",
+      "filename" : "Default-736h@3x.png",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
+      "scale" : "3x"
+    },
+    {
+      "orientation" : "landscape",
+      "idiom" : "iphone",
+      "extent" : "full-screen",
+      "minimum-system-version" : "8.0",
+      "subtype" : "736h",
       "scale" : "3x"
     },
     {
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "667h",
-      "filename" : "marketWelcome-8.png",
+      "filename" : "Default-667h@2x.png",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
       "scale" : "2x"
@@ -30,7 +38,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "marketWelcome-2.png",
+      "filename" : "Default@2x.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"
@@ -39,7 +47,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "retina4",
-      "filename" : "marketWelcome-3.png",
+      "filename" : "Default-568h@2x.png",
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"
@@ -47,21 +55,21 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "marketWelcome-4.png",
+      "filename" : "Default-736h@3x-2.png",
       "extent" : "full-screen",
       "scale" : "1x"
     },
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "marketWelcome-6.png",
+      "filename" : "Default-736h@3x-3.png",
       "extent" : "full-screen",
       "scale" : "2x"
     },
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "marketWelcome-5.png",
+      "filename" : "Default-736h@3x-4.png",
       "extent" : "full-screen",
       "subtype" : "retina4",
       "scale" : "2x"

@@ -8,42 +8,42 @@
 
 import UIKit
 
+//主控制器
 class JLMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setupChildControllers()
+        setupChildControllers()
     }
-    //extension 类似于OC中的分类，在Swift中可以查分代码块，
-    //可以把相近功能的函数，放在一个extension中，便于代码维护
-    //注意：和OC的分类一样，extension 中不能定义属性
-    
-    //MARK: - 设置界面
-//    extension JLMainViewController {
-//
-//        private func setupChildControllers() {
-//
-//        }
-//
-//    //使用字典
-//    //dict:信息字典 （clsName ， title，imageName）
-//    //reture - 控制器
-//        private func controller(dict: [String: String]) -> UIViewController {
-//            //1，取得字典内容
-//            let clsName = dict["clsName"],
-//            title["title"],
-//            imageName["imageName"] else {
-//
-//                return UIViewController
-//            }
-//
-//            //2.创建视图控制器
-//            //1.将clsName转换成cls
-////            let cls = <#value#>
-//
-//
-//        }
-//    }
 
 }
+
+//extension 类似于OC中的分类，在Swift中可以查分代码块，
+//可以把相近功能的函数，放在一个extension中，便于代码维护
+//注意：和OC的分类一样，extension 中不能定义属性
+
+//MARK: - 设置界面
+extension JLMainViewController {
+
+//设置所有子控制器
+
+    fileprivate func setupChildControllers() {
+        addChildViewController(vc: JLHomeViewController(), title: "首页", imageName: "tabbar_home")
+        addChildViewController(vc: JLMessageViewController(), title: "消息", imageName: "tabbar_message_center")
+        addChildViewController(UIViewController())
+        addChildViewController(vc: JLDiscoverViewController(), title: "发现", imageName: "tabbar_discover")
+        addChildViewController(vc: JLProfileViewController(), title: "我", imageName: "tabbar_profile")
+    }
+    
+    fileprivate func addChildViewController(vc: UIViewController, title: String, imageName: String) {
+        // 设置标题
+        vc.title = title
+        // 设置图像
+        vc.tabBarItem.image = UIImage(named: imageName)
+        // 导航控制器
+        let nav = UINavigationController(rootViewController: vc)
+        addChildViewController(nav)
+    }
+}
+

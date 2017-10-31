@@ -13,7 +13,7 @@ class JLBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        view.backgroundColor = UIColor.cz_random()
+//        view.backgroundColor = UIColor.cz_random();
     }
 
     override func didReceiveMemoryWarning() {

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = JLHomeViewController()
+        window?.rootViewController = JLMainViewController()
         window?.makeKeyAndVisible()
         
         return true
