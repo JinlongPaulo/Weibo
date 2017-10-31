@@ -44,6 +44,15 @@ extension JLMainViewController {
         
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_highlighted")?.withRenderingMode(.alwaysOriginal)
+        
+        //设置tabbar标题字体
+        vc.tabBarItem.setTitleTextAttributes(
+            [NSAttributedStringKey.foregroundColor: UIColor.orange], for: .highlighted)
+        
+       //系统默认12号字
+      vc.tabBarItem.setTitleTextAttributes(
+        [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)], for: .normal)
+        
         let nav = JLNavigationController(rootViewController: vc)
         return nav
         
