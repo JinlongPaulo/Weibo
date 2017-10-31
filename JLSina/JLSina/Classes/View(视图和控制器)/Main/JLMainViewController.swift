@@ -15,7 +15,17 @@ class JLMainViewController: UITabBarController {
         super.viewDidLoad()
         
         setupChildControllers()
+        setupCompostButton()
     }
+    
+    //MARK: - 监听方法
+    //FIXME:没有实现
+  @objc private func compostStatus() {
+        print("撰写微博")
+    }
+    //MARK: -私有控件
+    //撰写按钮
+    private lazy var compostButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 
 }
 
@@ -26,6 +36,20 @@ class JLMainViewController: UITabBarController {
 //MARK: - 设置界面
 extension JLMainViewController {
 
+    private func setupCompostButton() {
+        tabBar.addSubview(compostButton)
+        //计算按钮位置
+        let count = CGFloat(childViewControllers.count)
+        //将向内缩进宽度减少，能够让按钮的宽度变大，盖住容错点
+        let w = tabBar.bounds.width / count - 1
+        
+        //CGRectInset 正数向内缩进，负数向外扩展
+        compostButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
+        
+        //按钮监听方法
+        compostButton.addTarget(self, action: #selector(compostStatus), for: .touchUpInside)
+        
+    }
     
     //使用字典创建一个子控制器
     private func controller(dict: [String: String]) -> UIViewController {
@@ -42,7 +66,8 @@ extension JLMainViewController {
         let vc = cls.init()
         vc.title = title
         
-        vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
+        
+        vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName + ".png")
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_highlighted")?.withRenderingMode(.alwaysOriginal)
         
         //设置tabbar标题字体
@@ -51,7 +76,7 @@ extension JLMainViewController {
         
        //系统默认12号字
       vc.tabBarItem.setTitleTextAttributes(
-        [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)], for: .normal)
+        [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13)], for: .normal)
         
         let nav = JLNavigationController(rootViewController: vc)
         return nav
@@ -64,6 +89,7 @@ extension JLMainViewController {
         let array = [
             ["clsName":"JLHomeViewController","title":"首页" , "imageName":"home"],
             ["clsName":"JLMessageViewController","title":"消息" , "imageName":"message_center"],
+            ["clsName":"UIViewController"],
             ["clsName":"JLDiscoverViewController","title":"发现" , "imageName":"discover"],
             ["clsName":"JLProfileViewController","title":"我" , "imageName":"profile"]
         ]
