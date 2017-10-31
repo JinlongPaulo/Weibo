@@ -34,11 +34,7 @@ extension JLHomeViewController {
     override func setupUI() {
          super.setupUI()
         //设置导航栏按钮
-        //无法高亮
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
-        //Swift调用OC返回instancetype的方法，判断不出是否可选
-        let btn: UIButton = UIButton.cz_textButton("好友", fontSize: 14, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
-        btn.addTarget(self, action: #selector(showFriends), for: .touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+
     }
 }
