@@ -11,7 +11,7 @@ import UIKit
 class JLBaseViewController: UIViewController {
 
     //自定义导航条
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.cz_screenWidth(), height: 64))
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.cz_screenWidth(), height: 49))
     
     //自定义的导航项 - 以后使用导航栏内容，统一使用navItem
     lazy var navItem = UINavigationItem()
