@@ -20,6 +20,8 @@ class JLMainViewController: UITabBarController {
     
     //MARK: - 监听方法
     //FIXME:没有实现
+    //@objc 能够保证用OC方式访问，允许这个函数在运行时通过OC的消息机制被调用
+    //private 能够保证方法私有，仅在当前对象内访问
   @objc private func compostStatus() {
         print("撰写微博")
     }
@@ -102,14 +104,5 @@ extension JLMainViewController {
         
     }
     
-//    private func addChildViewController(vc: UIViewController, title: String, imageName: String) {
-//        // 设置标题
-//        vc.title = title
-//        // 设置图像
-//        vc.tabBarItem.image = UIImage(named: imageName)
-//        // 导航控制器
-//        let nav = UINavigationController(rootViewController: vc)
-//        addChildViewController(nav)
-//    }
 }
 
