@@ -30,6 +30,7 @@
 		2CAAB56A1FA821A70021B432 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB55E1FA821A70021B432 /* UIViewController+CZAddition.m */; };
 		2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAAB56B1FA826C20021B432 /* Images.xcassets */; };
 		2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */; };
+		2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		2CAAB55E1FA821A70021B432 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		2CAAB56B1FA826C20021B432 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDemoViewController.swift; sourceTree = "<group>"; };
+		2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */,
+				2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */,
 				2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */,
 				2CAAB55F1FA821A70021B432 /* NSArray+Log.m in Sources */,
+				2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */,
 				2CAAB5671FA821A70021B432 /* UILabel+CZAddition.m in Sources */,
 				2C6384AC1F7E4E3D00F95FDF /* JLDiscoverViewController.swift in Sources */,
 				2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */,
