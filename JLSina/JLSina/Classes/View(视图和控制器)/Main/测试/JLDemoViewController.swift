@@ -28,6 +28,6 @@ extension JLDemoViewController {
     override func setupUI() {
         super.setupUI()
         //设置右侧控制器
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
     }
 }
