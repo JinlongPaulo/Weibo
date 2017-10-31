@@ -20,7 +20,8 @@ class JLHomeViewController: JLBaseViewController {
     @objc private func showFriends() {
         print(#function)
         let vc = JLDemoViewController()
-        vc.hidesBottomBarWhenPushed = true
+//        vc.hidesBottomBarWhenPushed = true
+        //push的动作是NAV做的
         navigationController?.pushViewController(vc, animated: true)
         
     }
