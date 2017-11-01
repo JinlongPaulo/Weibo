@@ -35,6 +35,14 @@ class JLMainViewController: UITabBarController {
     //private 能够保证方法私有，仅在当前对象内访问
   @objc private func compostStatus() {
         print("撰写微博")
+        //测试方向旋转
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.cz_random()
+        let nav = UINavigationController(rootViewController: vc)
+    
+        present(nav, animated: true, completion: nil)
+    
+    
     }
     //MARK: -私有控件
     //撰写按钮
