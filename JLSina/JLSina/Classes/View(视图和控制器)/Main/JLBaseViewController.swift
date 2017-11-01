@@ -10,6 +10,9 @@ import UIKit
 
 class JLBaseViewController: UIViewController {
 
+    var tableView: UITableView?
+    
+    
     //自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.cz_screenWidth(), height: 49))
     
@@ -35,7 +38,11 @@ class JLBaseViewController: UIViewController {
 extension JLBaseViewController {
     @objc dynamic func setupUI() {
         view.backgroundColor = UIColor.cz_random()
+        setUpNavigationBar()
         
+    }
+    
+    private func setUpNavigationBar() {
         //添加导航条
         view.addSubview(navigationBar)
         //将item设置给bar

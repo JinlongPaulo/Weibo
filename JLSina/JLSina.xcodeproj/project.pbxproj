@@ -96,6 +96,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2C2FE0911FA9C06E006BAA9C /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */,
+				2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */,
+			);
+			path = "主控制器";
+			sourceTree = "<group>";
+		};
 		2C63847A1F7E407300F95FDF = {
 			isa = PBXGroup;
 			children = (
@@ -183,8 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				2CAAB56D1FA84F6A0021B432 /* 测试 */,
-				2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */,
-				2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */,
+				2C2FE0911FA9C06E006BAA9C /* 主控制器 */,
 				2C6384A51F7E4DBF00F95FDF /* JLBaseViewController.swift */,
 			);
 			path = Main;
