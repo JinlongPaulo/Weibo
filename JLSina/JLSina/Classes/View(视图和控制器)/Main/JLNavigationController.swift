@@ -16,6 +16,7 @@ class JLNavigationController: UINavigationController {
         navigationBar.isHidden = true
         
     }
+    
     //重写push方法，所有的push方法都会调用此方法!
     //viewController被push的控制器，设置他的左侧按钮作为返回按钮
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

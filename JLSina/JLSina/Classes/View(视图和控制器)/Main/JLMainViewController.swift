@@ -18,6 +18,17 @@ class JLMainViewController: UITabBarController {
         setupCompostButton()
     }
     
+    /**
+     portrait  :竖屏, 肖像
+     landscape :横屏, 风景画❀
+     - 使用代码控制设备的方向，好处：可以在需要横屏的时候单独处理
+     - 设置支持的方向之后，当前的控制器及子控制器都会遵守这个方向
+     - 如果播放视频，通常是通过 modal 展现的!
+     */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     //MARK: - 监听方法
     //FIXME:没有实现
     //@objc 能够保证用OC方式访问，允许这个函数在运行时通过OC的消息机制被调用
