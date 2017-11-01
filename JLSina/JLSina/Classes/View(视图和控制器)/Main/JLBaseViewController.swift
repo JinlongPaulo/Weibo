@@ -39,9 +39,16 @@ extension JLBaseViewController {
     @objc dynamic func setupUI() {
         view.backgroundColor = UIColor.cz_random()
         setUpNavigationBar()
-        
+        setupTableView()
     }
     
+    //设置表格视图
+    private func setupTableView() {
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        view.insertSubview(tableView!, belowSubview: navigationBar)
+    }
+    
+    //设置导航条
     private func setUpNavigationBar() {
         //添加导航条
         view.addSubview(navigationBar)
