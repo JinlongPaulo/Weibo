@@ -21,7 +21,7 @@ import UIKit
 class JLBaseViewController: UIViewController {
     
     //用户登录标记
-    var userLogon = true
+    var userLogon = false
 
     //表格视图 - 如果用户没有登录，就不创建
     var tableView: UITableView?
@@ -100,8 +100,7 @@ extension JLBaseViewController {
     
     //设置访客视图
     private func setupVisitorView() {
-        let visitorView = UIView(frame: view.bounds)
-        visitorView.backgroundColor = UIColor.cz_random()
+        let visitorView = JLVisitorView(frame: view.bounds)
         
         view.insertSubview(visitorView, belowSubview: navigationBar)
         

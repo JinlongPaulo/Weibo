@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3777181FAAF2FA00567432 /* JLVisitorView.swift */; };
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
 		2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C3777181FAAF2FA00567432 /* JLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVisitorView.swift; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6384921F7E407300F95FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 				2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */,
 			);
 			path = "主控制器";
+			sourceTree = "<group>";
+		};
+		2C3777171FAAF2B600567432 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3777181FAAF2FA00567432 /* JLVisitorView.swift */,
+			);
+			path = VisitorView;
 			sourceTree = "<group>";
 		};
 		2C63847A1F7E407300F95FDF = {
@@ -191,8 +201,9 @@
 		2C63849E1F7E4CE800F95FDF /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2CAAB56D1FA84F6A0021B432 /* 测试 */,
 				2C2FE0911FA9C06E006BAA9C /* 主控制器 */,
+				2C3777171FAAF2B600567432 /* VisitorView */,
+				2CAAB56D1FA84F6A0021B432 /* 测试 */,
 				2C6384A51F7E4DBF00F95FDF /* JLBaseViewController.swift */,
 			);
 			path = Main;
@@ -340,6 +351,7 @@
 				2CAAB5661FA821A70021B432 /* UIColor+CZAddition.m in Sources */,
 				2C6384A61F7E4DBF00F95FDF /* JLBaseViewController.swift in Sources */,
 				2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */,
+				2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */,
 				2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */,
 				2CAAB55F1FA821A70021B432 /* NSArray+Log.m in Sources */,
 				2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */,
