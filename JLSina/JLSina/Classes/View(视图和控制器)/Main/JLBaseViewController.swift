@@ -51,7 +51,8 @@ class JLBaseViewController: UIViewController {
     
     //加载数据 - 具体实现，由子类负责
     @objc func loadData() {
-        
+        //如果子类不实现任何方法，默认关闭刷新
+        refreshControl?.endRefreshing()
     }
 
 }
