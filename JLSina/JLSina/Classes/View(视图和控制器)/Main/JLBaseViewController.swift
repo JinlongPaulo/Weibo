@@ -25,6 +25,8 @@ class JLBaseViewController: UIViewController {
     var tableView: UITableView?
     //刷新控件
     var refreshControl: UIRefreshControl?
+    //上拉刷新标记
+    var isPullup = false
     
     
     //自定义导航条
@@ -79,6 +81,10 @@ extension JLBaseViewController {
         //设置刷新控件
         //1,实例化控件
         refreshControl = UIRefreshControl()
+        let str = NSAttributedString(string: "正在刷新")
+        
+        refreshControl?.attributedTitle = str
+        refreshControl?.tintColor = UIColor.orange
         //2,添加到表格视图
         tableView?.addSubview(refreshControl!)
         
@@ -110,5 +116,31 @@ extension JLBaseViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //只是保证没有语法错误
         return UITableViewCell()
+    }
+    
+    //在显示最后一行的时候，做上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //1,判断indexPath是否是最后一行
+        //(indexPath.section(最大) / indexPath.row(最后一行))
+        //1>row
+        let row = indexPath.row
+        //2> section
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        //3,行数
+        let count = tableView.numberOfRows(inSection: section)
+        
+        //如果是最后一行，同时没有开始上拉刷新
+        if row == count - 1 && !isPullup {
+            print("上拉刷新")
+        }
+        
+        print("section--\(section)")
+    
+        
     }
 }
