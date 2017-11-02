@@ -54,6 +54,8 @@ extension JLVisitorView {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
         //3,自动布局
+        let margin: CGFloat = 20.0
+        
         //1>图像视图
         addConstraint(NSLayoutConstraint(item: iconView,
                                          attribute: .centerX,
@@ -86,7 +88,73 @@ extension JLVisitorView {
                                          constant: 0))
         
         //3>提示标签
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .centerX,
+                                         relatedBy: .equal,
+                                         toItem: iconView,
+                                         attribute: .centerX,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .top,
+                                         relatedBy: .equal,
+                                         toItem: iconView,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: margin))
+        
+        addConstraint(NSLayoutConstraint(item: tipLabel,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: 236))
+        tipLabel.textAlignment = .center
         //4>注册
+        addConstraint(NSLayoutConstraint(item: registerBtn,
+                                         attribute: .left,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .left,
+                                         multiplier: 1.0,
+                                         constant: 0))
+         addConstraint(NSLayoutConstraint(item: registerBtn,
+                                          attribute: .top,
+                                          relatedBy: .equal,
+                                          toItem: tipLabel,
+                                          attribute: .bottom,
+                                          multiplier: 1.0,
+                                          constant: margin))
+        addConstraint(NSLayoutConstraint(item: registerBtn,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: 100))
         //5>登录
+        addConstraint(NSLayoutConstraint(item: loginBtn,
+                                         attribute: .right,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .right,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: loginBtn,
+                                         attribute: .top,
+                                         relatedBy: .equal,
+                                         toItem: tipLabel,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: margin))
+        addConstraint(NSLayoutConstraint(item: loginBtn,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: registerBtn,
+                                         attribute: .width,
+                                         multiplier: 1.0,
+                                         constant: 0))
+
     }
 }
