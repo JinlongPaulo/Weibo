@@ -21,7 +21,11 @@ import UIKit
 class JLBaseViewController: UIViewController {
     
 
+    //表格视图 - 如果用户没有登录，就不创建
     var tableView: UITableView?
+    //刷新控件
+    var refreshControl: UIRefreshControl?
+    
     
     //自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.cz_screenWidth(), height: 49))
@@ -44,7 +48,7 @@ class JLBaseViewController: UIViewController {
     }
     
     //加载数据 - 具体实现，由子类负责
-    func loadData() {
+    @objc func loadData() {
         
     }
 
@@ -68,9 +72,18 @@ extension JLBaseViewController {
         //设置数据源和代理 ->让子类直接实现数据源方法
         tableView?.dataSource = self
         tableView?.delegate = self
-        
+        tableView?.showsVerticalScrollIndicator = false
         //设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: 0, right: 0)
+        
+        //设置刷新控件
+        //1,实例化控件
+        refreshControl = UIRefreshControl()
+        //2,添加到表格视图
+        tableView?.addSubview(refreshControl!)
+        
+        //3,添加监听方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     //设置导航条
