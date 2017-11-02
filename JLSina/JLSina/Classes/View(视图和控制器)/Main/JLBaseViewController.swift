@@ -20,14 +20,17 @@ import UIKit
 //所有主控制器的基类控制器
 class JLBaseViewController: UIViewController {
     
+    //用户登录标记
+    var userLogon = true
 
     //表格视图 - 如果用户没有登录，就不创建
     var tableView: UITableView?
+    
     //刷新控件
     var refreshControl: UIRefreshControl?
+    
     //上拉刷新标记
     var isPullup = false
-    
     
     //自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.cz_screenWidth(), height: 49))
@@ -60,11 +63,12 @@ class JLBaseViewController: UIViewController {
 // MARK: - 设置界面
 extension JLBaseViewController {
     @objc dynamic func setupUI() {
-        view.backgroundColor = UIColor.cz_random()
+        view.backgroundColor = UIColor.white
         //取消自动缩进 - 如果隐藏了导航栏，会缩进20个点(目前版本不设置也好)
         automaticallyAdjustsScrollViewInsets = false
         setUpNavigationBar()
-        setupTableView()
+        
+        userLogon ? setupTableView() : setupVisitorView()
     }
     
     //设置表格视图
@@ -76,6 +80,7 @@ extension JLBaseViewController {
         tableView?.dataSource = self
         tableView?.delegate = self
         tableView?.showsVerticalScrollIndicator = false
+        tableView?.separatorStyle = .none
         //设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: 0, right: 0)
         
@@ -93,6 +98,14 @@ extension JLBaseViewController {
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
+    //设置访客视图
+    private func setupVisitorView() {
+        let visitorView = UIView(frame: view.bounds)
+        visitorView.backgroundColor = UIColor.cz_random()
+        
+        view.insertSubview(visitorView, belowSubview: navigationBar)
+        
+    }
     //设置导航条
     private func setUpNavigationBar() {
         //添加导航条
