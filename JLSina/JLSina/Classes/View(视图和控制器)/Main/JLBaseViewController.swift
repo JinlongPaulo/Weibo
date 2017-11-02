@@ -54,6 +54,8 @@ class JLBaseViewController: UIViewController {
 extension JLBaseViewController {
     @objc dynamic func setupUI() {
         view.backgroundColor = UIColor.cz_random()
+        //取消自动缩进 - 如果隐藏了导航栏，会缩进20个点(目前版本不设置也好)
+        automaticallyAdjustsScrollViewInsets = false
         setUpNavigationBar()
         setupTableView()
     }
@@ -66,6 +68,9 @@ extension JLBaseViewController {
         //设置数据源和代理 ->让子类直接实现数据源方法
         tableView?.dataSource = self
         tableView?.delegate = self
+        
+        //设置内容缩进
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: 0, right: 0)
     }
     
     //设置导航条
