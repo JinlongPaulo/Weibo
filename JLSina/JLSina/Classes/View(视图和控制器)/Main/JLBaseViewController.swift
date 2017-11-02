@@ -33,6 +33,7 @@ class JLBaseViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        loadData()
     }
     
     //重写title的didSet
@@ -40,6 +41,11 @@ class JLBaseViewController: UIViewController {
         didSet {
             navItem.title = title
         }
+    }
+    
+    //加载数据 - 具体实现，由子类负责
+    func loadData() {
+        
     }
 
 }
