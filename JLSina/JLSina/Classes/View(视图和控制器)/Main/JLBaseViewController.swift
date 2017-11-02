@@ -137,6 +137,9 @@ extension JLBaseViewController: UITableViewDelegate , UITableViewDataSource {
         //如果是最后一行，同时没有开始上拉刷新
         if row == count - 1 && !isPullup {
             print("上拉刷新")
+            isPullup = true
+            //开始刷新
+            loadData()
         }
         
         print("section--\(section)")
