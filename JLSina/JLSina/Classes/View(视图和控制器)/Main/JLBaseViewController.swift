@@ -21,7 +21,7 @@ import UIKit
 class JLBaseViewController: UIViewController {
     
     //用户登录标记
-    var userLogon = true
+    var userLogon = false
     
     //访客视图信息字典
     var visitorInfoDictionary: [String: String]?
