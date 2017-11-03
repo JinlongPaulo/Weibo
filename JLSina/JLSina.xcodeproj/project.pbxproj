@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C04A9DB1FAC5B8A00E0B299 /* main.json */; };
 		2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3777181FAAF2FA00567432 /* JLVisitorView.swift */; };
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C04A9DB1FAC5B8A00E0B299 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		2C3777181FAAF2FA00567432 /* JLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVisitorView.swift; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		2C2FE0911FA9C06E006BAA9C /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				2C04A9DB1FAC5B8A00E0B299 /* main.json */,
 				2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */,
 				2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */,
 			);
@@ -333,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */,
 				2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,12 +21,11 @@ import UIKit
 class JLBaseViewController: UIViewController {
     
     //用户登录标记
-    var userLogon = false
+    var userLogon = true
     
     //访客视图信息字典
     var visitorInfoDictionary: [String: String]?
     
-
     //表格视图 - 如果用户没有登录，就不创建
     var tableView: UITableView?
     

@@ -151,6 +151,12 @@ extension JLMainViewController {
         //测试数据格式是否正确，转换成plist数据更加直观
 //        (array as NSArray).write(toFile: "/Users/panying/Desktop/demo.plist", atomically: true)
         
+        //数组 -> json序列号
+        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+
+        
+        (data as NSData).write(toFile: "Users/panying/Desktop/demo.json", atomically: true)
+//        data.write(to: fileURL)
         
         var arrayM = [UIViewController]()
         for dict in array {
