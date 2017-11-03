@@ -26,6 +26,7 @@ class JLVisitorView: UIView {
             
             //3>设置图像，首页不需要设置
             if imageName == "" {
+                startAnimation()
                 return
             }
             
@@ -50,6 +51,21 @@ class JLVisitorView: UIView {
     
 
     
+    //旋转图标动画
+    private func startAnimation() {
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        
+        anim.toValue = 2 * Double.pi
+        anim.repeatCount = MAXFLOAT
+        anim.duration = 15
+        
+        //动画完成不删除,如果iconView被释放，动画会一起销毁
+        //设置连续动画非常有用
+        anim.isRemovedOnCompletion = false
+        
+        //将动画添加到图层
+        iconView.layer.add(anim, forKey: nil)
+    }
     
     //MARK: - 私有控件
     //懒加载属性只有调用UIKit 控件的指定构造函数，其他都需要使用类型
