@@ -31,6 +31,9 @@ class JLVisitorView: UIView {
             
             iconView.image = UIImage(named: imageName)
             
+            //其他控制器的访客视图不需要显示小房子,遮罩视图
+            houseIconView.isHidden = true
+            maskIconView.isHidden = true
             
         }
     }
