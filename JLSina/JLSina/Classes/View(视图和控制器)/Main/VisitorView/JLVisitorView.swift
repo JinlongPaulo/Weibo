@@ -30,6 +30,8 @@ class JLVisitorView: UIView {
             }
             
             iconView.image = UIImage(named: imageName)
+            
+            
         }
     }
     
@@ -79,6 +81,7 @@ extension JLVisitorView {
         addSubview(registerBtn)
         addSubview(loginBtn)
         
+        tipLabel.textAlignment = .center
         //2,取消 autoresizing
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false

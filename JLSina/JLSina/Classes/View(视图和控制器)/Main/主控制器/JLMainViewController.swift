@@ -80,15 +80,20 @@ extension JLMainViewController {
         guard let clsName = dict["clsName"] as? String ,
          let title = dict["title"] as? String ,
          let imageName = dict["imageName"] as? String ,
-         let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+         let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? JLBaseViewController.Type ,
+         let visitorDict = dict["visitorInfo"] as? [String: String]
+        
         else {
             
             return UIViewController()
         }
         
+        //创建视图
         let vc = cls.init()
         vc.title = title
         
+        //设置控制器访客信息字典
+        vc.visitorInfoDictionary = visitorDict
         
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName + ".png")
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_highlighted")?.withRenderingMode(.alwaysOriginal)
