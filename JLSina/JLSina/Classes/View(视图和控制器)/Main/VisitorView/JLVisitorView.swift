@@ -43,7 +43,8 @@ class JLVisitorView: UIView {
 extension JLVisitorView {
     
     func setupUI() {
-        backgroundColor = UIColor.white
+        //在开发的时候，如果能够使用颜色，就不要使用图像,效率会更高
+        backgroundColor = UIColor.cz_color(withHex: 0xEDEDED)
         //1,添加控件
         addSubview(iconView)
         addSubview(maskIconView)
@@ -166,7 +167,7 @@ extension JLVisitorView {
             "maskIconView": maskIconView,
             "registerBtn": registerBtn] as [String : Any]
         
-        let metrics = ["spacing":-20]
+        let metrics = ["spacing":15]
         
         
         addConstraints(NSLayoutConstraint.constraints(
