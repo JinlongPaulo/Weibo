@@ -24,6 +24,8 @@ class JLVisitorView: UIView {
     //懒加载属性只有调用UIKit 控件的指定构造函数，其他都需要使用类型
     // 图像视图
     private lazy var iconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
+    //遮罩图像
+    private lazy var maskIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     //小房子
     private lazy var houseIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     //提示标签
@@ -44,6 +46,7 @@ extension JLVisitorView {
         backgroundColor = UIColor.white
         //1,添加控件
         addSubview(iconView)
+        addSubview(maskIconView)
         addSubview(houseIconView)
         addSubview(tipLabel)
         addSubview(registerBtn)
@@ -155,6 +158,28 @@ extension JLVisitorView {
                                          attribute: .width,
                                          multiplier: 1.0,
                                          constant: 0))
+        
+        //6>遮罩
+        //views:定义VFL中的控件名称和实际名称的映射关系
+        //metrics:定义VFL中（）指定的常数映射关系
+        let viewDict = [
+            "maskIconView": maskIconView,
+            "registerBtn": registerBtn] as [String : Any]
+        
+        let metrics = ["spacing":-20]
+        
+        
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[maskIconView]-0-|",
+            options: [],
+            metrics: nil,
+            views: viewDict))
+        
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[maskIconView]-(spacing)-[registerBtn]",
+            options: [],
+            metrics: metrics,
+            views: viewDict))
 
     }
 }
