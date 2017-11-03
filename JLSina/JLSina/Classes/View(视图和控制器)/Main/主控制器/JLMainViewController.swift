@@ -73,11 +73,11 @@ extension JLMainViewController {
     }
     
     //使用字典创建一个子控制器
-    private func controller(dict: [String: String]) -> UIViewController {
+    private func controller(dict: [String: AnyObject]) -> UIViewController {
         //1，取得字典内容
-        guard let clsName = dict["clsName"] ,
-         let title = dict["title"] ,
-         let imageName = dict["imageName"] ,
+        guard let clsName = dict["clsName"] as? String ,
+         let title = dict["title"] as? String ,
+         let imageName = dict["imageName"] as? String ,
          let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
         else {
             
@@ -107,12 +107,32 @@ extension JLMainViewController {
 //设置所有子控制器
     private func setupChildControllers() {
 
-        let array = [
-            ["clsName":"JLHomeViewController","title":"首页" , "imageName":"home"],
-            ["clsName":"JLMessageViewController","title":"消息" , "imageName":"message_center"],
-            ["clsName":"UIViewController"],
-            ["clsName":"JLDiscoverViewController","title":"发现" , "imageName":"discover"],
-            ["clsName":"JLProfileViewController","title":"我" , "imageName":"profile"]
+        //现在的很多应用程序中，界面的创建都依赖网络json
+        let array: [[String: AnyObject]] = [
+            ["clsName": "JLHomeViewController" as AnyObject,
+             "title": "首页" as AnyObject ,
+             "imageName": "home" as AnyObject ,
+             "visitorInfo": ["imageName":"" ,
+                             "message":"哈哈"] as AnyObject
+            ],
+            
+            ["clsName": "JLMessageViewController" as AnyObject ,
+             "title": "消息" as AnyObject ,
+             "imageName": "message_center" as AnyObject
+            ],
+            
+            ["clsName": "UIViewController" as AnyObject
+            ],
+            
+            ["clsName": "JLDiscoverViewController" as AnyObject ,
+             "title": "发现" as AnyObject ,
+             "imageName": "discover" as AnyObject
+            ],
+            
+            ["clsName":"JLProfileViewController" as AnyObject ,
+             "title":"我" as AnyObject ,
+             "imageName":"profile" as AnyObject
+            ]
         ]
         var arrayM = [UIViewController]()
         for dict in array {

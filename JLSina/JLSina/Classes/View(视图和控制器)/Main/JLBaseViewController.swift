@@ -22,6 +22,10 @@ class JLBaseViewController: UIViewController {
     
     //用户登录标记
     var userLogon = false
+    
+    //访客视图信息字典
+    var visitorInfoDictionary: [String: String]?
+    
 
     //表格视图 - 如果用户没有登录，就不创建
     var tableView: UITableView?
@@ -103,6 +107,9 @@ extension JLBaseViewController {
         let visitorView = JLVisitorView(frame: view.bounds)
         
         view.insertSubview(visitorView, belowSubview: navigationBar)
+        
+        visitorView.visitorInfo = visitorInfoDictionary
+        print("访客视图\(visitorView)")
         
     }
     //设置导航条
