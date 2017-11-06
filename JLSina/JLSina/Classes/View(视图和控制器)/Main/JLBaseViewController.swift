@@ -138,10 +138,12 @@ extension JLBaseViewController {
         view.addSubview(navigationBar)
         //将item设置给bar
         navigationBar.items = [navItem]
-        //设置navbar的渲染颜色
+        //1>设置navbar整个背景的渲染颜色
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
-        //设置navbar的字体颜色
+        //2>设置navbar的字体颜色
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
+        //3>设置item按钮的文字渲染颜色
+        navigationBar.tintColor = UIColor.orange
     }
 }
 
