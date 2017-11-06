@@ -76,7 +76,7 @@ extension JLBaseViewController {
 
 // MARK: - 设置界面
 extension JLBaseViewController {
-    @objc dynamic func setupUI() {
+    private func setupUI() {
         view.backgroundColor = UIColor.white
         //取消自动缩进 - 如果隐藏了导航栏，会缩进20个点(目前版本不设置也好)
         automaticallyAdjustsScrollViewInsets = false
@@ -85,8 +85,9 @@ extension JLBaseViewController {
         userLogon ? setupTableView() : setupVisitorView()
     }
     
-    //设置表格视图
-    private func setupTableView() {
+    //设置表格视图 - 用户登录之后执行(子类重写此类方法)
+    //因为子类不需要关心用户登录之前的逻辑
+    @objc dynamic func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
@@ -118,11 +119,17 @@ extension JLBaseViewController {
         
         view.insertSubview(visitorView, belowSubview: navigationBar)
         
+        //1,设置访客视图信息
         visitorView.visitorInfo = visitorInfoDictionary
         print("访客视图\(visitorView)")
-        //添加访客视图按钮监听方法
+        
+        //2,添加访客视图按钮监听方法
         visitorView.loginBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
         visitorView.registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        //3,设置导航条按钮
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
         
     }
     //设置导航条

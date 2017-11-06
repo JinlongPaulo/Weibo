@@ -25,9 +25,8 @@ class JLDemoViewController: JLBaseViewController {
 }
 
 extension JLDemoViewController {
-    override func setupUI() {
-        super.setupUI()
-        //设置右侧控制器
+    override func setupTableView() {
+        super.setupTableView()
         navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
     }
 }
