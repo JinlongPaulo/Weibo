@@ -82,9 +82,8 @@ extension JLMainViewController {
          let imageName = dict["imageName"] as? String ,
          let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? JLBaseViewController.Type ,
          let visitorDict = dict["visitorInfo"] as? [String: String]
-        
-        else {
             
+        else {
             return UIViewController()
         }
         
@@ -165,7 +164,6 @@ extension JLMainViewController {
         //数组 -> json序列号
 //        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
 
-        
 //        (data as NSData).write(toFile: "Users/panying/Desktop/demo.json", atomically: true)
 //        data.write(to: fileURL)
         
