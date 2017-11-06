@@ -113,11 +113,23 @@ extension JLMainViewController {
 //设置所有子控制器
     private func setupChildControllers() {
 
-        //从bundle加载配置json
+        //获取沙盒json路径
+        let docDic = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        
+        let jsonPath = (docDic as NSString).appendingPathComponent("main.json")
+        //加载data
+        var data = NSData(contentsOfFile: jsonPath)
+        
+        //判断data是否有内容，如果没有，说明本地沙盒没有文件
+        if data == nil {
+            //从bundle加载data
+            let path = Bundle.main.path(forResource: "main.json" , ofType: nil)
+            data = NSData(contentsOfFile: path!)
+        }
+        
+        //data一定会有一个内容，反序列化
         //1,路径 2,加载NSData 3,反序列化转换成数组
-        guard let path = Bundle.main.path(forResource: "main.json" , ofType: nil),
-              let data = NSData(contentsOfFile: path),
-              let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String: AnyObject]]
+        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: AnyObject]]
         else  {
             return
         }

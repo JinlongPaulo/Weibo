@@ -47,7 +47,7 @@ extension AppDelegate {
                 
                 let jsonPath = (docDic as NSString).appendingPathComponent("main.json")
                 
-                
+                //直接保存在沙盒，等待下一次程序启动使用
                 data?.write(toFile: jsonPath, atomically: true)
                 
                 print("应用程序加载完毕 \(jsonPath)")
