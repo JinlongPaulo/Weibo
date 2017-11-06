@@ -63,6 +63,17 @@ class JLBaseViewController: UIViewController {
 
 }
 
+//访客视图监听方法
+extension JLBaseViewController {
+    @objc private func login() {
+        print("用户登录")
+    }
+    
+    @objc private func register() {
+        print("用户注册")
+    }
+}
+
 // MARK: - 设置界面
 extension JLBaseViewController {
     @objc dynamic func setupUI() {
@@ -109,6 +120,9 @@ extension JLBaseViewController {
         
         visitorView.visitorInfo = visitorInfoDictionary
         print("访客视图\(visitorView)")
+        //添加访客视图按钮监听方法
+        visitorView.loginBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
+        visitorView.registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
         
     }
     //设置导航条

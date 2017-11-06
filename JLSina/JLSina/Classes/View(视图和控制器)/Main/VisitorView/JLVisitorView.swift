@@ -11,6 +11,11 @@ import UIKit
 //访客视图
 class JLVisitorView: UIView {
 
+    //注册按钮
+    lazy var registerBtn: UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
+    //登录按钮
+    lazy var loginBtn: UIButton = UIButton.cz_textButton("登录", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
+    
     //访客视图的信息字典 [imageName / message]
     //如果是首页 imageName == ""
     var visitorInfo: [String: String]? {
@@ -80,10 +85,7 @@ class JLVisitorView: UIView {
         withText: "关注一些人，回这里看看有什么惊喜",
         fontSize: 14,
         color: UIColor.darkGray)
-    //注册按钮
-    private lazy var registerBtn: UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
-    //登录按钮
-    private lazy var loginBtn: UIButton = UIButton.cz_textButton("登录", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
+
 }
 
 //MARK: - 设置界面
