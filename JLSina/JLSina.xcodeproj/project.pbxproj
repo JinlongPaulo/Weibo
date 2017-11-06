@@ -33,6 +33,7 @@
 		2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAAB56B1FA826C20021B432 /* Images.xcassets */; };
 		2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */; };
 		2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */; };
+		648011F3CB87C67EBF1F3A55 /* Pods_JLSina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA53401303D76B710F8ABD /* Pods_JLSina.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,9 @@
 		2CAAB56B1FA826C20021B432 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDemoViewController.swift; sourceTree = "<group>"; };
 		2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		3D46ADFD21A0D0BD58ADF3D6 /* Pods-JLSina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLSina.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLSina/Pods-JLSina.debug.xcconfig"; sourceTree = "<group>"; };
+		A8F3107D5E28CDE37CF5AD78 /* Pods-JLSina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLSina.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLSina/Pods-JLSina.release.xcconfig"; sourceTree = "<group>"; };
+		FABA53401303D76B710F8ABD /* Pods_JLSina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLSina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +89,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648011F3CB87C67EBF1F3A55 /* Pods_JLSina.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10181048945562EBA6BC2888 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FABA53401303D76B710F8ABD /* Pods_JLSina.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2C1D343D1F8F05F90036902A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,8 @@
 			children = (
 				2C6384851F7E407300F95FDF /* JLSina */,
 				2C6384841F7E407300F95FDF /* Products */,
+				8B8E5651BF232DC0AAA02B18 /* Pods */,
+				10181048945562EBA6BC2888 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,6 +290,15 @@
 			path = "测试";
 			sourceTree = "<group>";
 		};
+		8B8E5651BF232DC0AAA02B18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D46ADFD21A0D0BD58ADF3D6 /* Pods-JLSina.debug.xcconfig */,
+				A8F3107D5E28CDE37CF5AD78 /* Pods-JLSina.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,9 +306,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C6384951F7E407300F95FDF /* Build configuration list for PBXNativeTarget "JLSina" */;
 			buildPhases = (
+				629BBA1ABF1715F517FA3404 /* [CP] Check Pods Manifest.lock */,
 				2C63847F1F7E407300F95FDF /* Sources */,
 				2C6384801F7E407300F95FDF /* Frameworks */,
 				2C6384811F7E407300F95FDF /* Resources */,
+				62BF5F7E70EBD3AE6985A387 /* [CP] Embed Pods Frameworks */,
+				5F90BFF888FFD325043950BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,6 +369,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F90BFF888FFD325043950BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLSina/Pods-JLSina-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		629BBA1ABF1715F517FA3404 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		62BF5F7E70EBD3AE6985A387 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLSina/Pods-JLSina-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C63847F1F7E407300F95FDF /* Sources */ = {
@@ -487,6 +562,7 @@
 		};
 		2C6384961F7E407300F95FDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D46ADFD21A0D0BD58ADF3D6 /* Pods-JLSina.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -508,6 +584,7 @@
 		};
 		2C6384971F7E407300F95FDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8F3107D5E28CDE37CF5AD78 /* Pods-JLSina.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
