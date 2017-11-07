@@ -20,6 +20,19 @@ class JLHomeViewController: JLBaseViewController {
     //模拟“延时”加载数据
     override func loadData() {
         
+        //用网络工具加载微博数据
+        let urlStr = "https://api.weibo.com/2/statuses/home_timeline.json";
+        let params = ["access_token":"2.00oHIRKGFFF9qC7708d7eadfXXn1JB"]
+//        JLNetworkManager.shared .get(urlStr, parameters: params, progress: nil, success: { (_, json) in
+//            print(json)
+//        }) { (_, error) in
+//            print("网络请求失败\(error)")
+//        }
+        
+        JLNetworkManager.shared.request(URLString: urlStr, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+            print(json)
+        }
+        
         print("开始加载数据\(JLNetworkManager.shared)")
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
