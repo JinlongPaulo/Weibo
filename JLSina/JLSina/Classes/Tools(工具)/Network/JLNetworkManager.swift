@@ -23,6 +23,8 @@ class JLNetworkManager: AFHTTPSessionManager {
     static let shared = JLNetworkManager()
     
     //访问令牌，所有网络请求，都基于此令牌，登录除外
+    //访问令牌有时限，默认用户是三天
+    //模拟token过期，服务器返回的状态码是403
     var accessToken: String? = "2.00oHIRKGFFF9qC7708d7eadfXXn1JB"
     
     //专门负责拼接token的网络请求方法
@@ -30,8 +32,11 @@ class JLNetworkManager: AFHTTPSessionManager {
         
         //处理token字典
         //0>判断token是否为nil，直接返回
+        
         guard let token = accessToken else {
+            //FIXME: 发送通知，提示用户登录
             print("没有token，需要登录")
+            
             completion(nil , false)
             return
         }
@@ -46,6 +51,7 @@ class JLNetworkManager: AFHTTPSessionManager {
         //调用request发起真正的网络请求方法
         request(URLString: URLString, parameters: parameters, completion: completion)
     }
+    
     //使用一个函数，封装AFN的 get 和 post 请求
     /// - parameter method:     GET /POST
     /// - parameter URLString:  URLString
@@ -63,7 +69,8 @@ class JLNetworkManager: AFHTTPSessionManager {
             //针对 403 处理token 过期
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 
-                // 发送通知
+                print("token过期")
+                //FIXME: 发送通知(本方法不知道被谁调用，谁接收到通知，谁处理)
                 
             }
             print("网络请求错误\(error)")
