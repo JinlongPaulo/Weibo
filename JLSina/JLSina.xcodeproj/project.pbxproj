@@ -36,6 +36,7 @@
 		2CB564191FB06670005FDA84 /* JLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB564181FB06670005FDA84 /* JLNetworkManager.swift */; };
 		2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */; };
 		2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */; };
+		2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */; };
 		648011F3CB87C67EBF1F3A55 /* Pods_JLSina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA53401303D76B710F8ABD /* Pods_JLSina.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		2CB564181FB06670005FDA84 /* JLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNetworkManager.swift; sourceTree = "<group>"; };
 		2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatus.swift; sourceTree = "<group>"; };
+		2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusListViewModel.swift; sourceTree = "<group>"; };
 		3D46ADFD21A0D0BD58ADF3D6 /* Pods-JLSina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLSina.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLSina/Pods-JLSina.debug.xcconfig"; sourceTree = "<group>"; };
 		A8F3107D5E28CDE37CF5AD78 /* Pods-JLSina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLSina.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLSina/Pods-JLSina.release.xcconfig"; sourceTree = "<group>"; };
 		FABA53401303D76B710F8ABD /* Pods_JLSina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLSina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +248,7 @@
 		2C6384A01F7E4CE800F95FDF /* ViewModel(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				2CAAB5681FA821A70021B432 /* UIScreen+CZAddition.m in Sources */,
 				2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */,
 				2CAAB5651FA821A70021B432 /* UIButton+CZAddition.m in Sources */,
+				2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */,
 				2CAAB56A1FA821A70021B432 /* UIViewController+CZAddition.m in Sources */,
 				2CAAB5611FA821A70021B432 /* NSObject+CZRuntime.m in Sources */,
 				2CAAB5691FA821A70021B432 /* UIView+CZAddition.m in Sources */,
