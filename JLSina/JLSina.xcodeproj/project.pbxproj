@@ -34,6 +34,7 @@
 		2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */; };
 		2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */; };
 		2CB564191FB06670005FDA84 /* JLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB564181FB06670005FDA84 /* JLNetworkManager.swift */; };
+		2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */; };
 		648011F3CB87C67EBF1F3A55 /* Pods_JLSina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA53401303D76B710F8ABD /* Pods_JLSina.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDemoViewController.swift; sourceTree = "<group>"; };
 		2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		2CB564181FB06670005FDA84 /* JLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNetworkManager.swift; sourceTree = "<group>"; };
+		2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		3D46ADFD21A0D0BD58ADF3D6 /* Pods-JLSina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLSina.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLSina/Pods-JLSina.debug.xcconfig"; sourceTree = "<group>"; };
 		A8F3107D5E28CDE37CF5AD78 /* Pods-JLSina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLSina.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLSina/Pods-JLSina.release.xcconfig"; sourceTree = "<group>"; };
 		FABA53401303D76B710F8ABD /* Pods_JLSina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLSina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				2CB564181FB06670005FDA84 /* JLNetworkManager.swift */,
+				2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */,
 				2CAAB5601FA821A70021B432 /* NSAttributedString+CZAdditon.m in Sources */,
 				2CB564191FB06670005FDA84 /* JLNetworkManager.swift in Sources */,
+				2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */,
 				2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */,
 				2CAAB5631FA821A70021B432 /* NSString+CZHash.m in Sources */,
 				2C6384AF1F7E4E7800F95FDF /* JLProfileViewController.swift in Sources */,
