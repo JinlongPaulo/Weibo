@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import YYModel
 //微博数据模型
 class JLStatus: NSObject {
     //Int类型，在64位的机器是64位，在32位机器就是32位
@@ -17,9 +16,13 @@ class JLStatus: NSObject {
     //微博信息内容
     var text: String?
     
+
     //重写 description 的计算型属性
-    override var description: String {
-        return yy_modelDescription()
-    }
+//    override var description: String {
+//        return yy_modelDescription()
+//    }
     
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+
+    }
 }

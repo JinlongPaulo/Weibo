@@ -27,19 +27,33 @@ class JLStatusListViewModel {
     //加载微博列表
     //completion：网络请求是否成功
     func loadStatus(completion: @escaping (_ isSuccess: Bool)->()) {
+        
         JLNetworkManager.shared.statusList { (list, isSuccess) in
             
-            //1,字典转模型
-            guard let array = NSArray.yy_modelArray(with: JLStatus.self, json: list ?? []) as? [JLStatus] else {
-                
-                completion(isSuccess)
-                
-                return
-            }
+//            1,字典转模型
+//            guard let array = NSArray.yy_modelArray(with: JLStatus.self, json: list ?? []) as? [JLStatus] else {
+//
+//                completion(isSuccess)
+//
+//                return
+//            }
             
+
             //2,拼接数据
-            self.statusList += array
+//            self.statusList += array
             
+            for dict  in list ?? [] {
+
+                let dic: NSDictionary = dict as NSDictionary
+                
+                let model = JLStatus()
+//                model.setValuesForKeys(dic as! [String : Any])
+                model.id = dic.object(forKey: "id") as! Int64
+                model.text = dic.object(forKey: "text") as? String
+                self.statusList.append(model)
+//                print("字数是\(String(describing: model.text))字典的值\(String(describing: dic["text"]))数组是\(String(describing: list?.count.description))")
+            }
+
             //3,完成回调
             completion(isSuccess)
             

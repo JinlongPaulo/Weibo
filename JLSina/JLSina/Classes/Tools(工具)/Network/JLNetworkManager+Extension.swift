@@ -23,6 +23,7 @@ extension JLNetworkManager {
             //从json中获取statuses字典数组
             //如果 as？失败，result = nil
             let result = json?["statuses"] as? [[String: AnyObject]]
+            
             completion(result , isSuccess)
         }
     }

@@ -14,14 +14,14 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
-  - pop (1.0.9)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
-  - SVProgressHUD (2.0.4)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
+  - pop (1.0.10)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+  - SVProgressHUD (2.2.2)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -34,12 +34,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: aab11ea769f2c1dfc64e21af4caed265036f6e18
+PODFILE CHECKSUM: dc90a52d18547e2e4ee6cab333185570d2b968fc
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0.beta.2
