@@ -28,7 +28,10 @@ class JLStatusListViewModel {
     //completion：网络请求是否成功
     func loadStatus(completion: @escaping (_ isSuccess: Bool)->()) {
         
-        JLNetworkManager.shared.statusList { (list, isSuccess) in
+        //since_id 取出数组中第一天微博的id
+        let since_id = statusList.first?.id ?? 0
+        
+        JLNetworkManager.shared.statusList(since_id: since_id,max_id: 0) { (list, isSuccess) in
             
 //            1,字典转模型
 //            guard let array = NSArray.yy_modelArray(with: JLStatus.self, json: list ?? []) as? [JLStatus] else {
@@ -43,14 +46,14 @@ class JLStatusListViewModel {
 //            self.statusList += array
             
             for dict  in list ?? [] {
-
                 let dic: NSDictionary = dict as NSDictionary
-                
                 let model = JLStatus()
 //                model.setValuesForKeys(dic as! [String : Any])
                 model.id = dic.object(forKey: "id") as! Int64
                 model.text = dic.object(forKey: "text") as? String
                 self.statusList.append(model)
+                
+                
 //                print("字数是\(String(describing: model.text))字典的值\(String(describing: dic["text"]))数组是\(String(describing: list?.count.description))")
             }
 
