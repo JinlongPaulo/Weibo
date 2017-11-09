@@ -25,11 +25,17 @@ class JLStatusListViewModel {
     lazy var statusList = [JLStatus]()
     
     //加载微博列表
+    //pullup:是否上拉标记
     //completion：网络请求是否成功
-    func loadStatus(completion: @escaping (_ isSuccess: Bool)->()) {
+    
+    func loadStatus(pullup:Bool , completion: @escaping (_ isSuccess: Bool)->()) {
         
         //since_id 取出数组中第一天微博的id
-        let since_id = statusList.first?.id ?? 0
+        let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
+        
+        //上拉刷新,取出数组的最后的一条id
+        let max_id = !pullup ? 0 : (statusList.last?.id ?? 0)
+        
         
         JLNetworkManager.shared.statusList(since_id: since_id,max_id: 0) { (list, isSuccess) in
             
@@ -44,6 +50,9 @@ class JLStatusListViewModel {
 
             //2,拼接数据
 //            self.statusList += array
+            if pullup {
+                self.statusList.removeAll()
+            }
             
             for dict  in list ?? [] {
                 let dic: NSDictionary = dict as NSDictionary
@@ -52,9 +61,7 @@ class JLStatusListViewModel {
                 model.id = dic.object(forKey: "id") as! Int64
                 model.text = dic.object(forKey: "text") as? String
                 self.statusList.append(model)
-                
-                
-//                print("字数是\(String(describing: model.text))字典的值\(String(describing: dic["text"]))数组是\(String(describing: list?.count.description))")
+                //                print("字数是\(String(describing: model.text))字典的值\(String(describing: dic["text"]))数组是\(String(describing: list?.count.description))")
             }
 
             //3,完成回调

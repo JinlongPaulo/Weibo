@@ -67,6 +67,9 @@ class JLNetworkManager: AFHTTPSessionManager {
         let failure = {(task: URLSessionDataTask?, error: Error) ->() in
             
             //针对 403 处理token 过期
+            //对于测试用户（应用程序未提交给新浪微博审核）
+            //超出上限 token会被锁定一段时间
+            //解决办法，新建一个应用程序
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 
                 print("token过期")

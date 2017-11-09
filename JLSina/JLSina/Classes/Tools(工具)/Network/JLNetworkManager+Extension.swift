@@ -23,11 +23,12 @@ extension JLNetworkManager {
 
         //Swift 中 Int可以转换成AnyObject / Int64不行
         let params = ["since_id": "\(since_id)",
-                     "max_id":"\(max_id)"]
+            "max_id":"\(max_id > 0 ? max_id - 1 : 0)"]
         
         tokenRequest(URLString: urlStr, parameters: params as [String : AnyObject]) { (json, isSuccess) in
             //从json中获取statuses字典数组
             //如果 as？失败，result = nil
+            //服务器返回的字典数组，就是按照时间的倒序排序的
             let result = json?["statuses"] as? [[String: AnyObject]]
             
             completion(result , isSuccess)

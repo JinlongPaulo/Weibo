@@ -20,9 +20,9 @@ class JLHomeViewController: JLBaseViewController {
     //模拟“延时”加载数据
     override func loadData() {
         
-        listViewModel.loadStatus { (isSuccess) in
+        listViewModel.loadStatus (pullup: self.isPullup) { (isSuccess) in
             
-            print("数组长度是\(self.listViewModel.statusList.count)")
+            
             //结束刷新控件
             self.refreshControl?.endRefreshing()
             //恢复上拉刷新标记
