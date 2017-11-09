@@ -72,6 +72,8 @@ extension JLMainViewController {
             //设置首页tabbard的badgeNumber
             print("检测到\(count)条新微薄")
             self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
+            //设置app的badgeNum,从iOS8.0之后，要用户授权之后才能显示
+            UIApplication.shared.applicationIconBadgeNumber = count
         }
     }
 }
