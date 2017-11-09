@@ -20,7 +20,7 @@ class JLHomeViewController: JLBaseViewController {
     //模拟“延时”加载数据
     override func loadData() {
         
-        listViewModel.loadStatus (pullup: self.isPullup) { (isSuccess) in
+        listViewModel.loadStatus (pullup: self.isPullup) { (isSuccess , shouldRefresh) in
             
             
             //结束刷新控件
@@ -28,7 +28,9 @@ class JLHomeViewController: JLBaseViewController {
             //恢复上拉刷新标记
             self.isPullup = false
             //刷新表格
-            self.tableView?.reloadData()
+            if shouldRefresh {
+                self.tableView?.reloadData()
+            }
         }
     }
     

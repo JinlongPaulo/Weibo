@@ -20,15 +20,28 @@ import Foundation
  1,字典转模型
  2,下拉/上拉刷新数据处理
 */
+
+//上拉刷新最大尝试次数
+private let maxPullipTryTime = 3
 class JLStatusListViewModel {
     //微博模型数组懒加载
     lazy var statusList = [JLStatus]()
     
+    //上拉刷新错误次数
+    private var pullupErrorTimes = 0
     //加载微博列表
     //pullup:是否上拉标记
     //completion：网络请求是否成功
+    //hasMorePullup:是否刷新表格
     
-    func loadStatus(pullup:Bool , completion: @escaping (_ isSuccess: Bool)->()) {
+    func loadStatus(pullup:Bool , completion: @escaping (_ isSuccess: Bool , _ shouldRefresh: Bool)->()) {
+        
+        
+        //判断是否是上拉刷新，同时检查刷新错误
+        if pullup && pullupErrorTimes > maxPullipTryTime {
+            completion(true , false)
+            return
+        }
         
         //since_id 取出数组中第一天微博的id
         let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
@@ -63,10 +76,17 @@ class JLStatusListViewModel {
                 self.statusList.append(model)
                 //                print("字数是\(String(describing: model.text))字典的值\(String(describing: dic["text"]))数组是\(String(describing: list?.count.description))")
             }
-
-            //3,完成回调
-            completion(isSuccess)
             
+            //判断上拉刷新的数据量
+            if pullup && self.statusList.count == 0 {
+                self.pullupErrorTimes += 1
+                
+                completion(isSuccess , false)
+            } else {
+                
+                //3,完成回调
+                completion(isSuccess , true)
+            }
         }
     }
 }
