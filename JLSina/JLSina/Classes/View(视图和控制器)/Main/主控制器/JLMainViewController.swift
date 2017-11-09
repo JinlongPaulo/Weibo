@@ -11,18 +11,21 @@ import UIKit
 //主控制器
 class JLMainViewController: UITabBarController {
 
+    //定时器
+    private var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupChildControllers()
         setupCompostButton()
-        
-        //测试未读数量
-        JLNetworkManager.shared.unreadCount { (count) in
-            print("有\(count)条新微薄")
-        }
+        setupTimer()
     }
     
+    deinit {
+        //销毁定时器
+        timer?.invalidate()
+    }
     /**
      portrait  :竖屏, 肖像
      landscape :横屏, 风景画❀
@@ -53,6 +56,24 @@ class JLMainViewController: UITabBarController {
     //撰写按钮
     private lazy var compostButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 
+}
+
+
+//MARK: - 时钟相关方法
+extension JLMainViewController {
+    //定义时钟
+    private func setupTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    //时钟触发方法
+    @objc private func updateTimer() {
+        JLNetworkManager.shared.unreadCount { (count) in
+            //设置首页tabbard的badgeNumber
+            print("检测到\(count)条新微薄")
+            self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
+        }
+    }
 }
 
 //extension 类似于OC中的分类，在Swift中可以查分代码块，
