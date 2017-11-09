@@ -23,11 +23,16 @@ class JLMainViewController: UITabBarController {
         
         //设置代理
         delegate = self
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     
     deinit {
         //销毁定时器
         timer?.invalidate()
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
     }
     /**
      portrait  :竖屏, 肖像
@@ -38,6 +43,11 @@ class JLMainViewController: UITabBarController {
      */
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+    }
+    
+    //MARK: - 监听方法
+    @objc private func userLogin(n:NSNotification) {
+        print("用户登录通知\(n)")
     }
     
     //MARK: - 监听方法

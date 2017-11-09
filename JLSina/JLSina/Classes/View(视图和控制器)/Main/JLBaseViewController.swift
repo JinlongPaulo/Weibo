@@ -64,7 +64,8 @@ class JLBaseViewController: UIViewController {
 //访客视图监听方法
 extension JLBaseViewController {
     @objc private func login() {
-        print("用户登录")
+        //发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     
     @objc private func register() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C04A9DB1FAC5B8A00E0B299 /* main.json */; };
+		2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */; };
 		2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3777181FAAF2FA00567432 /* JLVisitorView.swift */; };
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2C04A9DB1FAC5B8A00E0B299 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		2C3777181FAAF2FA00567432 /* JLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVisitorView.swift; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				2CB564171FB0662F005FDA84 /* Network */,
 				2CAAB5451FA821A70021B432 /* Additions */,
 				2C1D343D1F8F05F90036902A /* Extensions */,
+				2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */,
 				2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */,
 				2CAAB5641FA821A70021B432 /* NSString+CZPath.m in Sources */,
+				2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */,
 				2CAAB5621FA821A70021B432 /* NSString+CZBase64.m in Sources */,
 				2C6384A81F7E4E0B00F95FDF /* JLHomeViewController.swift in Sources */,
 				2CAAB5661FA821A70021B432 /* UIColor+CZAddition.m in Sources */,
