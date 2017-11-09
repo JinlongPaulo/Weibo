@@ -20,8 +20,6 @@ import UIKit
 //所有主控制器的基类控制器
 class JLBaseViewController: UIViewController {
     
-    //用户登录标记
-    var userLogon = true
     
     //访客视图信息字典
     var visitorInfoDictionary: [String: String]?
@@ -45,7 +43,7 @@ class JLBaseViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        loadData()
+        JLNetworkManager.shared.userLogon ? loadData() : ()
     }
     
     //重写title的didSet
@@ -82,7 +80,7 @@ extension JLBaseViewController {
         automaticallyAdjustsScrollViewInsets = false
         setUpNavigationBar()
         
-        userLogon ? setupTableView() : setupVisitorView()
+        JLNetworkManager.shared.userLogon ? setupTableView() : setupVisitorView()
     }
     
     //设置表格视图 - 用户登录之后执行(子类重写此类方法)

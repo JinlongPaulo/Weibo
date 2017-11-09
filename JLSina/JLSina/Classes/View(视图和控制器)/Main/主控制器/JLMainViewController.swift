@@ -99,11 +99,18 @@ extension JLMainViewController: UITabBarControllerDelegate {
 extension JLMainViewController {
     //定义时钟
     private func setupTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        //时间间隔建议长一些
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
+    
     
     //时钟触发方法
     @objc private func updateTimer() {
+        
+        if !JLNetworkManager.shared.userLogon {
+            return
+        }
+        
         JLNetworkManager.shared.unreadCount { (count) in
             //设置首页tabbard的badgeNumber
             print("检测到\(count)条新微薄")
