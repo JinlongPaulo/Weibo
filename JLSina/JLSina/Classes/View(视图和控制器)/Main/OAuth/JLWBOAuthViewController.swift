@@ -17,6 +17,9 @@ class JLWBOAuthViewController: UIViewController {
         view = webView
         view.backgroundColor = UIColor.white
         
+        //设置代理
+        webView.delegate = self
+        
         //设置导航栏
         title = "登录新浪微博"
         //导航栏按钮
@@ -62,4 +65,21 @@ class JLWBOAuthViewController: UIViewController {
         webView.stringByEvaluatingJavaScript(from: js)
     }
 
+}
+
+extension JLWBOAuthViewController: UIWebViewDelegate {
+    
+    //webView: webView
+    //request： 要加载的请求
+    //UIWebViewNavigationType：导航类型
+    //return : 是否加载 request
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        //确认思路
+        //1.如果请求地址包含 http://baidu.com 不加载页面 否则加载界面
+        print("加载请求---\(String(describing: request.url?.absoluteString))")
+        
+        //2.从 http://baidu.com 回调地址里面查询字符串 code
+        //3.如果有，授权成功 否则授权失败
+        return true
+    }
 }
