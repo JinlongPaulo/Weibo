@@ -20,6 +20,9 @@ class JLMainViewController: UITabBarController {
         setupChildControllers()
         setupCompostButton()
         setupTimer()
+        
+        //设置代理
+        delegate = self
     }
     
     deinit {
@@ -58,6 +61,20 @@ class JLMainViewController: UITabBarController {
 
 }
 
+//MARK: - UITabBarControllerDelegate
+extension JLMainViewController: UITabBarControllerDelegate {
+    
+    //将要选择tabbarItem
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        print("将要切换到\(viewController)")
+        
+        //判断目标控制器是否是UIViewController
+        
+        return !viewController.isMember(of: UIViewController.self)
+    }
+}
+
 
 //MARK: - 时钟相关方法
 extension JLMainViewController {
@@ -89,8 +106,8 @@ extension JLMainViewController {
         tabBar.addSubview(compostButton)
         //计算按钮位置
         let count = CGFloat(childViewControllers.count)
-        //将向内缩进宽度减少，能够让按钮的宽度变大，盖住容错点
-        let w = tabBar.bounds.width / count - 1
+        //将向内缩进宽度
+        let w = tabBar.bounds.width / count
         
         //CGRectInset 正数向内缩进，负数向外扩展
         compostButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
