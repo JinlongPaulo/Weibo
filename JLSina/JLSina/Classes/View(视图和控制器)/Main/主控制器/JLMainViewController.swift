@@ -16,6 +16,11 @@ class JLMainViewController: UITabBarController {
         
         setupChildControllers()
         setupCompostButton()
+        
+        //测试未读数量
+        JLNetworkManager.shared.unreadCount { (count) in
+            print("有\(count)条新微薄")
+        }
     }
     
     /**

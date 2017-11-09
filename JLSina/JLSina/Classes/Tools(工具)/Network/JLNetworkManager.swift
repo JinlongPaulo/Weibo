@@ -25,7 +25,11 @@ class JLNetworkManager: AFHTTPSessionManager {
     //访问令牌，所有网络请求，都基于此令牌，登录除外
     //访问令牌有时限，默认用户是三天
     //模拟token过期，服务器返回的状态码是403
-    var accessToken: String? = "2.00oHIRKGzx9_IBe7c088d1820xzC9i"
+    var accessToken: String? = "2.00oHIRKGFFF9qC7708d7eadfXXn1JB"
+    
+    //用户微博id
+    var uid: String? = "5365823342"
+    
     
     //专门负责拼接token的网络请求方法
     func tokenRequest(method: JLHttpMethod = .GET, URLString: String, parameters: [String:AnyObject]?, completion: @escaping (_ json: AnyObject?,_ isSuccess: Bool) ->()) {
