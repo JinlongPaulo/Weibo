@@ -48,6 +48,12 @@ class JLMainViewController: UITabBarController {
     //MARK: - 监听方法
     @objc private func userLogin(n:NSNotification) {
         print("用户登录通知\(n)")
+        //展现登录控制器 - 通常会和 UINavtigationController连用，方便返回
+        let nav = UINavigationController(rootViewController: JLWBOAuthViewController())
+        
+        present(nav, animated: true, completion: nil)
+        
+        
     }
     
     //MARK: - 监听方法
