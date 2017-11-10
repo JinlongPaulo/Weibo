@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 //通过webView加载新浪微博授权页面控制器
 class JLWBOAuthViewController: UIViewController {
 
@@ -16,6 +16,9 @@ class JLWBOAuthViewController: UIViewController {
     override func loadView() {
         view = webView
         view.backgroundColor = UIColor.white
+        //取消滚动视图
+        webView.scrollView.isScrollEnabled = false
+//        webView.scrollView.bounces = false
         
         //设置代理
         webView.delegate = self
@@ -51,7 +54,9 @@ class JLWBOAuthViewController: UIViewController {
     
 
     //MARK: - 监听方法
+    //关闭控制器
     @objc private func close() {
+        SVProgressHUD.dismiss()
         dismiss(animated: true, completion: nil)
     }
     
@@ -101,5 +106,14 @@ extension JLWBOAuthViewController: UIWebViewDelegate {
         
         print("获取授权码...\(String(describing: code))")
         return false
+    }
+    
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
     }
 }
