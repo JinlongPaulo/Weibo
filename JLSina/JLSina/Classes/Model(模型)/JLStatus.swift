@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import YYModel
 //微博数据模型
+@objcMembers
 class JLStatus: NSObject {
     //Int类型，在64位的机器是64位，在32位机器就是32位
     //如果不写Int64 在iPad2/iphone 5/5C/4s/4都无法正常运行
@@ -22,7 +24,4 @@ class JLStatus: NSObject {
         return yy_modelDescription()
     }
     
-//    override func setValue(_ value: Any?, forUndefinedKey key: String) {
-//
-//    }
 }

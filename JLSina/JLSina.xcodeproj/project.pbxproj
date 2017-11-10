@@ -19,9 +19,8 @@
 		2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A91F7E4E3000F95FDF /* JLMessageViewController.swift */; };
 		2C6384AC1F7E4E3D00F95FDF /* JLDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384AB1F7E4E3D00F95FDF /* JLDiscoverViewController.swift */; };
 		2C6384AF1F7E4E7800F95FDF /* JLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384AE1F7E4E7800F95FDF /* JLProfileViewController.swift */; };
+		2C876BBC1FB5A95900A5CB39 /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C876BBD1FB5A95900A5CB39 /* YYModel.framework */; };
 		2C9A6DDE1FB54B2A002E54EF /* JLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A6DDD1FB54B2A002E54EF /* JLUserAccount.swift */; };
-		2C9A6DEE1FB556FA002E54EF /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A6DEA1FB556F9002E54EF /* NSObject+YYModel.m */; };
-		2C9A6DEF1FB556FA002E54EF /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A6DEC1FB556F9002E54EF /* YYClassInfo.m */; };
 		2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */; };
 		2CAAB55F1FA821A70021B432 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5481FA821A70021B432 /* NSArray+Log.m */; };
 		2CAAB5601FA821A70021B432 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB54A1FA821A70021B432 /* NSAttributedString+CZAdditon.m */; };
@@ -60,13 +59,9 @@
 		2C6384A91F7E4E3000F95FDF /* JLMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLMessageViewController.swift; sourceTree = "<group>"; };
 		2C6384AB1F7E4E3D00F95FDF /* JLDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDiscoverViewController.swift; sourceTree = "<group>"; };
 		2C6384AE1F7E4E7800F95FDF /* JLProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLProfileViewController.swift; sourceTree = "<group>"; };
+		2C876BBD1FB5A95900A5CB39 /* YYModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8E1D471F7F3EC1000365A3 /* JLSina-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLSina-Bridging-Header.h"; sourceTree = "<group>"; };
 		2C9A6DDD1FB54B2A002E54EF /* JLUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLUserAccount.swift; sourceTree = "<group>"; };
-		2C9A6DE91FB556F9002E54EF /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
-		2C9A6DEA1FB556F9002E54EF /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
-		2C9A6DEB1FB556F9002E54EF /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
-		2C9A6DEC1FB556F9002E54EF /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
-		2C9A6DED1FB556F9002E54EF /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		2CAAB5461FA821A70021B432 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		2CAAB5471FA821A70021B432 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -110,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C876BBC1FB5A95900A5CB39 /* YYModel.framework in Frameworks */,
 				648011F3CB87C67EBF1F3A55 /* Pods_JLSina.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +116,7 @@
 		10181048945562EBA6BC2888 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C876BBD1FB5A95900A5CB39 /* YYModel.framework */,
 				FABA53401303D76B710F8ABD /* Pods_JLSina.framework */,
 			);
 			name = Frameworks;
@@ -213,7 +210,6 @@
 		2C63849A1F7E4CE800F95FDF /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
-				2C9A6DE81FB556F9002E54EF /* YYModel */,
 				2C9A6DDC1FB54AFE002E54EF /* Model */,
 				2CB564171FB0662F005FDA84 /* Network */,
 				2CAAB5451FA821A70021B432 /* Additions */,
@@ -293,19 +289,6 @@
 				2C9A6DDD1FB54B2A002E54EF /* JLUserAccount.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		2C9A6DE81FB556F9002E54EF /* YYModel */ = {
-			isa = PBXGroup;
-			children = (
-				2C9A6DE91FB556F9002E54EF /* NSObject+YYModel.h */,
-				2C9A6DEA1FB556F9002E54EF /* NSObject+YYModel.m */,
-				2C9A6DEB1FB556F9002E54EF /* YYClassInfo.h */,
-				2C9A6DEC1FB556F9002E54EF /* YYClassInfo.m */,
-				2C9A6DED1FB556F9002E54EF /* YYModel.h */,
-			);
-			name = YYModel;
-			path = "../../../../../YYModel-master/YYModel";
 			sourceTree = "<group>";
 		};
 		2CAAB5451FA821A70021B432 /* Additions */ = {
@@ -507,7 +490,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */,
-				2C9A6DEF1FB556FA002E54EF /* YYClassInfo.m in Sources */,
 				2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */,
 				2CAAB5641FA821A70021B432 /* NSString+CZPath.m in Sources */,
 				2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */,
@@ -526,7 +508,6 @@
 				2C6384AC1F7E4E3D00F95FDF /* JLDiscoverViewController.swift in Sources */,
 				2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */,
 				2CAAB5601FA821A70021B432 /* NSAttributedString+CZAdditon.m in Sources */,
-				2C9A6DEE1FB556FA002E54EF /* NSObject+YYModel.m in Sources */,
 				2CB564191FB06670005FDA84 /* JLNetworkManager.swift in Sources */,
 				2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */,
 				2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */,
@@ -671,6 +652,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -692,6 +674,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "JLSina/JLSina-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

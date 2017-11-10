@@ -63,23 +63,13 @@ class JLStatusListViewModel {
 
             print("刷新到\(array.count)条数据")
             //2,拼接数据
-//            self.statusList += array
+
             if pullup {
                 self.statusList += array
             } else {
                 self.statusList = array + self.statusList
             }
-            
-//            for dict  in list ?? [] {
-//                let dic: NSDictionary = dict as NSDictionary
-//                let model = JLStatus()
-////                model.setValuesForKeys(dic as! [String : Any])
-//                model.id = dic.object(forKey: "id") as! Int64
-//                model.text = dic.object(forKey: "text") as? String
-//                self.statusList.append(model)
-//                //                print("字数是\(String(describing: model.text))字典的值\(String(describing: dic["text"]))数组是\(String(describing: list?.count.description))")
-//            }
-            
+                       
             //判断上拉刷新的数据量
             if pullup && self.statusList.count == 0 {
                 self.pullupErrorTimes += 1

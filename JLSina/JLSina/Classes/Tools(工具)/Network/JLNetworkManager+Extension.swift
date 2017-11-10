@@ -76,8 +76,10 @@ extension JLNetworkManager {
         //发起网络请求
         request(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
             print(json as Any)
+            
             //直接用字典设置userAccount的属性
             self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
+            
             print(self.userAccount)
             //保存模型
             self.userAccount.saveAccount()

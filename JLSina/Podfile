@@ -9,10 +9,5 @@ pod 'SDWebImage'
 pod 'FMDB'
 pod 'SVProgressHUD'
 pod 'pop'
-#pod 'SwiftyJSON’
 pod 'YYModel'
-#pod 'ObjectMapper'
-#pod 'MJExtension'
-
-
 end
