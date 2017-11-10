@@ -53,29 +53,32 @@ class JLStatusListViewModel {
         JLNetworkManager.shared.statusList(since_id: since_id,max_id: 0) { (list, isSuccess) in
             
 //            1,字典转模型
-//            guard let array = NSArray.yy_modelArray(with: JLStatus.self, json: list ?? []) as? [JLStatus] else {
-//
-//                completion(isSuccess)
-//
-//                return
-//            }
+            guard let array = NSArray.yy_modelArray(with: JLStatus.self, json: list ?? []) as? [JLStatus] else {
+
+                completion(isSuccess , false)
+
+                return
+            }
             
 
+            print("刷新到\(array.count)条数据")
             //2,拼接数据
 //            self.statusList += array
             if pullup {
-                self.statusList.removeAll()
+                self.statusList += array
+            } else {
+                self.statusList = array + self.statusList
             }
             
-            for dict  in list ?? [] {
-                let dic: NSDictionary = dict as NSDictionary
-                let model = JLStatus()
-//                model.setValuesForKeys(dic as! [String : Any])
-                model.id = dic.object(forKey: "id") as! Int64
-                model.text = dic.object(forKey: "text") as? String
-                self.statusList.append(model)
-                //                print("字数是\(String(describing: model.text))字典的值\(String(describing: dic["text"]))数组是\(String(describing: list?.count.description))")
-            }
+//            for dict  in list ?? [] {
+//                let dic: NSDictionary = dict as NSDictionary
+//                let model = JLStatus()
+////                model.setValuesForKeys(dic as! [String : Any])
+//                model.id = dic.object(forKey: "id") as! Int64
+//                model.text = dic.object(forKey: "text") as? String
+//                self.statusList.append(model)
+//                //                print("字数是\(String(describing: model.text))字典的值\(String(describing: dic["text"]))数组是\(String(describing: list?.count.description))")
+//            }
             
             //判断上拉刷新的数据量
             if pullup && self.statusList.count == 0 {
