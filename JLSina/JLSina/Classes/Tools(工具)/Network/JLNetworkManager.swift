@@ -31,18 +31,14 @@ class JLNetworkManager: AFHTTPSessionManager {
         return instance
     }()
     
-    //访问令牌，所有网络请求，都基于此令牌，登录除外
-    //访问令牌有时限，默认用户是三天
-    //模拟token过期，服务器返回的状态码是403
-    var accessToken: String? //= "2.00oHIRKGFFF9qCe43302bd7a0SbDlG"
+    lazy var userAccount = JLUserAccount()
     
     //用户登录标记(计算型属性)
     var userLogon: Bool {
-        return accessToken != nil
+        return userAccount.access_token != nil
     }
     
     //用户微博id
-    var uid: String? = "5365823342"
     
     
     //专门负责拼接token的网络请求方法
@@ -51,7 +47,7 @@ class JLNetworkManager: AFHTTPSessionManager {
         //处理token字典
         //0>判断token是否为nil，直接返回
         
-        guard let token = accessToken else {
+        guard let token = userAccount.access_token else {
             //FIXME: 发送通知，提示用户登录
             print("没有token，需要登录")
             

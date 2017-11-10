@@ -12,7 +12,7 @@ import YYModel
 class JLUserAccount: NSObject {
 
     //访问令牌
-    var access_token: String?
+    var access_token: String? = "2.00oHIRKGFFF9qCe43302bd7a0SbDlG"
     //用户代号
     var uid: String?
     
