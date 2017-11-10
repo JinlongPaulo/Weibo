@@ -76,10 +76,30 @@ extension JLWBOAuthViewController: UIWebViewDelegate {
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         //确认思路
         //1.如果请求地址包含 http://baidu.com 不加载页面 否则加载界面
-        print("加载请求---\(String(describing: request.url?.absoluteString))")
+        //request.url?.absoluteString.hasPrefix(WBRedirectURI) 返回的是可选项 bool/nil
+        if request.url?.absoluteString.hasPrefix(WBRedirectURI) == false {
+            return true
+        }
         
-        //2.从 http://baidu.com 回调地址里面查询字符串 code
-        //3.如果有，授权成功 否则授权失败
-        return true
+        
+        
+//        print("加载请求---\(String(describing: request.url?.absoluteString))")
+        //query 就是URL中‘？’后面的就是query
+//        print("加载请求---\(String(describing: request.url?.query))")
+        //2.从 http://baidu.com 回调地址里面查询字符串 code=
+        //如果有，授权成功 否则授权失败
+        if request.url?.query?.hasPrefix("code=") == false {
+            
+            print("取消授权")
+            close()
+            return false
+        }
+        
+        //从query字符串中取出授权码
+        //代码到此，url中一定有查询字符串，并且包含code
+        let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
+        
+        print("获取授权码...\(String(describing: code))")
+        return false
     }
 }
