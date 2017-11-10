@@ -31,6 +31,7 @@ class JLNetworkManager: AFHTTPSessionManager {
         return instance
     }()
     
+    //用户懒加载属性
     lazy var userAccount = JLUserAccount()
     
     //用户登录标记(计算型属性)

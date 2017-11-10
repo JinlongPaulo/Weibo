@@ -7,6 +7,9 @@
 //
 
 import UIKit
+
+private let accountFile: NSString = "useraccount.json"
+
 //用户账户信息
 @objcMembers
 class JLUserAccount: NSObject {
@@ -28,6 +31,13 @@ class JLUserAccount: NSObject {
     //过期日期
      var expiresDate: Date?
     
+    override init() {
+        super.init()
+        
+        //从磁盘加载保存的文件 ->字典
+        
+        //使用字典设置属性值
+    }
     
     override var description: String {
         return yy_modelDescription()
@@ -47,7 +57,7 @@ class JLUserAccount: NSObject {
         dict.removeValue(forKey: "expires_in")
         //2.字典序列化
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []) ,
-         let filePath = ("useraccount.json" as NSString).cz_appendDocumentDir()
+         let filePath = accountFile.cz_appendDocumentDir()
         else {
             return
         }
