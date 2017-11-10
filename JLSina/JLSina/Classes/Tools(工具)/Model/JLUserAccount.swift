@@ -32,4 +32,14 @@ class JLUserAccount: NSObject {
     override var description: String {
         return yy_modelDescription()
     }
+    
+    /*
+     1.偏好设置(存小的) - Xcode 8.beta 无效
+     2.沙盒-归档/plist/json
+     3.数据库(FMDB/CoreData)
+     4.钥匙串(小/自动加密-需要使用框架SSKeychina)
+     */
+    func saveAccount() {
+        
+    }
 }
