@@ -40,6 +40,22 @@ class JLUserAccount: NSObject {
      4.钥匙串(小/自动加密-需要使用框架SSKeychina)
      */
     func saveAccount() {
+        //1.模型转字典
+        var dict = (self.yy_modelToJSONObject() as? [String: AnyObject]) ?? [:]
+        
+        //需要删除expires_in 值
+        dict.removeValue(forKey: "expires_in")
+        //2.字典序列化
+        guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []) ,
+         let filePath = ("useraccount.json" as NSString).cz_appendDocumentDir()
+        else {
+            return
+        }
+        
+        //3.写入磁盘
+       (data as NSData).write(toFile: filePath, atomically: true)
+        
+        print("用户账户保存成功\(filePath)")
         
     }
 }
