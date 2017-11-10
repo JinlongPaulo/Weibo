@@ -75,7 +75,7 @@ extension JLNetworkManager {
         
         //发起网络请求
         request(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-            print(json)
+            print(json as Any)
         }
     }
 }

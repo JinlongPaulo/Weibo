@@ -20,12 +20,21 @@ class JLNetworkManager: AFHTTPSessionManager {
 
     //静态区/常量/闭包 (单例)
     //在第一次访问时执行闭包，并且将结果保存在 shared 常量中
-    static let shared = JLNetworkManager()
+    static let shared: JLNetworkManager = {
+        //实例化对象
+        let instance = JLNetworkManager()
+        
+        //设置响应反序列化支持的类型
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        //返回对象
+        return instance
+    }()
     
     //访问令牌，所有网络请求，都基于此令牌，登录除外
     //访问令牌有时限，默认用户是三天
     //模拟token过期，服务器返回的状态码是403
-    var accessToken: String? //= "2.00oHIRKGFFF9qC7708d7eadfXXn1JB"
+    var accessToken: String? //= "2.00oHIRKGFFF9qCe43302bd7a0SbDlG"
     
     //用户登录标记(计算型属性)
     var userLogon: Bool {
