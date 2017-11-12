@@ -81,6 +81,11 @@ extension JLBaseViewController {
         
         print("登录成功\(n)")
         
+        //登录前左边是注册，右边是登录
+        navItem.rightBarButtonItem = nil
+        navItem.leftBarButtonItem = nil
+
+        
         //更新UI => 将访客视图替换为表格视图
         
         //需要重新设置View
@@ -120,11 +125,14 @@ extension JLBaseViewController {
         //设置数据源和代理 ->让子类直接实现数据源方法
         tableView?.dataSource = self
         tableView?.delegate = self
-        tableView?.showsVerticalScrollIndicator = false
-        tableView?.separatorStyle = .none
+//        tableView?.showsVerticalScrollIndicator = false
+//        tableView?.separatorStyle = .none
+        
         //设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: 0, right: 0)
         
+        //修改指示器缩进 - 强行解包是为了拿到一个必有的inset
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         //设置刷新控件
         //1,实例化控件
         refreshControl = UIRefreshControl()
