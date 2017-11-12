@@ -44,7 +44,7 @@ class JLUserAccount: NSObject {
         }
         
         //2>使用字典设置属性值
-//        yy_modelSet(with: dict ?? [:])
+        yy_modelSet(with: dict ?? [:])
         
         print("从沙盒加载信息\(self)")
         //3.判断tiken是否过期

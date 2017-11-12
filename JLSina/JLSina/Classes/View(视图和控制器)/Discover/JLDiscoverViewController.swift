@@ -13,7 +13,10 @@ class JLDiscoverViewController: JLBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //模拟token过期
+//        JLNetworkManager.shared.userAccount.access_token = "hello"
+        
+//        print("修改了token")
     }
 
     override func didReceiveMemoryWarning() {

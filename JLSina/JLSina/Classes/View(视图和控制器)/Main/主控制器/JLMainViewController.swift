@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 //主控制器
 class JLMainViewController: UITabBarController {
 
@@ -46,14 +46,28 @@ class JLMainViewController: UITabBarController {
     }
     
     //MARK: - 监听方法
-    @objc private func userLogin(n:NSNotification) {
+    @objc private func userLogin(n: NSNotification) {
         print("用户登录通知\(n)")
-        //展现登录控制器 - 通常会和 UINavtigationController连用，方便返回
-        let nav = UINavigationController(rootViewController: JLWBOAuthViewController())
         
-        present(nav, animated: true, completion: nil)
+        var  when = DispatchTime.now()
         
+        //判断n.object是否有值->token过期，如果有值，提示用户重新登录
+        if n.object != nil {
+            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.showInfo(withStatus: "用户登录已经超时，需要重新登录")
+            //修改延迟时间
+            when = DispatchTime.now() + 2
+        }
         
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            
+            SVProgressHUD.setDefaultMaskType(.clear)
+            //展现登录控制器 - 通常会和 UINavtigationController连用，方便返回
+            let nav = UINavigationController(rootViewController: JLWBOAuthViewController())
+            
+            self.present(nav, animated: true, completion: nil)
+        }
+    
     }
     
     //MARK: - 监听方法
