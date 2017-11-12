@@ -44,6 +44,18 @@ class JLBaseViewController: UIViewController {
 
         setupUI()
         JLNetworkManager.shared.userLogon ? loadData() : ()
+        
+        //注册登录成功通知
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(loginSucess),
+            name: NSNotification.Name(rawValue: WBUserLoginSuccessedNotification),
+            object: nil)
+    }
+    
+    deinit {
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
     }
     
     //重写title的didSet
@@ -63,6 +75,21 @@ class JLBaseViewController: UIViewController {
 
 //访客视图监听方法
 extension JLBaseViewController {
+    
+    //登录成功处理
+    @objc private func loginSucess(n: Notification) {
+        
+        print("登录成功\(n)")
+        
+        //更新UI => 将访客视图替换为表格视图
+        
+        //需要重新设置View
+        //在访问 view == nil 的getter时，如果view == nil，会调用loadView ->viewDidLoad
+        view = nil
+        //注销通知 ->重新执行viewDidLoad会再次注册！(注册几次发送几次通知消息)，避免通知被重复注册
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc private func login() {
         //发送通知
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)

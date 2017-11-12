@@ -111,7 +111,8 @@ extension JLWBOAuthViewController: UIWebViewDelegate {
             } else {
                 SVProgressHUD.showInfo(withStatus: "登录成功")
                 //跳转界面，如何跳转
-                //1,通过通知跳转，发送登录成功消息 - 不关心有没有监听者
+                //1,通过通知跳转，发送登录成功消息
+                //- 不关心有没有监听者
                 NotificationCenter.default.post(name:
                     NSNotification.Name(rawValue:
                         WBUserLoginSuccessedNotification),
