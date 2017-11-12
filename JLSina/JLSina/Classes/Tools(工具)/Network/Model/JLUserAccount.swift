@@ -47,6 +47,21 @@ class JLUserAccount: NSObject {
         yy_modelSet(with: dict ?? [:])
         
         print("从沙盒加载信息\(self)")
+        //3.判断tiken是否过期
+        //测试过期日期 - 在开发中，每一个分支都需要测试
+//        expiresDate = Date(timeIntervalSinceNow: -3600 * 24)
+//        print(expiresDate)
+        if expiresDate?.compare(Date()) != .orderedDescending {
+            print("账户过期")
+            //清空token
+            access_token = nil
+            uid = nil
+            
+            //删除账户文件
+            try? FileManager.default.removeItem(atPath: path)
+            
+        }
+        
     }
     
     override var description: String {
