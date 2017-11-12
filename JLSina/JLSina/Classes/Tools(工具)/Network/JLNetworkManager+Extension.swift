@@ -36,7 +36,7 @@ extension JLNetworkManager {
     }
     
     
-    //返回微博的未读数量
+    //返回微博的未读数量 - 定时刷。不需要提示是否失败
     func unreadCount(completion: @escaping (_ count: Int)->()) {
         
         guard let uid = userAccount.uid else {
@@ -64,7 +64,9 @@ extension JLNetworkManager {
 //MARK: - OAuth相关方法
 extension JLNetworkManager {
     //加载AccessToken
-    func loadAccessToken(code: String){
+    //提问：网络请求异步到底应该返回什么 - 需要什么，返回什么
+    //code:授权码 ，completion-完成回调，是否成功
+    func loadAccessToken(code: String , completion: @escaping (_ isSuccess: Bool)->()){
         let urlString = "https://api.weibo.com/oauth2/access_token"
         
         let params = ["client_id":WBAppKey ,
@@ -77,12 +79,16 @@ extension JLNetworkManager {
         request(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
             print(json as Any)
             
+            //如果请求失败，对用户账户数据不会有任何影响
             //直接用字典设置userAccount的属性
             self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
             
             print(self.userAccount)
             //保存模型
             self.userAccount.saveAccount()
+            
+            //完成回调
+            completion(isSuccess)
         }
     }
 }

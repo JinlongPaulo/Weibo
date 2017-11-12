@@ -104,7 +104,16 @@ extension JLWBOAuthViewController: UIWebViewDelegate {
         //代码到此，url中一定有查询字符串，并且包含code
         let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
         //使用授权码获取accessToken
-        JLNetworkManager.shared.loadAccessToken(code: code)
+        JLNetworkManager.shared.loadAccessToken(code: code) { (isSuccess) in
+            
+            if !isSuccess {
+                SVProgressHUD.showInfo(withStatus: "网络请求失败")
+            } else {
+                SVProgressHUD.showInfo(withStatus: "登录成功")
+                //跳转界面，如何跳转
+            }
+            
+        }
         print("获取授权码...\(String(describing: code))")
         return false
     }
