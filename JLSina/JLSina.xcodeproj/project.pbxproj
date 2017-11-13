@@ -47,6 +47,7 @@
 		2CD104BE1FB9473800116BFC /* JLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */; };
 		2CD104C21FB9496500116BFC /* JLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104C11FB9496500116BFC /* JLNewFeatureView.swift */; };
 		2CD104C41FB9637300116BFC /* JLWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD104C31FB9637300116BFC /* JLWelcomeView.xib */; };
+		2CD104C61FB9770000116BFC /* JLNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD104C51FB9770000116BFC /* JLNewFeatureView.xib */; };
 		2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */; };
 		2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */; };
 		2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */; };
@@ -110,6 +111,7 @@
 		2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLWelcomeView.swift; sourceTree = "<group>"; };
 		2CD104C11FB9496500116BFC /* JLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNewFeatureView.swift; sourceTree = "<group>"; };
 		2CD104C31FB9637300116BFC /* JLWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLWelcomeView.xib; sourceTree = "<group>"; };
+		2CD104C51FB9770000116BFC /* JLNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLNewFeatureView.xib; sourceTree = "<group>"; };
 		2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatus.swift; sourceTree = "<group>"; };
 		2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusListViewModel.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */,
 				2CD104C31FB9637300116BFC /* JLWelcomeView.xib */,
 				2CD104C11FB9496500116BFC /* JLNewFeatureView.swift */,
+				2CD104C51FB9770000116BFC /* JLNewFeatureView.xib */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD104C61FB9770000116BFC /* JLNewFeatureView.xib in Resources */,
 				2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */,
 				2CD104C41FB9637300116BFC /* JLWelcomeView.xib in Resources */,
 				2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */,

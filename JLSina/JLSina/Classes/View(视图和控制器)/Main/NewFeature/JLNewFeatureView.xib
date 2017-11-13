@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JLNewFeatureView" customModule="JLSina" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egE-aX-hHo">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaT-vC-XUA">
+                    <rect key="frame" x="134.5" y="436" width="105" height="36"/>
+                    <state key="normal" title="进入微博" backgroundImage="new_feature_finish_button"/>
+                    <state key="highlighted" backgroundImage="new_feature_finish_button_highlighted"/>
+                    <connections>
+                        <action selector="enterStatus" destination="iN0-l3-epB" eventType="touchUpInside" id="a0v-n5-aLA"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="eqH-Ky-0SB">
+                    <rect key="frame" x="159.5" y="536" width="55" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="egE-aX-hHo" secondAttribute="trailing" id="85C-jF-s13"/>
+                <constraint firstItem="egE-aX-hHo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8Jj-Ke-XpT"/>
+                <constraint firstItem="eqH-Ky-0SB" firstAttribute="top" secondItem="JaT-vC-XUA" secondAttribute="bottom" constant="64" id="9vS-II-Egj"/>
+                <constraint firstItem="egE-aX-hHo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A1h-LP-fXR"/>
+                <constraint firstItem="JaT-vC-XUA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Kvx-KG-PmU"/>
+                <constraint firstItem="eqH-Ky-0SB" firstAttribute="centerX" secondItem="JaT-vC-XUA" secondAttribute="centerX" id="fH8-Up-DAn"/>
+                <constraint firstAttribute="bottom" secondItem="egE-aX-hHo" secondAttribute="bottom" id="ssb-QA-BjV"/>
+                <constraint firstAttribute="bottom" secondItem="JaT-vC-XUA" secondAttribute="bottom" constant="195" id="wg2-vZ-ICe"/>
+            </constraints>
+            <connections>
+                <outlet property="enterButton" destination="JaT-vC-XUA" id="jfD-qy-UhP"/>
+                <outlet property="pageControl" destination="eqH-Ky-0SB" id="Pv7-t3-8Bi"/>
+                <outlet property="scrollView" destination="egE-aX-hHo" id="65u-N9-Ez3"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="149.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="new_feature_finish_button" width="105" height="36"/>
+        <image name="new_feature_finish_button_highlighted" width="105" height="36"/>
+    </resources>
+</document>

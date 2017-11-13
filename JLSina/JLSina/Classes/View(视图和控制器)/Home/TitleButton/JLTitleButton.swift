@@ -38,6 +38,7 @@ class JLTitleButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //FIXME: 导航图片第一次右移
     //重新布局子视图
     override func layoutSubviews() {
         super.layoutSubviews()
