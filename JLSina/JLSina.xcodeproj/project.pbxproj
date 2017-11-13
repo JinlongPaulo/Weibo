@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C04A9DB1FAC5B8A00E0B299 /* main.json */; };
 		2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */; };
-		2C30A6651FB4309F00DF8B46 /* JLWBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30A6641FB4309F00DF8B46 /* JLWBOAuthViewController.swift */; };
 		2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3777181FAAF2FA00567432 /* JLVisitorView.swift */; };
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
@@ -48,6 +47,7 @@
 		2CD104C21FB9496500116BFC /* JLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104C11FB9496500116BFC /* JLNewFeatureView.swift */; };
 		2CD104C41FB9637300116BFC /* JLWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD104C31FB9637300116BFC /* JLWelcomeView.xib */; };
 		2CD104C61FB9770000116BFC /* JLNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD104C51FB9770000116BFC /* JLNewFeatureView.xib */; };
+		2CD3D94B1FB9EE8900BB0188 /* JLWBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D94A1FB9EE8800BB0188 /* JLWBOAuthViewController.swift */; };
 		2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */; };
 		2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */; };
 		2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */; };
@@ -57,7 +57,6 @@
 /* Begin PBXFileReference section */
 		2C04A9DB1FAC5B8A00E0B299 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
-		2C30A6641FB4309F00DF8B46 /* JLWBOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLWBOAuthViewController.swift; sourceTree = "<group>"; };
 		2C3777181FAAF2FA00567432 /* JLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVisitorView.swift; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		2CD104C11FB9496500116BFC /* JLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNewFeatureView.swift; sourceTree = "<group>"; };
 		2CD104C31FB9637300116BFC /* JLWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLWelcomeView.xib; sourceTree = "<group>"; };
 		2CD104C51FB9770000116BFC /* JLNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLNewFeatureView.xib; sourceTree = "<group>"; };
+		2CD3D94A1FB9EE8800BB0188 /* JLWBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLWBOAuthViewController.swift; sourceTree = "<group>"; };
 		2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatus.swift; sourceTree = "<group>"; };
 		2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusListViewModel.swift; sourceTree = "<group>"; };
@@ -171,21 +171,12 @@
 			path = "主控制器";
 			sourceTree = "<group>";
 		};
-		2C30A6631FB4307C00DF8B46 /* OAuth */ = {
-			isa = PBXGroup;
-			children = (
-				2C30A6641FB4309F00DF8B46 /* JLWBOAuthViewController.swift */,
-			);
-			name = OAuth;
-			path = Main/OAuth;
-			sourceTree = "<group>";
-		};
-		2C3777171FAAF2B600567432 /* VisitorView */ = {
+		2C3777171FAAF2B600567432 /* VisitorView(访客视图) */ = {
 			isa = PBXGroup;
 			children = (
 				2C3777181FAAF2FA00567432 /* JLVisitorView.swift */,
 			);
-			path = VisitorView;
+			path = "VisitorView(访客视图)";
 			sourceTree = "<group>";
 		};
 		2C63847A1F7E407300F95FDF = {
@@ -251,8 +242,7 @@
 		2C63849B1F7E4CE800F95FDF /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
-				2C30A6631FB4307C00DF8B46 /* OAuth */,
-				2C63849E1F7E4CE800F95FDF /* Main */,
+				2C63849E1F7E4CE800F95FDF /* Main(主要的) */,
 				2C6384AD1F7E4E6900F95FDF /* Profile */,
 				2C63849C1F7E4CE800F95FDF /* Discover */,
 				2C63849D1F7E4CE800F95FDF /* Home */,
@@ -278,16 +268,17 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		2C63849E1F7E4CE800F95FDF /* Main */ = {
+		2C63849E1F7E4CE800F95FDF /* Main(主要的) */ = {
 			isa = PBXGroup;
 			children = (
-				2CD104BC1FB9454F00116BFC /* NewFeature */,
 				2C2FE0911FA9C06E006BAA9C /* 主控制器 */,
-				2C3777171FAAF2B600567432 /* VisitorView */,
+				2CD3D9491FB9EE8800BB0188 /* OAuth(授权) */,
+				2CD104BC1FB9454F00116BFC /* NewFeature(新特性) */,
+				2C3777171FAAF2B600567432 /* VisitorView(访客视图) */,
 				2CAAB56D1FA84F6A0021B432 /* 测试 */,
 				2C6384A51F7E4DBF00F95FDF /* JLBaseViewController.swift */,
 			);
-			path = Main;
+			path = "Main(主要的)";
 			sourceTree = "<group>";
 		};
 		2C63849F1F7E4CE800F95FDF /* Message */ = {
@@ -380,7 +371,7 @@
 			path = TitleButton;
 			sourceTree = "<group>";
 		};
-		2CD104BC1FB9454F00116BFC /* NewFeature */ = {
+		2CD104BC1FB9454F00116BFC /* NewFeature(新特性) */ = {
 			isa = PBXGroup;
 			children = (
 				2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */,
@@ -388,7 +379,15 @@
 				2CD104C11FB9496500116BFC /* JLNewFeatureView.swift */,
 				2CD104C51FB9770000116BFC /* JLNewFeatureView.xib */,
 			);
-			path = NewFeature;
+			path = "NewFeature(新特性)";
+			sourceTree = "<group>";
+		};
+		2CD3D9491FB9EE8800BB0188 /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				2CD3D94A1FB9EE8800BB0188 /* JLWBOAuthViewController.swift */,
+			);
+			path = "OAuth(授权)";
 			sourceTree = "<group>";
 		};
 		8B8E5651BF232DC0AAA02B18 /* Pods */ = {
@@ -555,7 +554,6 @@
 				2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */,
 				2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */,
 				2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */,
-				2C30A6651FB4309F00DF8B46 /* JLWBOAuthViewController.swift in Sources */,
 				2CAAB55F1FA821A70021B432 /* NSArray+Log.m in Sources */,
 				2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */,
 				2CAAB5671FA821A70021B432 /* UILabel+CZAddition.m in Sources */,
@@ -574,6 +572,7 @@
 				2CAAB5651FA821A70021B432 /* UIButton+CZAddition.m in Sources */,
 				2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */,
 				2CAAB56A1FA821A70021B432 /* UIViewController+CZAddition.m in Sources */,
+				2CD3D94B1FB9EE8900BB0188 /* JLWBOAuthViewController.swift in Sources */,
 				2CAAB5611FA821A70021B432 /* NSObject+CZRuntime.m in Sources */,
 				2CAAB5691FA821A70021B432 /* UIView+CZAddition.m in Sources */,
 			);

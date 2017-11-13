@@ -169,6 +169,10 @@ extension JLMainViewController: UITabBarControllerDelegate {
                  vc.loadData()
             })
             
+            //5>清除tabbarItem的badgeNumber
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
+            
         }
         //判断目标控制器是否是UIViewController
         
