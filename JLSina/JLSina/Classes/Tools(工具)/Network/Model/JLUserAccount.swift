@@ -15,21 +15,27 @@ private let accountFile: NSString = "useraccount.json"
 class JLUserAccount: NSObject {
 
     //访问令牌
-     var access_token: String? //= "2.00oHIRKGFFF9qCe43302bd7a0SbDlG"
+    var access_token: String? //= "2.00oHIRKGFFF9qCe43302bd7a0SbDlG"
     //用户代号
-     var uid: String?
+    var uid: String?
     
     //access_token的生命周期，单位是秒数。
     //开发者5年 每次登录之后，都是5年
     //使用者3天,会从第一次登录递减
-     var expires_in: TimeInterval = 0 {
+    var expires_in: TimeInterval = 0 {
         didSet {
             expiresDate = Date(timeIntervalSinceNow: expires_in)
         }
     }
     
     //过期日期
-     var expiresDate: Date?
+    var expiresDate: Date?
+    
+    //用户昵称
+    var screen_name:NSString?
+    //用户头像地址（大图），180×180像素
+    var avatar_large:NSString?
+    
     
     override init() {
         super.init()
@@ -44,7 +50,7 @@ class JLUserAccount: NSObject {
         }
         
         //2>使用字典设置属性值
-        yy_modelSet(with: dict ?? [:])
+//        yy_modelSet(with: dict ?? [:])
         
         print("从沙盒加载信息\(self)")
         //3.判断tiken是否过期
