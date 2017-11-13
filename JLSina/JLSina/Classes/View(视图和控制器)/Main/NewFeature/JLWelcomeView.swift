@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 //欢迎视图
 class JLWelcomeView: UIView {
     
@@ -28,6 +28,29 @@ class JLWelcomeView: UIView {
         return v
     }
     
+    
+//    required convenience init?(coder aDecoder: NSCoder) {
+//        self.init(coder: aDecoder)
+//        //提示，只是刚刚从XIB的二进制文件加载完成，
+//        //还没有和代码连线，建立关系，开发时，千万不要在这个方法处理UI
+//    }
+    
+    override func awakeFromNib() {
+        
+        //1,url
+        guard let urlString = JLNetworkManager.shared.userAccount.avatar_large ,
+              let url = URL(string: urlString)
+        else {
+            return
+        }
+        
+        
+        //2,设置头像
+        //如果不指定占位图像，之前xib设置的图像会被清空
+        iconView.sd_setImage(with: url,
+                             placeholderImage: UIImage.init(named: "avatar_default_big"))
+    }
+    
     //视图被添加到 window上，表示视图已经显示
     override func didMoveToWindow() {
         super.didMoveToWindow()
@@ -45,7 +68,11 @@ class JLWelcomeView: UIView {
             //更新约束
             self.layoutIfNeeded()
         }) { (_) in
-            
+            UIView.animate(withDuration: 1.0, animations: {
+                self.tipLabel.alpha = 1
+            }, completion: { (_) in
+                
+            })
         }
     }
 
