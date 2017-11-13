@@ -81,14 +81,14 @@ extension JLHomeViewController {
     //设置导航栏标题
     private func setNavTitle() {
         
-        let button = UIButton.cz_textButton("龙哥", fontSize: 17, normalColor: UIColor.darkGray, highlightedColor: UIColor.black)
         
-        button?.setImage(UIImage.init(named: "navigationbar_arrow_down"), for: [])
-        button?.setImage(UIImage.init(named: "navigationbar_arrow_up"), for: .selected)
+        let title = JLNetworkManager.shared.userAccount.screen_name
+
+        let button = JLTitleButton(title: title as String?)
         
         navItem.titleView = button
         
-        button?.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
     }
     
     @objc func clickTitleButton(btn: UIButton) {
