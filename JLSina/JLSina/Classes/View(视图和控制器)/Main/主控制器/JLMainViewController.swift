@@ -106,7 +106,7 @@ extension JLMainViewController {
         //1,检查版本是否更新
         
         //2,如果更新，显示新特性，否则显示欢迎
-        let v = isNewVersion ? JLNewFeatureView() : JLWelcomeView.welcomeView()
+        let v = isNewVersion ? JLNewFeatureView.newFeatureView() : JLWelcomeView.welcomeView()
 
         view.addSubview(v)
         //3,添加视图
@@ -139,7 +139,8 @@ extension JLMainViewController {
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         //4,返回两个版本是否一致 new
-        return currentVersion != sandboxVersion
+//        return currentVersion != sandboxVersion
+        return currentVersion == sandboxVersion
     }
 }
 
