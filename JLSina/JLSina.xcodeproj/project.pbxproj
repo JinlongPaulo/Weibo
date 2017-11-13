@@ -44,6 +44,8 @@
 		2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */; };
 		2CB564191FB06670005FDA84 /* JLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB564181FB06670005FDA84 /* JLNetworkManager.swift */; };
 		2CD104BB1FB93A2000116BFC /* JLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104BA1FB93A2000116BFC /* JLTitleButton.swift */; };
+		2CD104BE1FB9473800116BFC /* JLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */; };
+		2CD104C01FB9477500116BFC /* JLNewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104BF1FB9477500116BFC /* JLNewFeature.swift */; };
 		2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */; };
 		2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */; };
 		2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */; };
@@ -104,6 +106,8 @@
 		2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		2CB564181FB06670005FDA84 /* JLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNetworkManager.swift; sourceTree = "<group>"; };
 		2CD104BA1FB93A2000116BFC /* JLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLTitleButton.swift; sourceTree = "<group>"; };
+		2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLWelcomeView.swift; sourceTree = "<group>"; };
+		2CD104BF1FB9477500116BFC /* JLNewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNewFeature.swift; sourceTree = "<group>"; };
 		2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatus.swift; sourceTree = "<group>"; };
 		2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusListViewModel.swift; sourceTree = "<group>"; };
@@ -375,6 +379,8 @@
 		2CD104BC1FB9454F00116BFC /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
+				2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */,
+				2CD104BF1FB9477500116BFC /* JLNewFeature.swift */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -535,11 +541,13 @@
 				2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */,
 				2CAAB5621FA821A70021B432 /* NSString+CZBase64.m in Sources */,
 				2C6384A81F7E4E0B00F95FDF /* JLHomeViewController.swift in Sources */,
+				2CD104BE1FB9473800116BFC /* JLWelcomeView.swift in Sources */,
 				2CAAB5661FA821A70021B432 /* UIColor+CZAddition.m in Sources */,
 				2C6384A61F7E4DBF00F95FDF /* JLBaseViewController.swift in Sources */,
 				2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */,
 				2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */,
 				2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */,
+				2CD104C01FB9477500116BFC /* JLNewFeature.swift in Sources */,
 				2C30A6651FB4309F00DF8B46 /* JLWBOAuthViewController.swift in Sources */,
 				2CAAB55F1FA821A70021B432 /* NSArray+Log.m in Sources */,
 				2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */,
