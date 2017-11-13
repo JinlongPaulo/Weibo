@@ -98,6 +98,11 @@ extension JLMainViewController {
     
     //设置新特性视图
     private func setupNewFeatureViews() {
+        
+        //0,判断是否登录
+        if !JLNetworkManager.shared.userLogon {
+            return
+        }
         //1,检查版本是否更新
         
         //2,如果更新，显示新特性，否则显示欢迎
