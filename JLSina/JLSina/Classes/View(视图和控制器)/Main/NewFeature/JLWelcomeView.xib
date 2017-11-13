@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JLWelcomeView" customModule="JLSina" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="SY7-9j-J6N">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-RG-C4Y">
+                    <rect key="frame" x="145" y="392" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="8yL-VR-vaK"/>
+                        <constraint firstAttribute="width" constant="85" id="DFq-hP-xjQ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="欢迎归来" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ft-V7-PxY">
+                    <rect key="frame" x="145" y="499" width="96" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SY7-9j-J6N" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Am8-lq-df8"/>
+                <constraint firstAttribute="bottom" secondItem="SY7-9j-J6N" secondAttribute="bottom" id="EFQ-KC-Krg"/>
+                <constraint firstItem="SY7-9j-J6N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TYG-iH-sLt"/>
+                <constraint firstItem="6Ft-V7-PxY" firstAttribute="centerX" secondItem="9ma-RG-C4Y" secondAttribute="centerX" id="jHH-0U-arr"/>
+                <constraint firstItem="9ma-RG-C4Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oBq-LP-3Sj"/>
+                <constraint firstItem="6Ft-V7-PxY" firstAttribute="top" secondItem="9ma-RG-C4Y" secondAttribute="bottom" constant="22" id="rcm-CA-oSU"/>
+                <constraint firstAttribute="trailing" secondItem="SY7-9j-J6N" secondAttribute="trailing" id="rwh-sq-hEX"/>
+                <constraint firstAttribute="bottom" secondItem="9ma-RG-C4Y" secondAttribute="bottom" constant="190" id="ukV-yY-O5m"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="133.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+        <image name="avatar_default_big" width="85" height="85"/>
+    </resources>
+</document>
