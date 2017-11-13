@@ -32,9 +32,9 @@ class JLUserAccount: NSObject {
     var expiresDate: Date?
     
     //用户昵称
-    var screen_name:NSString?
+    var screen_name: String?
     //用户头像地址（大图），180×180像素
-    var avatar_large:NSString?
+    var avatar_large: String?
     
     
     override init() {

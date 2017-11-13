@@ -20,7 +20,7 @@ class JLTitleButton: UIButton {
         if title == nil {
             setTitle("首页", for: [])
         } else {
-            setTitle(title!, for: [])
+            setTitle(title! + " ", for: [])
             //设置图像
             setImage(UIImage.init(named: "navigationbar_arrow_down"), for: [])
             setImage(UIImage.init(named: "navigationbar_arrow_up"), for: .selected)
@@ -36,6 +36,21 @@ class JLTitleButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //重新布局子视图
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        guard let titleLabel = titleLabel ,
+              let imageView = imageView else {
+            return
+        }
+        print("\(titleLabel),\(imageView)")
+        //将label的x向左移动imageView的宽度，
+        titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width, dy: 0)
+        //将imageView的x向右移动label的宽度
+        imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width , dy: 0)
     }
     
 }

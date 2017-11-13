@@ -84,7 +84,7 @@ extension JLHomeViewController {
         
         let title = JLNetworkManager.shared.userAccount.screen_name
 
-        let button = JLTitleButton(title: title as String?)
+        let button = JLTitleButton(title: title)
         
         navItem.titleView = button
         
