@@ -139,8 +139,7 @@ extension JLMainViewController {
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         //4,返回两个版本是否一致 new
-//        return currentVersion != sandboxVersion
-        return currentVersion == sandboxVersion
+        return currentVersion != sandboxVersion
     }
 }
 
@@ -156,7 +155,7 @@ extension JLMainViewController: UITabBarControllerDelegate {
         let idx = (childViewControllers as NSArray).index(of: viewController)
         //2,判断当前索引是首页，同时idx也是首页,重复点击首页按钮
         if selectedIndex == 0 && idx == selectedIndex{
-            print("点击首页")
+//            print("点击首页")
             //3>让表格滚动到顶部
             //a)获取到控制器
             let nav = childViewControllers[0] as! UINavigationController
