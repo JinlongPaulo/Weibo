@@ -21,6 +21,8 @@ class JLMainViewController: UITabBarController {
         setupCompostButton()
         setupTimer()
         
+        //设置新特性视图
+        setupNewFeatureViews()
         //设置代理
         delegate = self
         
@@ -89,6 +91,28 @@ class JLMainViewController: UITabBarController {
     //撰写按钮
     private lazy var compostButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 
+}
+
+//MARK: - 新特性视图处理
+extension JLMainViewController {
+    
+    //设置新特性视图
+    private func setupNewFeatureViews() {
+        //1,检查版本是否更新
+        
+        //2,如果更新，显示新特性，否则显示欢迎
+        let v = isNewVersion ? JLNewFeatureView() : JLWelcomeView()
+        
+        v.frame = view.bounds
+        view.addSubview(v)
+        //3,添加视图
+    }
+    
+    //extension中可以有计算型属性，不会占用存储空间
+    //构造函数：给属性分配空间
+    private var isNewVersion: Bool {
+        return true
+    }
 }
 
 //MARK: - UITabBarControllerDelegate

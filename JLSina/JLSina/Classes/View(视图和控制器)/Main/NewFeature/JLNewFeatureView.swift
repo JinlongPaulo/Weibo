@@ -1,5 +1,5 @@
 //
-//  JLNewFeature.swift
+//  JLNewFeatureView.swift
 //  JLSina
 //
 //  Created by 盘赢 on 2017/11/13.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JLNewFeature: UIView {
+class JLNewFeatureView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
