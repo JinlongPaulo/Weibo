@@ -50,6 +50,7 @@
 		2CD3D94B1FB9EE8900BB0188 /* JLWBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D94A1FB9EE8800BB0188 /* JLWBOAuthViewController.swift */; };
 		2CD3D94E1FBA821B00BB0188 /* JLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D94D1FBA821B00BB0188 /* JLStatusCell.swift */; };
 		2CF142361FBB37B3009F6AEA /* JLStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF142351FBB37B3009F6AEA /* JLStatusNormalCell.xib */; };
+		2CF142381FBB3F0E009F6AEA /* JLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF142371FBB3F0E009F6AEA /* JLUser.swift */; };
 		2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */; };
 		2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */; };
 		2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */; };
@@ -116,6 +117,7 @@
 		2CD3D94A1FB9EE8800BB0188 /* JLWBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLWBOAuthViewController.swift; sourceTree = "<group>"; };
 		2CD3D94D1FBA821B00BB0188 /* JLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusCell.swift; sourceTree = "<group>"; };
 		2CF142351FBB37B3009F6AEA /* JLStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLStatusNormalCell.xib; sourceTree = "<group>"; };
+		2CF142371FBB3F0E009F6AEA /* JLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLUser.swift; sourceTree = "<group>"; };
 		2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatus.swift; sourceTree = "<group>"; };
 		2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusListViewModel.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */,
+				2CF142371FBB3F0E009F6AEA /* JLUser.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				2CAAB5601FA821A70021B432 /* NSAttributedString+CZAdditon.m in Sources */,
 				2CB564191FB06670005FDA84 /* JLNetworkManager.swift in Sources */,
 				2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */,
+				2CF142381FBB3F0E009F6AEA /* JLUser.swift in Sources */,
 				2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */,
 				2CAAB5631FA821A70021B432 /* NSString+CZHash.m in Sources */,
 				2C6384AF1F7E4E7800F95FDF /* JLProfileViewController.swift in Sources */,
