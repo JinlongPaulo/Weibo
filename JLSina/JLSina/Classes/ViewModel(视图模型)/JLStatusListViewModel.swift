@@ -49,10 +49,9 @@ class JLStatusListViewModel {
         //上拉刷新,取出数组的最后的一条id
         let max_id = !pullup ? 0 : (statusList.last?.id ?? 0)
         
-        
-        JLNetworkManager.shared.statusList(since_id: since_id,max_id: 0) { (list, isSuccess) in
+        JLNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
             
-//            1,字典转模型
+//            1,字典转模型(所有的第三方都支持嵌套的字典转模型)
             guard let array = NSArray.yy_modelArray(with: JLStatus.self, json: list ?? []) as? [JLStatus] else {
 
                 completion(isSuccess , false)

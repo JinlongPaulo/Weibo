@@ -18,6 +18,9 @@ class JLStatus: NSObject {
     //微博信息内容
     var text: String?
     
+    //微博用户 - 注意和服务器返回的 key 要一致
+    var user: JLUser?
+    
 
     //重写 description 的计算型属性
     override var description: String {
