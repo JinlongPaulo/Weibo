@@ -72,8 +72,7 @@ extension JLHomeViewController {
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         
         //注册原型cell
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
+        tableView?.register(UINib(nibName: "JLStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
         setNavTitle()
     }
     
