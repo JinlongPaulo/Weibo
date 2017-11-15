@@ -53,6 +53,7 @@
 		2CF142381FBB3F0E009F6AEA /* JLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF142371FBB3F0E009F6AEA /* JLUser.swift */; };
 		2CFC9CCA1FBBDB2200196F04 /* JLStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC9CC91FBBDB2200196F04 /* JLStatusViewModel.swift */; };
 		2CFC9CCC1FBC1C3700196F04 /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC9CCB1FBC1C3700196F04 /* UIImageView+WebImage.swift */; };
+		2CFC9CCE1FBC278400196F04 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC9CCD1FBC278400196F04 /* UIImage+Extensions.swift */; };
 		2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */; };
 		2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */; };
 		2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */; };
@@ -122,6 +123,7 @@
 		2CF142371FBB3F0E009F6AEA /* JLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLUser.swift; sourceTree = "<group>"; };
 		2CFC9CC91FBBDB2200196F04 /* JLStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusViewModel.swift; sourceTree = "<group>"; };
 		2CFC9CCB1FBC1C3700196F04 /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
+		2CFC9CCD1FBC278400196F04 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		2CFDC35B1FB17DFE003F60E6 /* JLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatus.swift; sourceTree = "<group>"; };
 		2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusListViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		2C1D343D1F8F05F90036902A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2CFC9CCD1FBC278400196F04 /* UIImage+Extensions.swift */,
 				2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */,
 				2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */,
 				2CFC9CCB1FBC1C3700196F04 /* UIImageView+WebImage.swift */,
@@ -601,6 +604,7 @@
 				2CFC9CCA1FBBDB2200196F04 /* JLStatusViewModel.swift in Sources */,
 				2CAAB56A1FA821A70021B432 /* UIViewController+CZAddition.m in Sources */,
 				2CD3D94B1FB9EE8900BB0188 /* JLWBOAuthViewController.swift in Sources */,
+				2CFC9CCE1FBC278400196F04 /* UIImage+Extensions.swift in Sources */,
 				2CAAB5611FA821A70021B432 /* NSObject+CZRuntime.m in Sources */,
 				2CAAB5691FA821A70021B432 /* UIView+CZAddition.m in Sources */,
 			);
