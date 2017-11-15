@@ -18,6 +18,8 @@ class JLStatusCell: UITableViewCell {
             nameLabel.text = viewModel?.status.user?.screen_name
             //设置会员图标 - 直接获取属性，不需要计算
             memberIconView.image = viewModel?.memberIcon
+            //认证图标
+            vipIconView.image = viewModel?.vipIcon
         }
     }
     

@@ -30,6 +30,10 @@ class JLStatusViewModel: CustomStringConvertible {
     //会员图标
     var memberIcon: UIImage?
     
+    //认证类型。-1：没有认证 0：认证用户，2,3,5企业认真 ， 220：达人
+    var vipIcon: UIImage?
+    
+    
     //构造函数
     init(model: JLStatus) {
         self.status = model
@@ -39,6 +43,18 @@ class JLStatusViewModel: CustomStringConvertible {
             let imageName = "common_icon_membership_level\(model.user?.mbrank ?? 1)"
             
             memberIcon = UIImage.init(named: imageName)
+        }
+        
+        //认证图标
+        switch model.user?.verified_type ?? -1 {
+        case 0:
+            vipIcon = UIImage.init(named: "avatar_vip")
+        case 2, 3, 5:
+            vipIcon = UIImage.init(named: "avatar_enterprise_vip")
+        case 220:
+            vipIcon = UIImage.init(named: "avatar_grassroot")
+        default:
+            break
         }
     }
     
