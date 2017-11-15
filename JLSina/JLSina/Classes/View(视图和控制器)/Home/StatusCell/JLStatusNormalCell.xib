@@ -63,7 +63,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8D-Vf-Qyw" userLabel="底部工具栏">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8D-Vf-Qyw" userLabel="底部工具栏" customClass="JLStatusToolBar" customModule="JLSina" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="224.5" width="497" height="28"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9X-au-TUh">
@@ -121,6 +121,11 @@
                             <constraint firstItem="Plr-9q-w21" firstAttribute="centerY" secondItem="WYp-u9-dfg" secondAttribute="centerY" id="tno-uG-HWw"/>
                             <constraint firstItem="0ju-uf-wO2" firstAttribute="width" secondItem="WYp-u9-dfg" secondAttribute="width" id="x0G-I8-2ag"/>
                         </constraints>
+                        <connections>
+                            <outlet property="commentButton" destination="WYp-u9-dfg" id="vYW-G0-1b8"/>
+                            <outlet property="likeButton" destination="0ju-uf-wO2" id="kjW-NY-lCN"/>
+                            <outlet property="retweetedButton" destination="P9X-au-TUh" id="mgh-bw-v9m"/>
+                        </connections>
                     </view>
                 </subviews>
                 <constraints>
@@ -155,6 +160,7 @@
                 <outlet property="sourceLabel" destination="eL1-Pi-Rrk" id="EhQ-uH-1Wj"/>
                 <outlet property="statusLabel" destination="fhM-oo-od9" id="8ve-qC-YHQ"/>
                 <outlet property="timeLabel" destination="Idp-k4-wsQ" id="KtD-vp-3TV"/>
+                <outlet property="toolBar" destination="Y8D-Vf-Qyw" id="ggI-KP-bab"/>
                 <outlet property="vipIconView" destination="bfg-YR-RRL" id="NZy-yY-9IK"/>
             </connections>
             <point key="canvasLocation" x="1.5" y="152.5"/>

@@ -18,6 +18,13 @@ class JLStatus: NSObject {
     //微博信息内容
     var text: String?
     
+    //转发数
+    var reposts_count: Int = 0
+    //评论数
+    var comments_count: Int = 0
+    //赞数
+    var attitudes_count: Int = 0
+    
     //微博用户 - 注意和服务器返回的 key 要一致
     var user: JLUser?
     

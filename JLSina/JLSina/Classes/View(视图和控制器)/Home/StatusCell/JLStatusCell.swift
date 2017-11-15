@@ -23,6 +23,9 @@ class JLStatusCell: UITableViewCell {
             
             //用户头像
             iconView.cz_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage.init(named: "avatar_default_big") , isAvatar: true)
+            
+            //底部工具栏
+            toolBar.viewModel = viewModel
         }
     }
     
@@ -42,6 +45,8 @@ class JLStatusCell: UITableViewCell {
     //微博正文
     @IBOutlet weak var statusLabel: UILabel!
     
+    //底部工具栏
+    @IBOutlet weak var toolBar: JLStatusToolBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()
