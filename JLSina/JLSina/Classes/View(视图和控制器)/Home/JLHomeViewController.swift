@@ -57,7 +57,10 @@ extension JLHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JLStatusCell
         cell.selectionStyle = .none
         //2,设置cell
-        cell.statusLabel?.text = listViewModel.statusList[indexPath.row].text
+        let viewModel = listViewModel.statusList[indexPath.row]
+        
+        cell.statusLabel?.text = viewModel.status.text
+        cell.nameLabel.text = viewModel.status.user?.screen_name
         //3,返回cell
         return cell
     }

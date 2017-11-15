@@ -63,13 +63,14 @@ class JLStatusListViewModel {
             var array = [JLStatusViewModel]()
             //2>遍历服务器返回的字典数组,字典转模型
             for dict in list ?? [] {
-                //a)创建微博模型,如果创建模型失败，继续遍历
-                guard let model = JLStatus.yy_model(with: dict) else {
-                    continue
-                }
+                //a)创建微博模型,
+                let status = JLStatus()
                 
-                //b)将视图model添加到数组
-                array.append(JLStatusViewModel(model: model))
+                status.yy_modelSet(with: dict)
+                
+                let viewModel = JLStatusViewModel(model: status)
+                
+                array.append(viewModel)
             }
 
             print("刷新到\(array.count)条数据")
