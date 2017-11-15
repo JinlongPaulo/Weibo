@@ -10,6 +10,17 @@ import UIKit
 
 class JLStatusCell: UITableViewCell {
 
+    var viewModel: JLStatusViewModel? {
+        didSet {
+            //微博文本
+            statusLabel?.text = viewModel?.status.text
+            //姓名
+            nameLabel.text = viewModel?.status.user?.screen_name
+            //设置会员图标 - 直接获取属性，不需要计算
+            memberIconView.image = viewModel?.memberIcon
+        }
+    }
+    
     //头像
     @IBOutlet weak var iconView: UIImageView!
     //姓名
