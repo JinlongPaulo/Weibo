@@ -24,8 +24,8 @@ import Foundation
 //上拉刷新最大尝试次数
 private let maxPullipTryTime = 3
 class JLStatusListViewModel {
-    //微博模型数组懒加载
-    lazy var statusList = [JLStatus]()
+    //微博视图模型数组懒加载
+    lazy var statusList = [JLStatusViewModel]()
     
     //上拉刷新错误次数
     private var pullupErrorTimes = 0
@@ -44,21 +44,33 @@ class JLStatusListViewModel {
         }
         
         //since_id 取出数组中第一天微博的id
-        let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
+        let since_id = pullup ? 0 : (statusList.first?.status.id ?? 0)
         
         //上拉刷新,取出数组的最后的一条id
-        let max_id = !pullup ? 0 : (statusList.last?.id ?? 0)
+        let max_id = !pullup ? 0 : (statusList.last?.status.id ?? 0)
         
         JLNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
             
-//            1,字典转模型(所有的第三方都支持嵌套的字典转模型)
-            guard let array = NSArray.yy_modelArray(with: JLStatus.self, json: list ?? []) as? [JLStatus] else {
-
-                completion(isSuccess , false)
-
+            //0,判断网络请求是否成功
+            if !isSuccess {
+                //直接回调返回
+                completion(false , false)
                 return
             }
             
+//            1,字典转模型(所有的第三方都支持嵌套的字典转模型)
+            //1>定义结果可变数组
+            var array = [JLStatusViewModel]()
+            //2>遍历服务器返回的字典数组,字典转模型
+            for dict in list ?? [] {
+                //a)创建微博模型,如果创建模型失败，继续遍历
+                guard let model = JLStatus.yy_model(with: dict) else {
+                    continue
+                }
+                
+                //b)将视图model添加到数组
+                array.append(JLStatusViewModel(model: model))
+            }
 
             print("刷新到\(array.count)条数据")
             //2,拼接数据
