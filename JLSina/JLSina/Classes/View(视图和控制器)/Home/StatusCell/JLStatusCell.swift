@@ -20,6 +20,9 @@ class JLStatusCell: UITableViewCell {
             memberIconView.image = viewModel?.memberIcon
             //认证图标
             vipIconView.image = viewModel?.vipIcon
+            
+            //用户头像
+            iconView.cz_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage.init(named: "avatar_default_big"))
         }
     }
     
