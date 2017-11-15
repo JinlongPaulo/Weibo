@@ -55,7 +55,6 @@ extension JLHomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //1,取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JLStatusCell
-        cell.selectionStyle = .none
         //2,设置cell
         let vm = listViewModel.statusList[indexPath.row]
         
