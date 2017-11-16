@@ -73,7 +73,7 @@ class JLStatusListViewModel {
                 array.append(viewModel)
             }
 
-            print("刷新到\(array.count)条数据")
+            print("刷新到\(array.count)条数据,\(array)")
             //2,拼接数据
 
             if pullup {

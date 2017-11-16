@@ -9,6 +9,7 @@
 import UIKit
 
 //微博配图模型
+@objcMembers
 class JLStatusPicture: NSObject {
 
     //缩略图地址

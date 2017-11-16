@@ -10,6 +10,33 @@ import UIKit
 
 class JLStatusPictureView: UIView {
     
+    //配图视图的数组
+    var urls: [JLStatusPicture]? {
+        didSet {
+            
+            //1,隐藏所有的imageView
+            for v in subviews {
+                v.isHidden = true
+            }
+            
+            //2,遍历urls数组，顺序设置图像
+            var index = 0
+            for url in urls ?? [] {
+                
+                //获得对应索引的imageView
+                let iv = subviews[index] as! UIImageView
+                
+                //设置图像
+                iv.cz_setImage(urlString: url.thumbnail_pic, placeholderImage: nil)
+                //显示图像
+                iv.isHidden = false
+                index += 1
+                
+            }
+        }
+    }
+    
+    
     @IBOutlet weak var heightCons: NSLayoutConstraint!
 
     override func awakeFromNib() {
@@ -31,7 +58,10 @@ extension JLStatusPictureView {
         
         for i in 0..<count * count {
             let iv = UIImageView()
-            iv.backgroundColor = UIColor.yellow
+            
+            //设置contentMode
+            iv.contentMode = .scaleAspectFill
+            iv.clipsToBounds = true
             
             //行 - Y
             let row = CGFloat(i / count)
