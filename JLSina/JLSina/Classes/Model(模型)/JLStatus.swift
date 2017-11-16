@@ -28,10 +28,21 @@ class JLStatus: NSObject {
     //微博用户 - 注意和服务器返回的 key 要一致
     var user: JLUser?
     
+    //微博配图模型数组
+    var pic_urls: [JLStatusPicture]?
+    
 
     //重写 description 的计算型属性
     override var description: String {
         return yy_modelDescription()
+    }
+    
+    //类函数 ->告诉第三方框架YYModel，如果遇到数组类型的属性，数组中存放的对象是什么类？
+    //NSArray 中 保存对象的类型通常是 ‘id‘ 类型
+    //OC中的泛型是 Swift 推出后，苹果为了兼容给 OC 增加的，
+    //从运行时角度，仍然不知道数组中应该存放什么类型的对象
+    class func modelContainerPropertyGenericClass() -> [String: AnyClass]{
+        return ["pic_urls": JLStatusPicture.self]
     }
     
 }
