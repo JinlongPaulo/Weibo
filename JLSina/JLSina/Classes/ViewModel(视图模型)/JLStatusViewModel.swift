@@ -81,8 +81,33 @@ class JLStatusViewModel: CustomStringConvertible {
     //count:配图数量   return：配图视图大小
     private func calcPictureViewSize(count: Int?) -> CGSize {
         
+        if count == 0 {
+            return CGSize()
+        }
         
-        return CGSize(width: 100, height: 300)
+        //1,计算配图视图的宽度
+        //常数准备
+        //配图视图外侧的间距
+        let JLStatusPictureViewOutterMargin = CGFloat(12)
+        //配图视图内部图像视图的间距
+        let JLStatusPictureViewInnerMargin = CGFloat(3)
+        //视图的宽度
+        let JlStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * JLStatusPictureViewOutterMargin
+        
+        //每个item默认的宽度
+        let JLStatusPictureItemWidth = (JlStatusPictureViewWidth - 2 * JLStatusPictureViewInnerMargin) / 3
+        
+        
+        //2,计算高度
+        //1>,根据count知道行数 1-9
+        let row = (count! - 1) / 3 + 1
+        
+        //2>根据行数算高度
+        var height = JLStatusPictureViewOutterMargin
+            height += CGFloat(row) * JLStatusPictureItemWidth
+            height += CGFloat(row - 1) * JLStatusPictureViewInnerMargin
+        
+        return CGSize(width: JlStatusPictureViewWidth, height: height)
     }
     
     
