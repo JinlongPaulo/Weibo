@@ -12,4 +12,5 @@ class JLStatusPictureView: UIView {
     
     @IBOutlet weak var heightCons: NSLayoutConstraint!
 
+    
 }
