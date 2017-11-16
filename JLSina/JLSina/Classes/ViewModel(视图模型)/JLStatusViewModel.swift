@@ -81,7 +81,7 @@ class JLStatusViewModel: CustomStringConvertible {
     //count:配图数量   return：配图视图大小
     private func calcPictureViewSize(count: Int?) -> CGSize {
         
-        if count == 0 && count == nil{
+        if count == 0 || count == nil{
             return CGSize()
         }
         
