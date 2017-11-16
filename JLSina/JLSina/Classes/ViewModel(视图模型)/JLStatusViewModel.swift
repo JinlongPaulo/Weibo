@@ -33,6 +33,13 @@ class JLStatusViewModel: CustomStringConvertible {
     //认证类型。-1：没有认证 0：认证用户，2,3,5企业认真 ， 220：达人
     var vipIcon: UIImage?
     
+    //转发文字
+    var retweetedStr: String?
+    //评论文字
+    var commentsStr: String?
+    //点赞文字
+    var likeStr: String?
+    
     
     //构造函数
     init(model: JLStatus) {
@@ -56,6 +63,33 @@ class JLStatusViewModel: CustomStringConvertible {
         default:
             break
         }
+        
+//        model.reposts_count = Int(arc4random_uniform(100000))
+        //设置底部计数字符串
+        retweetedStr = countString(count: status.reposts_count, defaultString: "转发")
+        commentsStr = countString(count: status.comments_count, defaultString: "评论")
+        likeStr = countString(count: status.attitudes_count, defaultString: "点赞")
+    }
+    
+    //给定一个数字，返回对应的描述函数
+    //count 数字
+    //defailtString 默认字符串 转发/评论/赞
+    //returns: 描述结果
+    /**
+     0 - 显示默认标题
+     > 10000  ,显示x.xx万
+     < 10000  ,显示实际数字
+     */
+    private func countString(count: Int , defaultString: String) -> String {
+        if count == 0 {
+            return defaultString
+        }
+        
+        if count < 10000 {
+            return count.description
+        }
+        
+        return String(format: "%.02f 万" , Double(count / 10000))
     }
     
     var description: String {

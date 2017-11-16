@@ -12,11 +12,9 @@ class JLStatusToolBar: UIView {
 
     var viewModel: JLStatusViewModel? {
         didSet {
-            retweetedButton.setTitle("\(viewModel?.status.reposts_count)", for: [])
-            commentButton.setTitle("\(viewModel?.status.comments_count)", for: [])
-
-            likeButton.setTitle("\(viewModel?.status.attitudes_count)", for: [])
-
+            retweetedButton.setTitle(viewModel?.retweetedStr, for: [])
+            commentButton.setTitle(viewModel?.commentsStr, for: [])
+            likeButton.setTitle(viewModel?.likeStr, for: [])
         }
     }
     
