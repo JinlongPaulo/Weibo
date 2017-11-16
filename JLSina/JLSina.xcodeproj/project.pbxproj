@@ -27,6 +27,7 @@
 		2C876BCA1FB5EEFA00A5CB39 /* JLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C876BC91FB5EEFA00A5CB39 /* JLUserAccount.swift */; };
 		2C91B6521FBD23EC00FA8AE2 /* JLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91B6511FBD23EC00FA8AE2 /* JLStatusPictureView.swift */; };
 		2C91B6541FBD3E1200FA8AE2 /* JLStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91B6531FBD3E1200FA8AE2 /* JLStatusPicture.swift */; };
+		2C9640641FBDFF3800956F19 /* JLStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9640631FBDFF3700956F19 /* JLStatusRetweetedCell.xib */; };
 		2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */; };
 		2CAAB55F1FA821A70021B432 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5481FA821A70021B432 /* NSArray+Log.m */; };
 		2CAAB5601FA821A70021B432 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB54A1FA821A70021B432 /* NSAttributedString+CZAdditon.m */; };
@@ -87,6 +88,7 @@
 		2C8E1D471F7F3EC1000365A3 /* JLSina-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLSina-Bridging-Header.h"; sourceTree = "<group>"; };
 		2C91B6511FBD23EC00FA8AE2 /* JLStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusPictureView.swift; sourceTree = "<group>"; };
 		2C91B6531FBD3E1200FA8AE2 /* JLStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusPicture.swift; sourceTree = "<group>"; };
+		2C9640631FBDFF3700956F19 /* JLStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		2CAAB5461FA821A70021B432 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		2CAAB5471FA821A70021B432 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				2CD3D94D1FBA821B00BB0188 /* JLStatusCell.swift */,
 				2C91B6511FBD23EC00FA8AE2 /* JLStatusPictureView.swift */,
 				2CF142351FBB37B3009F6AEA /* JLStatusNormalCell.xib */,
+				2C9640631FBDFF3700956F19 /* JLStatusRetweetedCell.xib */,
 				2CFC9CCF1FBC3DE100196F04 /* JLStatusToolBar.swift */,
 			);
 			path = StatusCell;
@@ -501,6 +504,7 @@
 				2CD104C61FB9770000116BFC /* JLNewFeatureView.xib in Resources */,
 				2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */,
 				2CD104C41FB9637300116BFC /* JLWelcomeView.xib in Resources */,
+				2C9640641FBDFF3800956F19 /* JLStatusRetweetedCell.xib in Resources */,
 				2CF142361FBB37B3009F6AEA /* JLStatusNormalCell.xib in Resources */,
 				2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */,
 			);
