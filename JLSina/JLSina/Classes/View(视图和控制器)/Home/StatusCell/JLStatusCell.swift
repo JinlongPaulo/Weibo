@@ -26,6 +26,10 @@ class JLStatusCell: UITableViewCell {
             
             //底部工具栏
             toolBar.viewModel = viewModel
+            
+            //测试修改配图视图的高度
+            pictureView.heightCons.constant = 0
+            pictureTopCons.constant = 0
         }
     }
     
@@ -48,15 +52,19 @@ class JLStatusCell: UITableViewCell {
     //底部工具栏
     @IBOutlet weak var toolBar: JLStatusToolBar!
     
+    //配图视图
+    @IBOutlet weak var pictureView: JLStatusPictureView!
+    
+    
+    @IBOutlet weak var pictureTopCons: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
 
 }

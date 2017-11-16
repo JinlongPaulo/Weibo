@@ -58,7 +58,7 @@
                         <rect key="frame" x="32.5" y="41.5" width="17" height="17"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-oo-od9" userLabel="正文">
-                        <rect key="frame" x="11" y="65" width="33" height="15.5"/>
+                        <rect key="frame" x="11" y="65" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -127,12 +127,15 @@
                             <outlet property="retweetedButton" destination="P9X-au-TUh" id="mgh-bw-v9m"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihx-ea-sML">
-                        <rect key="frame" x="11" y="92.5" width="511" height="325"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihx-ea-sML" userLabel="配图视图" customClass="JLStatusPictureView" customModule="JLSina" customModuleProvider="target">
+                        <rect key="frame" x="11" y="93" width="511" height="200"/>
                         <color key="backgroundColor" red="0.2392156869" green="0.67450982329999998" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="325" id="cfs-5z-sZx"/>
+                            <constraint firstAttribute="height" constant="200" id="cfs-5z-sZx"/>
                         </constraints>
+                        <connections>
+                            <outlet property="heightCons" destination="cfs-5z-sZx" id="m4O-Rf-cO0"/>
+                        </connections>
                     </view>
                 </subviews>
                 <constraints>
@@ -167,6 +170,8 @@
                 <outlet property="iconView" destination="OKM-Ls-FsK" id="crM-dE-GZq"/>
                 <outlet property="memberIconView" destination="yaF-ao-V44" id="qFg-oz-oVU"/>
                 <outlet property="nameLabel" destination="t9d-Ks-fRB" id="VL4-jX-jVQ"/>
+                <outlet property="pictureTopCons" destination="bPM-pM-Q5N" id="EYm-Ae-4Zl"/>
+                <outlet property="pictureView" destination="Ihx-ea-sML" id="OWX-NC-uwn"/>
                 <outlet property="sourceLabel" destination="eL1-Pi-Rrk" id="EhQ-uH-1Wj"/>
                 <outlet property="statusLabel" destination="fhM-oo-od9" id="8ve-qC-YHQ"/>
                 <outlet property="timeLabel" destination="Idp-k4-wsQ" id="KtD-vp-3TV"/>
