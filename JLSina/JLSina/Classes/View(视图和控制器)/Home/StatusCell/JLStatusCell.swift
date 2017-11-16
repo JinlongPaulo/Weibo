@@ -30,8 +30,17 @@ class JLStatusCell: UITableViewCell {
             //测试修改配图视图的高度
             pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
             //设置配图视图的url数据
+            //测试4张图像
+//            if (viewModel?.status.pic_urls?.count)! > 4 {
+//                //将末尾的数据全部删除
+//                var picUrls = viewModel!.status.pic_urls!
+//                picUrls.removeSubrange((picUrls.startIndex + 4)..<picUrls.endIndex)
+//                pictureView.urls = picUrls
+//            } else {
+//                
+//                pictureView.urls = viewModel?.status.pic_urls
+//            }
             pictureView.urls = viewModel?.status.pic_urls
-            
         }
     }
     
