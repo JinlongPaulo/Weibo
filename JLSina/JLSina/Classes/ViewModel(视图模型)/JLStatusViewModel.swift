@@ -40,6 +40,9 @@ class JLStatusViewModel: CustomStringConvertible {
     //点赞文字
     var likeStr: String?
     
+    //配图视图大小
+    var pictureViewSize = CGSize()
+    
     
     //构造函数
     init(model: JLStatus) {
@@ -69,7 +72,19 @@ class JLStatusViewModel: CustomStringConvertible {
         retweetedStr = countString(count: status.reposts_count, defaultString: "转发")
         commentsStr = countString(count: status.comments_count, defaultString: "评论")
         likeStr = countString(count: status.attitudes_count, defaultString: "点赞")
+        
+        //计算配图视图大小
+        pictureViewSize = calcPictureViewSize(count: status.pic_urls?.count)
     }
+    
+    //计算指定数量的图片，对应的配图视图的大小
+    //count:配图数量   return：配图视图大小
+    private func calcPictureViewSize(count: Int?) -> CGSize {
+        
+        
+        return CGSize(width: 100, height: 300)
+    }
+    
     
     //给定一个数字，返回对应的描述函数
     //count 数字
