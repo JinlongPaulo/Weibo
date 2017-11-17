@@ -421,9 +421,9 @@
 			children = (
 				2CD3D94D1FBA821B00BB0188 /* JLStatusCell.swift */,
 				2C91B6511FBD23EC00FA8AE2 /* JLStatusPictureView.swift */,
+				2CFC9CCF1FBC3DE100196F04 /* JLStatusToolBar.swift */,
 				2CF142351FBB37B3009F6AEA /* JLStatusNormalCell.xib */,
 				2C9640631FBDFF3700956F19 /* JLStatusRetweetedCell.xib */,
-				2CFC9CCF1FBC3DE100196F04 /* JLStatusToolBar.swift */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
