@@ -43,6 +43,14 @@ class JLStatusViewModel: CustomStringConvertible {
     //配图视图大小
     var pictureViewSize = CGSize()
     
+    //如果是被转发的微博，原创微博一定没有图片
+    var picURLs: [JLStatusPicture]? {
+        //如果有被转发的微博，返回被转发微博配图
+        //如果没有被转发的微博，返回原创微博的配图
+        //如果都没有，返回 nil
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
+    
     
     //构造函数
     init(model: JLStatus) {
@@ -73,8 +81,8 @@ class JLStatusViewModel: CustomStringConvertible {
         commentsStr = countString(count: status.comments_count, defaultString: "评论")
         likeStr = countString(count: status.attitudes_count, defaultString: "点赞")
         
-        //计算配图视图大小
-        pictureViewSize = calcPictureViewSize(count: status.pic_urls?.count)
+        //计算配图视图大小(有原创，计算原创，有转发计算转发)
+        pictureViewSize = calcPictureViewSize(count: picURLs?.count)
     }
     
     //计算指定数量的图片，对应的配图视图的大小

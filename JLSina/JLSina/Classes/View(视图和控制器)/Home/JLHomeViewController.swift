@@ -56,12 +56,15 @@ extension JLHomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //1,取cell
-        //FIXME: 修改id
-        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! JLStatusCell
-        //2,设置cell
+        //0,取出视图模型，根据视图模型，判断可重用cell
         let vm = listViewModel.statusList[indexPath.row]
         
+        let cellId = vm.status.retweeted_status != nil ? retweetedCellId : originalCellId
+        
+        //FIXME: 修改id
+        //1,取cell
+        //2,设置cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JLStatusCell
         cell.viewModel = vm
         //3,返回cell
         return cell
