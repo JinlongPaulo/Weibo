@@ -31,6 +31,9 @@ class JLStatus: NSObject {
     //微博配图模型数组
     var pic_urls: [JLStatusPicture]?
     
+    //被转发的原创微博
+    var retweeted_status: JLStatus?
+    
 
     //重写 description 的计算型属性
     override var description: String {
