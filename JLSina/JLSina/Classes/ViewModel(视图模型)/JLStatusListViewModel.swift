@@ -89,9 +89,16 @@ class JLStatusListViewModel {
                 completion(isSuccess , false)
             } else {
                 
-                //3,完成回调
+                self.cacheSingleImage(list: array)
+                //3,真正有数据的回调
                 completion(isSuccess , true)
             }
         }
+    }
+    
+    //缓存本次下载微博数据数组中的单张图像
+    //list：本次下载的视图模型数组
+    private func cacheSingleImage(list: [JLStatusViewModel]) {
+        
     }
 }
