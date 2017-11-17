@@ -9,7 +9,10 @@
 import UIKit
 
 //定义全局常量，尽量使用private修饰
-private let cellId = "cellId"
+//原创微博可重用cellid
+private let originalCellId = "originalCellId"
+//被转发微博的可重用cellid
+private let retweetedCellId = "retweetedCellId"
 
 class JLHomeViewController: JLBaseViewController {
 
@@ -54,7 +57,8 @@ extension JLHomeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //1,取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JLStatusCell
+        //FIXME: 修改id
+        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! JLStatusCell
         //2,设置cell
         let vm = listViewModel.statusList[indexPath.row]
         
@@ -73,7 +77,8 @@ extension JLHomeViewController {
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         
         //注册原型cell
-        tableView?.register(UINib(nibName: "JLStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "JLStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
+        tableView?.register(UINib(nibName: "JLStatusRetweetedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
         //设置行高
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
