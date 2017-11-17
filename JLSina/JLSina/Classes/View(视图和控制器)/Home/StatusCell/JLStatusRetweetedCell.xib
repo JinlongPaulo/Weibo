@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="100" width="467" height="265.5"/>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-0D-WcP" userLabel="被转发微博正文">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-0D-WcP" userLabel="被转发微博正文">
                         <rect key="frame" x="12" y="112" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -188,6 +188,7 @@
                 <outlet property="memberIconView" destination="yaF-ao-V44" id="qFg-oz-oVU"/>
                 <outlet property="nameLabel" destination="t9d-Ks-fRB" id="VL4-jX-jVQ"/>
                 <outlet property="pictureView" destination="Ihx-ea-sML" id="OWX-NC-uwn"/>
+                <outlet property="retweetedLabel" destination="lnb-0D-WcP" id="M8u-Qr-plD"/>
                 <outlet property="sourceLabel" destination="eL1-Pi-Rrk" id="EhQ-uH-1Wj"/>
                 <outlet property="statusLabel" destination="fhM-oo-od9" id="8ve-qC-YHQ"/>
                 <outlet property="timeLabel" destination="Idp-k4-wsQ" id="KtD-vp-3TV"/>

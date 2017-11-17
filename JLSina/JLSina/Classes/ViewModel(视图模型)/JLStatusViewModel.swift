@@ -51,6 +51,10 @@ class JLStatusViewModel: CustomStringConvertible {
         return status.retweeted_status?.pic_urls ?? status.pic_urls
     }
     
+    //被转发微博文字
+    var retweetedText: String?
+    
+    
     
     //构造函数
     init(model: JLStatus) {
@@ -83,6 +87,11 @@ class JLStatusViewModel: CustomStringConvertible {
         
         //计算配图视图大小(有原创，计算原创，有转发计算转发)
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
+        
+        
+        //设置被转发微博文字
+        let subStr = "@" + (status.retweeted_status?.user?.screen_name ?? "") + ":"
+        retweetedText = subStr + (status.retweeted_status?.text ?? "")
     }
     
     //计算指定数量的图片，对应的配图视图的大小
