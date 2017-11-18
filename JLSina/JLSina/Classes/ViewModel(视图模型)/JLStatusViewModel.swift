@@ -54,6 +54,8 @@ class JLStatusViewModel: CustomStringConvertible {
     //被转发微博文字
     var retweetedText: String?
     
+    //行高
+    var rowHeight: CGFloat = 0
     
     
     //构造函数
@@ -92,6 +94,53 @@ class JLStatusViewModel: CustomStringConvertible {
         //设置被转发微博文字
         let subStr = "@" + (status.retweeted_status?.user?.screen_name ?? "") + ":"
         retweetedText = subStr + (status.retweeted_status?.text ?? "")
+        
+        //计算行高
+        updateRowHeight()
+    }
+    
+    //根据当前视图模型内容，计算行高
+    func updateRowHeight() {
+        
+        let margin: CGFloat = 12
+        let iconHeight: CGFloat = 34
+        let toolBarHeight: CGFloat = 35
+        
+        var height: CGFloat = 0
+        
+        let viewSize = CGSize(width: UIScreen.cz_screenWidth() - 2 * margin, height: CGFloat(MAXFLOAT))
+        
+        let originalFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        
+        
+        //1,计算顶部位置
+        height = 2 * margin + iconHeight + margin
+        
+        //2,正文高度
+        if let text = status.text {
+           height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font: originalFont], context: nil).height
+        }
+        
+        //3,判断是否转发微博
+        if status.retweeted_status != nil {
+            height += 2 * margin
+            //转发文本的高度 - 一定用retweetedText，拼接过后的字符串
+            if let text = retweetedText {
+               height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font: retweetedFont], context: nil).height
+            }
+        }
+        
+        //4,配图视图
+        height += pictureViewSize.height
+        
+        height += margin
+        
+        //5,底部工具栏
+        height += toolBarHeight
+        
+        //6,使用属性记录
+        rowHeight = height
     }
     
     //使用单个图像，更新配图视图的大小

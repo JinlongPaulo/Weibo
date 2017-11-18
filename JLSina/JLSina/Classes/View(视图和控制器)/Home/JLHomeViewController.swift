@@ -62,9 +62,10 @@ extension JLHomeViewController {
         let cellId = vm.status.retweeted_status != nil ? retweetedCellId : originalCellId
         
         //FIXME: 修改id
-        //1,取cell
-        //2,设置cell
+        //1,取cell - 本身会调用代理方法(如果有)
+        //如果没有，找到cell，按照自动布局的规则，从上向下计算，找到向下的约束，从而动态计算行高
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JLStatusCell
+        //2,设置cell
         cell.viewModel = vm
         //3,返回cell
         return cell
