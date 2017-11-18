@@ -18,6 +18,30 @@ class JLStatusPictureView: UIView {
     
     //根据视图模型的配图视图大小，调整显示内容
     private func calcViewSize() {
+        //处理宽度
+        //1>单图，根据配图视图的大小，修改 subViews[0]的宽高
+        if viewModel?.picURLs?.count == 1 {
+            
+            let viewSize = viewModel?.pictureViewSize ?? CGSize()
+            
+            //a))获取第0个图像视图
+            let v = subviews[0]
+            v.frame = CGRect(x: 0,
+                             y: JLStatusPictureViewOutterMargin,
+                             width: viewSize.width,
+                             height: viewSize.height - JLStatusPictureViewOutterMargin)
+            
+        } else {
+            //2>多图，恢复subViews[0]的宽高
+            let v = subviews[0]
+            v.frame = CGRect(x: 0,
+                             y: JLStatusPictureViewOutterMargin,
+                             width: JLStatusPictureItemWidth,
+                             height: JLStatusPictureItemWidth)
+            
+        }
+        
+        
         //修改高度约束
         heightCons.constant = viewModel?.pictureViewSize.height ?? 0
     }
