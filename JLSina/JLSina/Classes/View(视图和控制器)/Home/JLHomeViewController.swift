@@ -70,6 +70,16 @@ extension JLHomeViewController {
         //3,返回cell
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        //1.根据indexpath获取视图模型
+        let vm = listViewModel.statusList[indexPath.row]
+        //返回行高
+        return vm.rowHeight
+        
+    }
 }
 
 
@@ -85,7 +95,7 @@ extension JLHomeViewController {
         tableView?.register(UINib(nibName: "JLStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
         tableView?.register(UINib(nibName: "JLStatusRetweetedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
         //设置行高
-        tableView?.rowHeight = UITableViewAutomaticDimension
+//        tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
         //取消分割线
         tableView?.separatorStyle = .none

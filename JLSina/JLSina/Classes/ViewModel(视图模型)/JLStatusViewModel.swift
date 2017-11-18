@@ -150,8 +150,11 @@ class JLStatusViewModel: CustomStringConvertible {
         
         //注意，尺寸需要增加顶部12个点，便于布局
         size.height += JLStatusPictureViewOutterMargin
-        pictureViewSize = size
         
+        //重新设置配图视图大小
+        pictureViewSize = size
+        //更新行高
+        updateRowHeight()
     }
     
     //计算指定数量的图片，对应的配图视图的大小

@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8D-Vf-Qyw" userLabel="底部工具栏" customClass="JLStatusToolBar" customModule="JLSina" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="422.5" width="534" height="35"/>
+                        <rect key="frame" x="0.0" y="300" width="534" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9X-au-TUh">
                                 <rect key="frame" x="0.0" y="0.0" width="178" height="35"/>
@@ -140,7 +140,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Idp-k4-wsQ" firstAttribute="leading" secondItem="t9d-Ks-fRB" secondAttribute="leading" id="4Qk-qN-1Yf"/>
-                    <constraint firstItem="Y8D-Vf-Qyw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ihx-ea-sML" secondAttribute="bottom" constant="12" id="4Xh-VZ-lVB"/>
+                    <constraint firstItem="Y8D-Vf-Qyw" firstAttribute="top" secondItem="Ihx-ea-sML" secondAttribute="bottom" constant="12" id="4Xh-VZ-lVB"/>
                     <constraint firstItem="Y8D-Vf-Qyw" firstAttribute="leading" secondItem="oVT-h2-2NH" secondAttribute="leading" id="AAj-Nf-DkD"/>
                     <constraint firstItem="eL1-Pi-Rrk" firstAttribute="leading" secondItem="Idp-k4-wsQ" secondAttribute="trailing" constant="8" id="HxW-bp-Qxc"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fhM-oo-od9" secondAttribute="trailing" constant="11" id="JDH-7q-GUT"/>
@@ -158,7 +158,6 @@
                     <constraint firstItem="bfg-YR-RRL" firstAttribute="centerY" secondItem="OKM-Ls-FsK" secondAttribute="bottom" constant="-4" id="hSc-I1-PvM"/>
                     <constraint firstItem="Idp-k4-wsQ" firstAttribute="bottom" secondItem="OKM-Ls-FsK" secondAttribute="bottom" id="iAi-9b-bQk"/>
                     <constraint firstItem="W2b-s3-0Q8" firstAttribute="top" secondItem="oVT-h2-2NH" secondAttribute="top" id="ldz-3i-4Sl"/>
-                    <constraint firstAttribute="bottom" secondItem="Y8D-Vf-Qyw" secondAttribute="bottom" id="lt8-XJ-VLZ"/>
                     <constraint firstItem="t9d-Ks-fRB" firstAttribute="top" secondItem="OKM-Ls-FsK" secondAttribute="top" constant="4" id="m8n-5X-UMJ"/>
                     <constraint firstItem="eL1-Pi-Rrk" firstAttribute="centerY" secondItem="Idp-k4-wsQ" secondAttribute="centerY" id="oUr-FU-vJ6"/>
                     <constraint firstAttribute="trailing" secondItem="Ihx-ea-sML" secondAttribute="trailing" constant="12" id="u15-n4-WHg"/>
