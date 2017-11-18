@@ -62,11 +62,18 @@ class JLStatusCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //离屏渲染 - 异步绘制
+        self.layer.drawsAsynchronously = true
+        
+        //栅格化 - 异步绘制之后，会生成一张独立的图像，cell在屏幕上滚动的时候。本质上滚动的是这张图片
+        //cell 优化，要尽量减少图层的数量，相当于就只有一层
+        //停止滚动之后可以接收监听
+        self.layer.shouldRasterize = true
+        
+        //使用栅格化必须注意指定分辨率
+        self.layer.rasterizationScale = UIScreen.main.scale
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
 
 }
