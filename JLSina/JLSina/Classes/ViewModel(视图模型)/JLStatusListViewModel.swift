@@ -141,6 +141,8 @@ class JLStatusListViewModel {
                     //NSData是length属性
                     length += data.count
                     
+                    //图像缓存成功，更新配图视图大小
+                    vm.updateSingleImageSize(image: image)
                 }
                 
                 print("缓存的图像是\(image)长度\(length)")
