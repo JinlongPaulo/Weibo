@@ -100,6 +100,9 @@ class JLStatusListViewModel {
     //list：本次下载的视图模型数组
     private func cacheSingleImage(list: [JLStatusViewModel]) {
         
+        //调度组
+        let group = DispatchGroup()
+        
         //记录数据长度
         var length = 0
         
@@ -116,7 +119,7 @@ class JLStatusListViewModel {
                 return
             }
             
-            print("要缓存的url是\(pic)")
+//            print("要缓存的url是\(pic)")
             
             //3>下载图像
             //downloadImage 是SDWebImage的核心方法
@@ -125,6 +128,10 @@ class JLStatusListViewModel {
             //不会发起网络请求,同时回调方法，同样会调用
             //方法还是同样的方法，调用还是同样的调用，不过内部不会再次发起网络请求
             //注意点：如果要缓存图像累计很大，要找后台要接口
+            
+            
+            //A>入组
+            group.enter()
             SDWebImageManager.shared().imageDownloader?.downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _) in
                 //将图像转换成二进制数据
                 if let image = image ,
@@ -137,9 +144,16 @@ class JLStatusListViewModel {
                 
                 print("缓存的图像是\(image)长度\(length)")
                 
+                //B>出组 - 放在回调的最后一句
+                group.leave()
             })
             
             
+        }
+        
+        //C>监听调度组情况
+        group.notify(queue: DispatchQueue.main) {
+            print("图像缓存完成\(length / 1024)K")
         }
     }
 }
