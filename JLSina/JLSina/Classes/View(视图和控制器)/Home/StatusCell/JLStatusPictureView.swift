@@ -13,6 +13,9 @@ class JLStatusPictureView: UIView {
     var viewModel: JLStatusViewModel? {
         didSet {
             calcViewSize()
+            
+            //设置url
+            urls = viewModel?.picURLs
         }
     }
     
@@ -48,7 +51,7 @@ class JLStatusPictureView: UIView {
     
     
     //配图视图的数组
-    var urls: [JLStatusPicture]? {
+    private var urls: [JLStatusPicture]? {
         didSet {
             
             //1,隐藏所有的imageView

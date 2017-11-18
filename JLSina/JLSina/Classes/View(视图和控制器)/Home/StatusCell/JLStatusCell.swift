@@ -30,22 +30,6 @@ class JLStatusCell: UITableViewCell {
             //配图视图视图模型
             pictureView.viewModel = viewModel
             
-            //测试修改配图视图的高度
-//            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
-            //设置配图视图的url数据
-            //测试4张图像
-//            if (viewModel?.status.pic_urls?.count)! > 4 {
-//                //将末尾的数据全部删除
-//                var picUrls = viewModel!.status.pic_urls!
-//                picUrls.removeSubrange((picUrls.startIndex + 4)..<picUrls.endIndex)
-//                pictureView.urls = picUrls
-//            } else {
-//                
-//                pictureView.urls = viewModel?.status.pic_urls
-//            }
-            //设置配图（被转发和原创）
-            pictureView.urls = viewModel?.picURLs
-            
             //设置被转发微博的文字
             retweetedLabel?.text = viewModel?.retweetedText
         }
