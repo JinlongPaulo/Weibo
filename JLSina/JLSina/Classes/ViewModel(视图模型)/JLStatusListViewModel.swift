@@ -89,16 +89,17 @@ class JLStatusListViewModel {
                 completion(isSuccess , false)
             } else {
                 
-                self.cacheSingleImage(list: array)
+                self.cacheSingleImage(list: array , finished: completion)
                 //3,真正有数据的回调
-                completion(isSuccess , true)
+//                completion(isSuccess , true)
             }
         }
     }
     
     //缓存本次下载微博数据数组中的单张图像
+    //应该缓存完单张图像，并且修改过配图大小之后，再回调，才能够保证表格等比例显示单张图像
     //list：本次下载的视图模型数组
-    private func cacheSingleImage(list: [JLStatusViewModel]) {
+    private func cacheSingleImage(list: [JLStatusViewModel] , finished: @escaping (_ isSuccess: Bool , _ shouldRefresh: Bool)->()) {
         
         //调度组
         let group = DispatchGroup()
@@ -154,6 +155,9 @@ class JLStatusListViewModel {
         //C>监听调度组情况
         group.notify(queue: DispatchQueue.main) {
             print("图像缓存完成\(length / 1024)K")
+            
+            //执行闭包回调
+            finished(true, true)
         }
     }
 }
