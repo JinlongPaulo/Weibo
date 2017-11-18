@@ -10,6 +10,19 @@ import UIKit
 
 class JLStatusPictureView: UIView {
     
+    var viewModel: JLStatusViewModel? {
+        didSet {
+            calcViewSize()
+        }
+    }
+    
+    //根据视图模型的配图视图大小，调整显示内容
+    private func calcViewSize() {
+        //修改高度约束
+        heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+    }
+    
+    
     //配图视图的数组
     var urls: [JLStatusPicture]? {
         didSet {
