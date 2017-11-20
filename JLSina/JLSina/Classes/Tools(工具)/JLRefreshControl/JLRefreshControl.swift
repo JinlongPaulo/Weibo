@@ -12,11 +12,11 @@ import UIKit
 class JLRefreshControl: UIControl {
     //开始刷新
     func beginRefreshing() {
-        
+        print("开始刷新")
     }
     
 
     func endRefreshing() {
-        
+        print("结束刷新")
     }
 }
