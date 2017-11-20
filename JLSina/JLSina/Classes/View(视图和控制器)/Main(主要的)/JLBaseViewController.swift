@@ -28,7 +28,7 @@ class JLBaseViewController: UIViewController {
     var tableView: UITableView?
     
     //刷新控件
-    var refreshControl: UIRefreshControl?
+    var refreshControl: JLRefreshControl?
     
     //上拉刷新标记
     var isPullup = false
@@ -135,10 +135,10 @@ extension JLBaseViewController {
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         //设置刷新控件
         //1,实例化控件
-        refreshControl = UIRefreshControl()
-        let str = NSAttributedString(string: "正在刷新")
+        refreshControl = JLRefreshControl()
+//        let str = NSAttributedString(string: "正在刷新")
         
-        refreshControl?.attributedTitle = str
+//        refreshControl?.attributedTitle = str
         refreshControl?.tintColor = UIColor.orange
         //2,添加到表格视图
         tableView?.addSubview(refreshControl!)
