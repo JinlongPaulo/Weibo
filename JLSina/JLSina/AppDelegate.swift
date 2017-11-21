@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-
 }
 
 //MARK: - 设置应用程序额外信息

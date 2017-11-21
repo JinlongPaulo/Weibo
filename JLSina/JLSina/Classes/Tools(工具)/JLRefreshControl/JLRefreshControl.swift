@@ -29,7 +29,7 @@ class JLRefreshControl: UIControl {
     /*
      newSuperview : addSubView 方法会调用
      - 当添加到父视图的时候，newSuperview是父视图
-     - 当父视图被移除， newSuperview 是nil
+     - 当父视图被移除， newSuperview 是 nil
      */
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)

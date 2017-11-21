@@ -163,12 +163,15 @@ class JLStatusViewModel: CustomStringConvertible {
         }
         
         //过窄图像处理
-        if size.width < 300 {
+        if size.width < minWidth {
             size.width = minWidth
             
             //要特殊处理高度，高度太大，会影响用户体验
             size.height = size.width * image.size.height / image.size.width / 4
         }
+        
+        //特例：有些图像，本身就是很窄很长 ->定义 minHeight，思路同上
+        //在工作中，如果看到代码中有些疑惑的分支处理，不要动，有风险
         
         //注意，尺寸需要增加顶部12个点，便于布局
         size.height += JLStatusPictureViewOutterMargin
