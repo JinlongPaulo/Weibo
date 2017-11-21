@@ -118,17 +118,9 @@ class JLRefreshControl: UIControl {
             //放手 - 判断是否超过临界点
             if refreshView.refreshState == .Pulling {
                 print("准备开始刷新")
-                //刷新结束之后，将状态改为.normal 才能给继续相应
-                refreshView.refreshState = .WillRefresh
                 
-                //让整个刷新视图能够显示出来
-                //解决方法： 修改表格的contentInset
-                var inset = sv.contentInset
+                beginRefreshing()
                 
-                //FIXME: 刷新控件位置问题
-                inset.top += JLRefreshOffset - 64
-                
-                sv.contentInset = inset
                 
             }
         }
@@ -139,6 +131,11 @@ class JLRefreshControl: UIControl {
         print("开始刷新")
         //判断父视图
         guard let sv = scrollView else { return }
+        
+        //判断是否正在刷新，如果正在刷新，直接返回
+        if refreshView.refreshState == .WillRefresh {
+            return
+        }
         
         //设置刷新视图的状态
         refreshView.refreshState = .WillRefresh
