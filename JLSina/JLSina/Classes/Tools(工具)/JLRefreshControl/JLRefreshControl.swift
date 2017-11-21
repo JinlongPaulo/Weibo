@@ -9,7 +9,7 @@
 import UIKit
 
 //刷新状态切换的临界点
-private let JLRefreshOffset: CGFloat = 60
+private let JLRefreshOffset: CGFloat = 60 + 64
 
 
 /// 刷新状态
@@ -138,7 +138,8 @@ class JLRefreshControl: UIControl {
 extension JLRefreshControl {
     
     private func setupUI() {
-        self.backgroundColor = UIColor.orange
+
+        backgroundColor = super.backgroundColor
         //设置超出边界不显示
         clipsToBounds = true
         //添加刷新视图 - 从xib加载出来，默认是xib中指定的宽高

@@ -12,7 +12,18 @@ import UIKit
 class JLRefreshView: UIView {
     
     //刷新状态
-    var refreshState: JLRefreshState = JLRefreshState.Normal
+    var refreshState: JLRefreshState = JLRefreshState.Normal {
+        didSet {
+            switch refreshState {
+            case .Normal:
+                tipLabel.text = "继续使劲拉..."
+            case .Pulling:
+                tipLabel.text = "放手就刷新..."
+            case.WillRefresh:
+                tipLabel.text = "正在刷新中..."
+            }
+        }
+    }
     
 
     //提示图片
