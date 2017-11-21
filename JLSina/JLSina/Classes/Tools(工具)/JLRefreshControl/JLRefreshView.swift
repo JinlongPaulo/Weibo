@@ -30,10 +30,15 @@ class JLRefreshView: UIView {
             case .Pulling:
                 tipLabel.text = "放手就刷新..."
                 UIView.animate(withDuration: 0.25) {
-                    self.tipIcon.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi - 0.001))
+                    self.tipIcon.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi + 0.001))
                 }
             case.WillRefresh:
                 tipLabel.text = "正在刷新中..."
+                //隐藏提示图标，显示菊花
+                tipIcon.isHidden = true
+                
+                indicator.startAnimating()
+                
             }
         }
     }
