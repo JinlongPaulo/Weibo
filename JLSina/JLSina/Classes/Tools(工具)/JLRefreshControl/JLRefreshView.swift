@@ -23,6 +23,9 @@ class JLRefreshView: UIView {
         didSet {
             switch refreshState {
             case .Normal:
+                //恢复状态
+                tipIcon.isHidden = false
+                indicator.stopAnimating()
                 tipLabel.text = "继续使劲拉..."
                 UIView.animate(withDuration: 0.25) {
                     self.tipIcon.transform = CGAffineTransform.identity

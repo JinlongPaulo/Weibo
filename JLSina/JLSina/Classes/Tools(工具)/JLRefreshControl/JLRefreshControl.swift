@@ -10,7 +10,7 @@ import UIKit
 
 //刷新状态切换的临界点
 //FIXME: 刷新控件位置问题
-private let JLRefreshOffset: CGFloat = 60 + 64
+private let JLRefreshOffset: CGFloat = 60
 
 
 /// 刷新状态
@@ -53,7 +53,7 @@ class JLRefreshControl: UIControl {
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
-        print(newSuperview)
+        
         //判断父视图的类型
         guard let sv = newSuperview as? UIScrollView else {
             return
@@ -145,7 +145,7 @@ class JLRefreshControl: UIControl {
         var inset = sv.contentInset
         
         //FIXME: 刷新控件位置问题
-        inset.top += JLRefreshOffset - 64
+        inset.top += JLRefreshOffset
         
         sv.contentInset = inset
     }
@@ -153,6 +153,18 @@ class JLRefreshControl: UIControl {
 
     func endRefreshing() {
         print("结束刷新")
+        
+        guard let sv = scrollView else {
+            return
+        }
+        //恢复刷新视图的状态
+        refreshView.refreshState = .Normal
+        //恢复表格视图的contentInset
+        var inset = sv.contentInset
+        inset.top -= JLRefreshOffset
+        
+        sv.contentInset = inset
+        
     }
 }
 
