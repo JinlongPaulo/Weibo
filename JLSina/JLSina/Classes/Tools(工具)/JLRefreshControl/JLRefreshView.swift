@@ -57,7 +57,7 @@ class JLRefreshView: UIView {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     class func refreshView()-> JLRefreshView {
-        let nib = UINib(nibName: "RefreshView", bundle: nil)
+        let nib = UINib(nibName: "JLHumanRefreshView", bundle: nil)
         
         
         return nib.instantiate(withOwner: nil, options: nil)[0] as! JLRefreshView

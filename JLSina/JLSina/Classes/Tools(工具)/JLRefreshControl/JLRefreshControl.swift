@@ -120,7 +120,7 @@ class JLRefreshControl: UIControl {
                 print("准备开始刷新")
                 
                 beginRefreshing()
-                //发送刷新数据时间
+                //发送刷新数据事件
                 sendActions(for: .valueChanged)
                 
                 
