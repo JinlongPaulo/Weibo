@@ -11,6 +11,7 @@
 		2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */; };
 		2C31997A1FC478F100B40ABB /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3199781FC478F100B40ABB /* RefreshView.xib */; };
 		2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3199791FC478F100B40ABB /* JLRefreshView.swift */; };
+		2C31997F1FC4809000B40ABB /* JLHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C31997E1FC4809000B40ABB /* JLHumanRefreshView.xib */; };
 		2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3777181FAAF2FA00567432 /* JLVisitorView.swift */; };
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
@@ -72,6 +73,7 @@
 		2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		2C3199781FC478F100B40ABB /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		2C3199791FC478F100B40ABB /* JLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLRefreshView.swift; sourceTree = "<group>"; };
+		2C31997E1FC4809000B40ABB /* JLHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLHumanRefreshView.xib; sourceTree = "<group>"; };
 		2C3777181FAAF2FA00567432 /* JLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVisitorView.swift; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				2C8869A51FC2771300E0DD96 /* JLRefreshControl.swift */,
 				2C3199791FC478F100B40ABB /* JLRefreshView.swift */,
 				2C3199781FC478F100B40ABB /* RefreshView.xib */,
+				2C31997E1FC4809000B40ABB /* JLHumanRefreshView.xib */,
 			);
 			path = JLRefreshControl;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C31997F1FC4809000B40ABB /* JLHumanRefreshView.xib in Resources */,
 				2CD104C61FB9770000116BFC /* JLNewFeatureView.xib in Resources */,
 				2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */,
 				2CD104C41FB9637300116BFC /* JLWelcomeView.xib in Resources */,
