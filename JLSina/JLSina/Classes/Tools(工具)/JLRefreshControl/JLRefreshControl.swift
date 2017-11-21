@@ -43,7 +43,21 @@ class JLRefreshControl: UIControl {
         scrollView = sv
         
         //KVO 监听父视图的contentOffset
+        //在程序中，通常只监听某一个对象的某几个属性，如果属性太多，方法会很乱
+        //观察者模式，在不需要的时候，需要释放
+        // - 通知中心: 如果不释放，什么也不会发生，但是会有内存泄露，会有多次注册可能
+        // - KVO : 如果不释放，会崩溃
         scrollView?.addObserver(self, forKeyPath: "ContentOffset", options: [], context: nil)
+    }
+    
+    //本视图从父视图上移除
+    //提示：所有下拉刷新框架，都是监听父视图的ContentOffset
+    //所有框架的KVO监听实现思路，都是这个
+    override func removeFromSuperview() {
+        //super还存在
+        superview?.removeObserver(self, forKeyPath: "ContentOffset")
+        super.removeFromSuperview()
+        //super不存在
     }
     
     //所有KVO方法会统一调用此方法
@@ -63,7 +77,6 @@ class JLRefreshControl: UIControl {
                             y: -height,
                             width: sv.bounds.width,
                             height: height)
-        print(height)
         
     }
     
