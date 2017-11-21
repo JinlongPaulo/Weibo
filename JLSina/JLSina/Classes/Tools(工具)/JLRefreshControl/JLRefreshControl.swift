@@ -9,6 +9,7 @@
 import UIKit
 
 //刷新状态切换的临界点
+//FIXME: 刷新控件位置问题
 private let JLRefreshOffset: CGFloat = 60 + 64
 
 
@@ -119,6 +120,16 @@ class JLRefreshControl: UIControl {
                 print("准备开始刷新")
                 //刷新结束之后，将状态改为.normal 才能给继续相应
                 refreshView.refreshState = .WillRefresh
+                
+                //让整个刷新视图能够显示出来
+                //解决方法： 修改表格的contentInset
+                var inset = sv.contentInset
+                
+                //FIXME: 刷新控件位置问题
+                inset.top += JLRefreshOffset - 64
+                
+                sv.contentInset = inset
+                
             }
         }
     }
@@ -141,7 +152,7 @@ extension JLRefreshControl {
 
         backgroundColor = super.backgroundColor
         //设置超出边界不显示
-        clipsToBounds = true
+//        clipsToBounds = true
         //添加刷新视图 - 从xib加载出来，默认是xib中指定的宽高
         addSubview(refreshView)
         
