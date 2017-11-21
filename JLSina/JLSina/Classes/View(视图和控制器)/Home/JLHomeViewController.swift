@@ -23,18 +23,24 @@ class JLHomeViewController: JLBaseViewController {
     //模拟“延时”加载数据
     override func loadData() {
         
-        listViewModel.loadStatus (pullup: self.isPullup) { (isSuccess , shouldRefresh) in
-            
-            
-            //结束刷新控件
-            self.refreshControl?.endRefreshing()
-            //恢复上拉刷新标记
-            self.isPullup = false
-            //刷新表格
-            if shouldRefresh {
-                self.tableView?.reloadData()
+        refreshControl?.beginRefreshing()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            self.listViewModel.loadStatus (pullup: self.isPullup) { (isSuccess , shouldRefresh) in
+                
+                
+                //结束刷新控件
+                self.refreshControl?.endRefreshing()
+                //恢复上拉刷新标记
+                self.isPullup = false
+                //刷新表格
+                if shouldRefresh {
+                    self.tableView?.reloadData()
+                }
             }
         }
+        
+    
     }
     
     //显示好友
