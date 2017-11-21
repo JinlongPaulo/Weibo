@@ -15,6 +15,9 @@ class JLRefreshControl: UIControl {
     //刷新控件的父视图，下拉视图刷新控件应该适用于，UITableView / UICollectionView
     private weak var scrollView: UIScrollView?
     
+    //刷新视图
+    private lazy var refreshView: JLRefreshView = JLRefreshView.refreshView()
+    
     //MARK: - 构造函数
     init() {
         super.init(frame: CGRect())
@@ -95,6 +98,46 @@ class JLRefreshControl: UIControl {
 extension JLRefreshControl {
     
     private func setupUI() {
-        backgroundColor = UIColor.yellow
+        self.backgroundColor = UIColor.orange
+        //设置超出边界不显示
+        clipsToBounds = true
+        //添加刷新视图 - 从xib加载出来，默认是xib中指定的宽高
+        addSubview(refreshView)
+        
+        //自动布局 - 设置xib 控件的自动布局，需要指定宽高约束
+        //先回原生的写法，如果自己开发框架，不能用任何的自动布局框架
+        refreshView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .centerX,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .centerX,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .bottom,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: refreshView.bounds.width))
+        
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .height,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: refreshView.bounds.height))
     }
 }

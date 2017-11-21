@@ -11,26 +11,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JLRefreshView" customModule="刷新控件" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="144" height="46"/>
+            <rect key="frame" x="0.0" y="0.0" width="176" height="67"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tableview_pull_refresh" translatesAutoresizingMaskIntoConstraints="NO" id="vgJ-oi-Xdi">
-                    <rect key="frame" x="0.0" y="11" width="30" height="25"/>
+                    <rect key="frame" x="7" y="18" width="30" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="下拉开始刷新..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUm-8e-BtJ">
-                    <rect key="frame" x="30" y="15" width="98" height="17"/>
+                    <rect key="frame" x="39" y="25" width="98" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2MM-P3-BUU">
-                    <rect key="frame" x="5" y="15" width="20" height="20"/>
+                    <rect key="frame" x="11" y="27" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -38,7 +38,7 @@
                 <outlet property="tipIcon" destination="vgJ-oi-Xdi" id="3nK-Hg-epV"/>
                 <outlet property="tipLabel" destination="IUm-8e-BtJ" id="Uyj-Qo-4NU"/>
             </connections>
-            <point key="canvasLocation" x="-81" y="-1147"/>
+            <point key="canvasLocation" x="-218" y="-1352.5"/>
         </view>
     </objects>
     <resources>

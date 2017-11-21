@@ -20,4 +20,12 @@ class JLRefreshView: UIView {
     //指示器
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
+    class func refreshView()-> JLRefreshView {
+        let nib = UINib(nibName: "RefreshView", bundle: nil)
+        
+        
+        return nib.instantiate(withOwner: nil, options: nil)[0] as! JLRefreshView
+        
+        
+    }
 }
