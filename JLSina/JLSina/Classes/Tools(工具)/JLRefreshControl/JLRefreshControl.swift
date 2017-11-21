@@ -82,7 +82,7 @@ class JLRefreshControl: UIControl {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         //contentOffset 的 y值跟 contentInset 的top有关
-        print(scrollView?.contentOffset)
+//        print(scrollView?.contentOffset)
         
         guard let sv = scrollView else {
             return
@@ -100,17 +100,26 @@ class JLRefreshControl: UIControl {
                             width: sv.bounds.width,
                             height: height)
         
+        print(height)
         //判断临界点 - 只需要判断一次
         if sv.isDragging {
             
-            if height > JLRefreshOffset {
+            if height > JLRefreshOffset && refreshView.refreshState == .Normal {
                 print("放手刷新")
-            } else {
+                refreshView.refreshState = .Pulling
+            } else if height <= JLRefreshOffset && refreshView.refreshState == .Pulling {
+                
+                refreshView.refreshState = .Normal
                 print("再拉")
             }
             
         } else {
-            //放手
+            //放手 - 判断是否超过临界点
+            if refreshView.refreshState == .Pulling {
+                print("准备开始刷新")
+                //刷新结束之后，将状态改为.normal 才能给继续相应
+                refreshView.refreshState = .WillRefresh
+            }
         }
     }
     
