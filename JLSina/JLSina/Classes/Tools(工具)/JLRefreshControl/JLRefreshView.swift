@@ -10,6 +10,10 @@ import UIKit
 
 //刷新视图 - 负责刷新相关的 UI 显示和动画
 class JLRefreshView: UIView {
+    
+    //刷新状态
+    var refreshState: JLRefreshState = JLRefreshState.Normal
+    
 
     //提示图片
     @IBOutlet weak var tipIcon: UIImageView!
