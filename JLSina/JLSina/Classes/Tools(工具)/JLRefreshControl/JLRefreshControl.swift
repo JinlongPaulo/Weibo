@@ -120,6 +120,8 @@ class JLRefreshControl: UIControl {
                 print("准备开始刷新")
                 
                 beginRefreshing()
+                //发送刷新数据时间
+                sendActions(for: .valueChanged)
                 
                 
             }
@@ -148,6 +150,8 @@ class JLRefreshControl: UIControl {
         inset.top += JLRefreshOffset
         
         sv.contentInset = inset
+        //如果开始调用beginRefresh 会重复发送刷新事件
+//        sendActions(for: .valueChanged)
     }
     
 
@@ -157,6 +161,12 @@ class JLRefreshControl: UIControl {
         guard let sv = scrollView else {
             return
         }
+        
+        //判断状态，是否正在刷新，如果不是，直接返回
+        if refreshView.refreshState != .WillRefresh {
+            return
+        }
+        
         //恢复刷新视图的状态
         refreshView.refreshState = .Normal
         //恢复表格视图的contentInset
