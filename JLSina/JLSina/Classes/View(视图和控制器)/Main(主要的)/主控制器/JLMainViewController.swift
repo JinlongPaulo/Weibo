@@ -16,6 +16,8 @@ class JLMainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         
         setupChildControllers()
         setupCompostButton()

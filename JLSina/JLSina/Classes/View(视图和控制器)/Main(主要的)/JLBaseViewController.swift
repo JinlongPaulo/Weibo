@@ -178,6 +178,12 @@ extension JLBaseViewController {
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
         //3>设置item按钮的文字渲染颜色
         navigationBar.tintColor = UIColor.orange
+        
+//        navigationBar.backgroundColor = UIColor.white
+        //设置状态栏背景颜色
+        let a = UIApplication.shared.value(forKey: "statusBarWindow") as! UIView
+        let v = a .value(forKeyPath: "statusBar") as! UIView
+        v.backgroundColor = navigationBar.barTintColor
     }
 }
 

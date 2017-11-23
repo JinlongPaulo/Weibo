@@ -14,6 +14,7 @@ class JLNavigationController: UINavigationController {
         super.viewDidLoad()
         //隐藏默认的Navigation
         navigationBar.isHidden = true
+
     }
     
     //重写push方法，所有的push方法都会调用此方法!
