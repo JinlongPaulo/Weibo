@@ -11,13 +11,15 @@ import UIKit
 //撰写微博类型视图
 class JLComposeTypeView: UIView {
 
-    override init(frame: CGRect) {
-        super.init(frame: UIScreen.main.bounds)
-        backgroundColor = UIColor.cz_random()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("a")
+
+    class func composeTypeView() -> JLComposeTypeView {
+        let nib = UINib(nibName: "JLComposeTypeView", bundle: nil)
+        
+        let v = nib.instantiate(withOwner: nil, options: nil)[0] as! JLComposeTypeView
+        
+        //XIB加载，默认600 * 600
+        v.frame = UIScreen.main.bounds
+        return v
     }
     
     //显示当前视图

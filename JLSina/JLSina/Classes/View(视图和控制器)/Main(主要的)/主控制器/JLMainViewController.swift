@@ -80,7 +80,7 @@ class JLMainViewController: UITabBarController {
     //FIXME: 0 > 判断是否登录
     
     //1>实例化视图
-    let v = JLComposeTypeView()
+    let v = JLComposeTypeView.composeTypeView()
     
     //2>显示视图
     v.show()

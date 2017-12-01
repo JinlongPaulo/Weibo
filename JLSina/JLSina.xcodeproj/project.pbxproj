@@ -11,6 +11,7 @@
 		2C15D14D1FD1357100E937E2 /* JLMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C15D14B1FD1357100E937E2 /* JLMeituanRefreshView.xib */; };
 		2C15D14E1FD1357100E937E2 /* JLMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */; };
 		2C15D1521FD13A9000E937E2 /* JLComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D1511FD13A9000E937E2 /* JLComposeTypeView.swift */; };
+		2C15D1541FD1408200E937E2 /* JLComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C15D1531FD1408200E937E2 /* JLComposeTypeView.xib */; };
 		2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */; };
 		2C31997A1FC478F100B40ABB /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3199781FC478F100B40ABB /* RefreshView.xib */; };
 		2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3199791FC478F100B40ABB /* JLRefreshView.swift */; };
@@ -76,6 +77,7 @@
 		2C15D14B1FD1357100E937E2 /* JLMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLMeituanRefreshView.xib; sourceTree = "<group>"; };
 		2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLMeituanRefreshView.swift; sourceTree = "<group>"; };
 		2C15D1511FD13A9000E937E2 /* JLComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLComposeTypeView.swift; sourceTree = "<group>"; };
+		2C15D1531FD1408200E937E2 /* JLComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLComposeTypeView.xib; sourceTree = "<group>"; };
 		2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		2C3199781FC478F100B40ABB /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		2C3199791FC478F100B40ABB /* JLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLRefreshView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				2C15D1511FD13A9000E937E2 /* JLComposeTypeView.swift */,
+				2C15D1531FD1408200E937E2 /* JLComposeTypeView.xib */,
 			);
 			path = ComposeType;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				2CF142361FBB37B3009F6AEA /* JLStatusNormalCell.xib in Resources */,
 				2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */,
 				2C15D14D1FD1357100E937E2 /* JLMeituanRefreshView.xib in Resources */,
+				2C15D1541FD1408200E937E2 /* JLComposeTypeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
