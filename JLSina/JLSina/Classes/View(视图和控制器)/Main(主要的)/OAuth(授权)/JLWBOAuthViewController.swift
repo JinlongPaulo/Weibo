@@ -64,10 +64,10 @@ class JLWBOAuthViewController: UIViewController {
     //点击登录，执行submit ，将本地的数据提交给服务器
     @objc private func autoFill() {
         //准备js
-        let js = "document.getElementById('userId').value = '13611942390';" + "document.getElementById('passwd').value = 'woaini921227';"
+//        let js = "document.getElementById('userId').value = '13611942390';" + "document.getElementById('passwd').value = 'woaini921227';"
         
         //让webView直行js
-        webView.stringByEvaluatingJavaScript(from: js)
+//        webView.stringByEvaluatingJavaScript(from: js)
     }
 
 }
