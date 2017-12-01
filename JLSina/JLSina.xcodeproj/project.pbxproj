@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C04A9DB1FAC5B8A00E0B299 /* main.json */; };
+		2C15D14D1FD1357100E937E2 /* JLMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C15D14B1FD1357100E937E2 /* JLMeituanRefreshView.xib */; };
+		2C15D14E1FD1357100E937E2 /* JLMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */; };
 		2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */; };
 		2C31997A1FC478F100B40ABB /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3199781FC478F100B40ABB /* RefreshView.xib */; };
 		2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3199791FC478F100B40ABB /* JLRefreshView.swift */; };
@@ -70,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		2C04A9DB1FAC5B8A00E0B299 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		2C15D14B1FD1357100E937E2 /* JLMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLMeituanRefreshView.xib; sourceTree = "<group>"; };
+		2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLMeituanRefreshView.swift; sourceTree = "<group>"; };
 		2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		2C3199781FC478F100B40ABB /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		2C3199791FC478F100B40ABB /* JLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLRefreshView.swift; sourceTree = "<group>"; };
@@ -351,8 +355,10 @@
 		2C8869A41FC276DB00E0DD96 /* JLRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
+				2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */,
 				2C8869A51FC2771300E0DD96 /* JLRefreshControl.swift */,
 				2C3199791FC478F100B40ABB /* JLRefreshView.swift */,
+				2C15D14B1FD1357100E937E2 /* JLMeituanRefreshView.xib */,
 				2C3199781FC478F100B40ABB /* RefreshView.xib */,
 				2C31997E1FC4809000B40ABB /* JLHumanRefreshView.xib */,
 			);
@@ -529,6 +535,7 @@
 				2C9640641FBDFF3800956F19 /* JLStatusRetweetedCell.xib in Resources */,
 				2CF142361FBB37B3009F6AEA /* JLStatusNormalCell.xib in Resources */,
 				2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */,
+				2C15D14D1FD1357100E937E2 /* JLMeituanRefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +637,7 @@
 				2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */,
 				2CAAB5601FA821A70021B432 /* NSAttributedString+CZAdditon.m in Sources */,
 				2CB564191FB06670005FDA84 /* JLNetworkManager.swift in Sources */,
+				2C15D14E1FD1357100E937E2 /* JLMeituanRefreshView.swift in Sources */,
 				2CFDC35A1FB150F2003F60E6 /* JLNetworkManager+Extension.swift in Sources */,
 				2CF142381FBB3F0E009F6AEA /* JLUser.swift in Sources */,
 				2C6384AA1F7E4E3000F95FDF /* JLMessageViewController.swift in Sources */,
