@@ -10,7 +10,7 @@ import UIKit
 
 //刷新状态切换的临界点
 //FIXME: 刷新控件位置问题
-private let JLRefreshOffset: CGFloat = 60
+private let JLRefreshOffset: CGFloat = 127
 
 
 /// 刷新状态

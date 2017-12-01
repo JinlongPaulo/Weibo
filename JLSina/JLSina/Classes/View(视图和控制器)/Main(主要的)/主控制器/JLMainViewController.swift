@@ -266,9 +266,8 @@ extension JLMainViewController {
         
         let nav = JLNavigationController(rootViewController: vc)
         return nav
-        
-        
     }
+    
 //设置所有子控制器
     private func setupChildControllers() {
 
