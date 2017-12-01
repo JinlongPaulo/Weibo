@@ -74,19 +74,16 @@ class JLMainViewController: UITabBarController {
     
     }
     
-    //MARK: - 监听方法
-    //FIXME:没有实现
-    //@objc 能够保证用OC方式访问，允许这个函数在运行时通过OC的消息机制被调用
-    //private 能够保证方法私有，仅在当前对象内访问
+    //MARK: - 撰写微博
   @objc private func compostStatus() {
         print("撰写微博")
-        //测试方向旋转
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.cz_random()
-        let nav = UINavigationController(rootViewController: vc)
+    //FIXME: 0 > 判断是否登录
     
-        present(nav, animated: true, completion: nil)
+    //1>实例化视图
+    let v = JLComposeTypeView()
     
+    //2>显示视图
+    v.show()
     
     }
     //MARK: -私有控件
