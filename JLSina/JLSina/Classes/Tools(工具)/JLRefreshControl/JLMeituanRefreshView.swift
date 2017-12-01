@@ -16,4 +16,26 @@ class JLMeituanRefreshView: JLRefreshView {
     @IBOutlet weak var earthIconView: UIImageView!
     
     @IBOutlet weak var kangarooIconView: UIImageView!
+    
+    override func awakeFromNib() {
+        //1,房子
+        let bImage1 = #imageLiteral(resourceName: "icon_building_loading_1")
+        let bImage2 = #imageLiteral(resourceName: "icon_building_loading_2")
+        
+        buildingIconView.image = UIImage.animatedImage(with: [bImage1 , bImage2], duration: 0.5)
+        
+        //2.地球
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        
+        anim.toValue = -2 * Double.pi
+        anim.repeatCount = MAXFLOAT
+        anim.duration = 3
+        
+        anim.isRemovedOnCompletion = false
+        
+        earthIconView.layer.add(anim, forKey: nil)
+        
+        
+        
+    }
 }
