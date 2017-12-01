@@ -21,6 +21,24 @@ class JLMeituanRefreshView: JLRefreshView {
     override var parentViewHeight: CGFloat {
         didSet {
             print("父视图高度\(parentViewHeight)")
+            if parentViewHeight < 23 {
+                return
+            }
+            
+            //23 - 127
+            //23->0.2  127->1.0
+            //高度差 / 最大高度差
+            //23 == 1 ->0.2  127 == 0 -> 1
+            var scale: CGFloat
+            
+            if parentViewHeight > 127 {
+                scale = 1
+            } else {
+                scale = 1 - ((127 - parentViewHeight) / (127 - 23))
+            }
+            
+            kangarooIconView.transform = CGAffineTransform(scaleX: scale, y: scale)
+            
         }
     }
     
@@ -44,6 +62,10 @@ class JLMeituanRefreshView: JLRefreshView {
         earthIconView.layer.add(anim, forKey: nil)
         
         //3,袋鼠
+        //0>设置袋鼠动画
+        let kImage1 = #imageLiteral(resourceName: "icon_small_kangaroo_loading_1")
+        let kImage2 = #imageLiteral(resourceName: "icon_small_kangaroo_loading_2")
+        kangarooIconView.image = UIImage.animatedImage(with: [kImage1 , kImage2], duration: 0.5)
         //1>设置锚点
         kangarooIconView.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         //2>设置center
@@ -53,7 +75,7 @@ class JLMeituanRefreshView: JLRefreshView {
         kangarooIconView.center = CGPoint(x: x,
                                           y: y)
         
-        kangarooIconView.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+//        kangarooIconView.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         
         
         

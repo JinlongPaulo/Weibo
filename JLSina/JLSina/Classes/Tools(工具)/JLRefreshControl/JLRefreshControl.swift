@@ -155,6 +155,9 @@ class JLRefreshControl: UIControl {
         sv.contentInset = inset
         //如果开始调用beginRefresh 会重复发送刷新事件
 //        sendActions(for: .valueChanged)
+        
+        //设置刷新视图父视图高度
+        refreshView.parentViewHeight = JLRefreshOffset
     }
     
 
