@@ -35,6 +35,18 @@ class JLMeituanRefreshView: JLRefreshView {
         
         earthIconView.layer.add(anim, forKey: nil)
         
+        //3,袋鼠
+        //1>设置锚点
+        kangarooIconView.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
+        //2>设置center
+        let x = self.bounds.width * 0.5
+        let y = self.bounds.height - 27
+        
+        kangarooIconView.center = CGPoint(x: x,
+                                          y: y)
+        
+        kangarooIconView.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        
         
         
     }
