@@ -251,7 +251,7 @@ extension JLMainViewController {
         vc.visitorInfoDictionary = visitorDict
         
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName + ".png")
-        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_highlighted")?.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         
         //设置tabbar标题字体
         vc.tabBarItem.setTitleTextAttributes(

@@ -224,7 +224,7 @@ extension JLBaseViewController: UITableViewDelegate , UITableViewDataSource {
             loadData()
         }
         
-        print("section--\(section)")
+//        print("section--\(section)")
     
         
     }
