@@ -17,6 +17,14 @@ class JLMeituanRefreshView: JLRefreshView {
     
     @IBOutlet weak var kangarooIconView: UIImageView!
     
+    //父视图高度
+    override var parentViewHeight: CGFloat {
+        didSet {
+            print("父视图高度\(parentViewHeight)")
+        }
+    }
+    
+    
     override func awakeFromNib() {
         //1,房子
         let bImage1 = #imageLiteral(resourceName: "icon_building_loading_1")

@@ -46,6 +46,10 @@ class JLRefreshView: UIView {
         }
     }
     
+    
+    //父视图的高度 - 为了刷新控件不需要知道子视图是谁
+    var parentViewHeight: CGFloat = 0
+    
 
     //提示图片
     @IBOutlet weak var tipIcon: UIImageView?
