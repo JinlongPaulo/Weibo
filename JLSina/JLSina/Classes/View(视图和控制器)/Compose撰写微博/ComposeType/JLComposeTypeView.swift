@@ -32,7 +32,28 @@ class JLComposeTypeView: UIView {
         //2> 添加视图
         vc.view .addSubview(self)
         
-        
+    }
+    
+    override func awakeFromNib() {
+        setupUI()
+    }
+    
+    //MARK: 监听方法
+    @objc private func clickButton() {
+        print("点我了")
     }
 
+}
+
+//private 让extension中所有方法都是私有的
+private extension JLComposeTypeView {
+    func setupUI() {
+        //1,创建类型按钮
+        let btn = JLComposeTypeButton.composeTypeButton(imageName: "tabbar_compose_music", title: "试一试")
+        btn.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        addSubview(btn)
+        
+        //添加监听方法
+        btn.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
+    }
 }

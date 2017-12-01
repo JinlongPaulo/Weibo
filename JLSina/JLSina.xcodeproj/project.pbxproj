@@ -17,6 +17,8 @@
 		2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3199791FC478F100B40ABB /* JLRefreshView.swift */; };
 		2C31997F1FC4809000B40ABB /* JLHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C31997E1FC4809000B40ABB /* JLHumanRefreshView.xib */; };
 		2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3777181FAAF2FA00567432 /* JLVisitorView.swift */; };
+		2C5CBDAF1FD1538600A50E2E /* JLComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5CBDAE1FD1538600A50E2E /* JLComposeTypeButton.swift */; };
+		2C5CBDB11FD153A900A50E2E /* JLComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5CBDB01FD153A900A50E2E /* JLComposeTypeButton.xib */; };
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
 		2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */; };
@@ -83,6 +85,8 @@
 		2C3199791FC478F100B40ABB /* JLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLRefreshView.swift; sourceTree = "<group>"; };
 		2C31997E1FC4809000B40ABB /* JLHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLHumanRefreshView.xib; sourceTree = "<group>"; };
 		2C3777181FAAF2FA00567432 /* JLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVisitorView.swift; sourceTree = "<group>"; };
+		2C5CBDAE1FD1538600A50E2E /* JLComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLComposeTypeButton.swift; sourceTree = "<group>"; };
+		2C5CBDB01FD153A900A50E2E /* JLComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLComposeTypeButton.xib; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6384921F7E407300F95FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 			children = (
 				2C15D1511FD13A9000E937E2 /* JLComposeTypeView.swift */,
 				2C15D1531FD1408200E937E2 /* JLComposeTypeView.xib */,
+				2C5CBDAE1FD1538600A50E2E /* JLComposeTypeButton.swift */,
+				2C5CBDB01FD153A900A50E2E /* JLComposeTypeButton.xib */,
 			);
 			path = ComposeType;
 			sourceTree = "<group>";
@@ -557,6 +563,7 @@
 				2C9640641FBDFF3800956F19 /* JLStatusRetweetedCell.xib in Resources */,
 				2CF142361FBB37B3009F6AEA /* JLStatusNormalCell.xib in Resources */,
 				2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */,
+				2C5CBDB11FD153A900A50E2E /* JLComposeTypeButton.xib in Resources */,
 				2C15D14D1FD1357100E937E2 /* JLMeituanRefreshView.xib in Resources */,
 				2C15D1541FD1408200E937E2 /* JLComposeTypeView.xib in Resources */,
 			);
@@ -671,6 +678,7 @@
 				2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */,
 				2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */,
 				2CAAB5651FA821A70021B432 /* UIButton+CZAddition.m in Sources */,
+				2C5CBDAF1FD1538600A50E2E /* JLComposeTypeButton.swift in Sources */,
 				2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */,
 				2CFC9CCA1FBBDB2200196F04 /* JLStatusViewModel.swift in Sources */,
 				2C91B6521FBD23EC00FA8AE2 /* JLStatusPictureView.swift in Sources */,
