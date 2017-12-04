@@ -68,7 +68,54 @@ private extension JLComposeTypeView {
         //0,强行更新布局
         layoutIfNeeded()
         //1,向scrollview添加视图，然后向视图添加按钮
-        let v = UIView()
+        let rect = scrollView.bounds
         
+        let v = UIView(frame: rect)
+        
+        //2,向视图添加按钮
+        addButtons(v: v, idx: 0)
+        
+        //3,将视图添加到scrollview
+        scrollView.addSubview(v)
+    }
+    
+    
+    ///1, 向V中添加按钮，按钮的数组索引从 idx 开始
+    func addButtons(v: UIView , idx: Int) {
+        let count = 6
+        //从idx开始，添加6个按钮
+        for i in idx..<(idx + count) {
+            
+            if idx >= buttonsInfo.count {
+                break
+            }
+            //0,从数组字典中获取名称和title
+            let dict = buttonsInfo[i]
+            guard let imageName = dict["imageName"] ,
+                  let title = dict["title"] else {
+                    continue
+            }
+            
+            
+            //1,创建按钮
+            let btn = JLComposeTypeButton.composeTypeButton(imageName: imageName, title: title)
+            
+            //将btn添加到视图
+            v.addSubview(btn)
+        }
+        
+        //2,遍历视图子视图，布局按钮
+        //准备常量
+        let btnSize = CGSize(width: 100, height: 100)
+        let margin = (v.bounds.width - 3 * btnSize.width) / 4
+        
+        for (i , btn) in v.subviews.enumerated() {
+            let y: CGFloat = (i > 2) ? (v.bounds.height - btnSize.height) : 0
+            let col = i % 3
+            
+            let x = (CGFloat(col) + 1) * margin + CGFloat(col) * btnSize.width
+            
+            btn.frame = CGRect(x: x, y: y, width: btnSize.width, height: btnSize.height)
+        }
     }
 }
