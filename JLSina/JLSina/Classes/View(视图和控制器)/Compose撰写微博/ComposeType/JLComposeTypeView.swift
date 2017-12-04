@@ -29,10 +29,12 @@ class JLComposeTypeView: UIView {
     class func composeTypeView() -> JLComposeTypeView {
         let nib = UINib(nibName: "JLComposeTypeView", bundle: nil)
         
+        //从XIB加载完成，就会调用awakeFromNib
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! JLComposeTypeView
         
         //XIB加载，默认600 * 600
         v.frame = UIScreen.main.bounds
+        v.setupUI()
         return v
     }
     
@@ -48,9 +50,6 @@ class JLComposeTypeView: UIView {
         
     }
     
-    override func awakeFromNib() {
-        setupUI()
-    }
     
     //MARK: 监听方法
     @objc private func clickButton() {
@@ -66,6 +65,10 @@ class JLComposeTypeView: UIView {
 //private 让extension中所有方法都是私有的
 private extension JLComposeTypeView {
     func setupUI() {
-    
+        //0,强行更新布局
+        layoutIfNeeded()
+        //1,向scrollview添加视图，然后向视图添加按钮
+        let v = UIView()
+        
     }
 }
