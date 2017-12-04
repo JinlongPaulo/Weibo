@@ -11,7 +11,21 @@ import UIKit
 //撰写微博类型视图
 class JLComposeTypeView: UIView {
 
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    private let buttonsInfo = [
+        ["imageName":"tabbar_compose_idea" , "title":"文字"] ,
+        ["imageName":"tabbar_compose_photo" , "title":"照片/视频"] ,
+        ["imageName":"tabbar_compose_weibo" , "title":"长微博"] ,
+        ["imageName":"tabbar_compose_lbs" , "title":"签到"] ,
+        ["imageName":"tabbar_compose_review" , "title":"点评"] ,
+        ["imageName":"tabbar_compose_more" , "title":"更多"] ,
+        ["imageName":"tabbar_compose_friend" , "title":"好友圈"] ,
+        ["imageName":"tabbar_compose_wbcamera" , "title":"微博相机"] ,
+        ["imageName":"tabbar_compose_music" , "title":"音乐"] ,
+        ["imageName":"tabbar_compose_shooting" , "title":"拍摄"]
+    ]
+    
     class func composeTypeView() -> JLComposeTypeView {
         let nib = UINib(nibName: "JLComposeTypeView", bundle: nil)
         
@@ -43,17 +57,15 @@ class JLComposeTypeView: UIView {
         print("点我了")
     }
 
+    //关闭视图
+    @IBAction func close() {
+        removeFromSuperview()
+    }
 }
 
 //private 让extension中所有方法都是私有的
 private extension JLComposeTypeView {
     func setupUI() {
-        //1,创建类型按钮
-        let btn = JLComposeTypeButton.composeTypeButton(imageName: "tabbar_compose_music", title: "试一试")
-        btn.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        addSubview(btn)
-        
-        //添加监听方法
-        btn.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
+    
     }
 }
