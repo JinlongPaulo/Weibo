@@ -83,6 +83,24 @@ class JLComposeTypeView: UIView {
         
     }
 
+    
+    @IBAction func clickReturn() {
+        //将滚动视图滚动到第1页
+        scrollView.setContentOffset(CGPoint(x: 0 , y: 0), animated: true)
+        
+        //让两个按钮合并
+        closeButtonCenterXCons.constant = 0
+        returnButtonCenterXCons.constant = 0
+        UIView.animate(withDuration: 0.25, animations: {
+            self.layoutIfNeeded()
+            self.returnButton.alpha = 0
+        }) { (_) in
+            self.returnButton.isHidden = true
+            self.returnButton.alpha = 1
+        }
+
+        
+    }
     //关闭视图
     @IBAction func close() {
         removeFromSuperview()
