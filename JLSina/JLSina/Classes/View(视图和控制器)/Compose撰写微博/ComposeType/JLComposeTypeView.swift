@@ -13,6 +13,12 @@ class JLComposeTypeView: UIView {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
+    //关闭按钮约束
+    @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
+    //返回前一页按钮约束
+    @IBOutlet weak var returnButtonCenterXCons: NSLayoutConstraint!
+    //返回前一页按钮
+    @IBOutlet weak var returnButton: UIButton!
     private let buttonsInfo = [
         ["imageName":"tabbar_compose_idea" , "title":"文字"] ,
         ["imageName":"tabbar_compose_photo" , "title":"照片/视频"] ,
@@ -58,7 +64,23 @@ class JLComposeTypeView: UIView {
     
     //点击更多按钮
     @objc private func clickMore() {
-        print("点击更多")
+//        print("点击更多")
+        //将scrollview滚动到第二页
+        let offSet = CGPoint(x: scrollView.bounds.width, y: 0)
+        scrollView.setContentOffset(offSet, animated: true)
+        
+        //处理底部按钮,让两个按钮分开
+        returnButton.isHidden = false
+        
+        let margin = scrollView.bounds.width / 6
+        
+        closeButtonCenterXCons.constant += margin
+        returnButtonCenterXCons.constant -= margin
+        
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
+        
     }
 
     //关闭视图
