@@ -70,13 +70,24 @@ private extension JLComposeTypeView {
         //1,向scrollview添加视图，然后向视图添加按钮
         let rect = scrollView.bounds
         
-        let v = UIView(frame: rect)
+        let width = scrollView.bounds.width
         
-        //2,向视图添加按钮
-        addButtons(v: v, idx: 0)
         
-        //3,将视图添加到scrollview
-        scrollView.addSubview(v)
+        for i in 0..<2 {
+            let v = UIView(frame: rect.offsetBy(dx: CGFloat(i) * width, dy: 0))
+            //        //2,向视图添加按钮
+            addButtons(v: v, idx: i * 6)
+            //        //3,将视图添加到scrollview
+            scrollView.addSubview(v)
+        }
+        
+        //4,设置scrollview
+        scrollView.contentSize = CGSize(width: 2 * width, height: 0)
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.bounces = false
+        //禁用滚动
+        scrollView.isScrollEnabled = false
     }
     
     
@@ -86,7 +97,7 @@ private extension JLComposeTypeView {
         //从idx开始，添加6个按钮
         for i in idx..<(idx + count) {
             
-            if idx >= buttonsInfo.count {
+            if i >= buttonsInfo.count {
                 break
             }
             //0,从数组字典中获取名称和title
