@@ -104,12 +104,37 @@ class JLComposeTypeView: UIView {
     }
     //关闭视图
     @IBAction func close() {
-        removeFromSuperview()
+//        removeFromSuperview()
+        hideButtons()
     }
 }
 
 //MARK: - 动画方法扩展
 private extension JLComposeTypeView {
+    //MARK: - 消除动画
+    private func hideButtons() {
+        //1,根据contentOffset 判断当前子视图
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let v = scrollView.subviews[page]
+        
+        //2,遍历v中所有按钮
+        for (i , btn) in v.subviews.enumerated().reversed() {
+            
+            //1,创建动画
+            let anim: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            //2,设置动画属性
+            anim.fromValue = btn.center.y
+            anim.toValue = btn.center.y + 350
+            
+            //设置时间
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
+            btn.layer.pop_add(anim, forKey: nil)
+            
+        }
+        
+        
+    }
+    //MARK: - 显示部分动画
     //动画显示当前视图
     private func showCurrentView() {
         
@@ -136,7 +161,7 @@ private extension JLComposeTypeView {
             //1，创建动画
             let anim: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
             //2,设置动画属性
-            anim.fromValue = btn.center.y + 300
+            anim.fromValue = btn.center.y + 350
             anim.toValue = btn.center.y
             //弹力系数，取值范围[0~20]，数值越大，弹性越大，默认值为4
             anim.springBounciness = 8
@@ -151,6 +176,7 @@ private extension JLComposeTypeView {
         }
         
     }
+
 }
 
 //private 让extension中所有方法都是私有的
