@@ -130,8 +130,34 @@ private extension JLComposeTypeView {
             anim.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
             btn.layer.pop_add(anim, forKey: nil)
             
+            //4,监听第0个按钮动画，是最后一个执行的
+            if i == 0{
+                anim.completionBlock = { _, _ in
+                    self.hideCurrentView()
+                }
+            }
         }
         
+        
+    }
+    
+    //隐藏当前视图
+    private func hideCurrentView() {
+        
+        //1,创建动画
+        let anim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim.fromValue = 1
+        anim.toValue = 0
+        
+        anim.duration = 0.25
+        
+        //2,添加到视图
+        pop_add(anim, forKey: nil)
+        
+        //3,添加完成监听方法
+        anim.completionBlock = { _, _ in
+           self.removeFromSuperview()
+        }
         
     }
     //MARK: - 显示部分动画
@@ -142,7 +168,7 @@ private extension JLComposeTypeView {
         let anim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
         anim.fromValue = 0
         anim.toValue = 1
-        anim.duration = 0.5
+        anim.duration = 0.25
         
         //2,添加到视图
         pop_add(anim, forKey: nil)
