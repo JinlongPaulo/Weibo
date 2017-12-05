@@ -71,7 +71,7 @@ class JLComposeTypeView: UIView {
         
         //2,遍历当前视图
         // - 选中按钮放大，未选中按钮缩小
-        for btn in v.subviews {
+        for (i , btn) in v.subviews.enumerated() {
             
             //1，缩放动画
             let scaleAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
@@ -85,8 +85,20 @@ class JLComposeTypeView: UIView {
             
             btn.pop_add(scaleAnim, forKey: nil)
             
-            //2,渐变动画
+            //2,渐变动画 - 动画组
+            let alphaAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            alphaAnim.toValue = 0.2
+            alphaAnim.duration = 0.5
             
+            btn.pop_add(alphaAnim, forKey: nil)
+            
+            //3,添加动画监听
+            if i == 0 {
+                alphaAnim.completionBlock = { _, _ in
+                    //执行回调
+                    print("完成回调，展现控制器")
+                }
+            }
         }
         
         
