@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 //撰写微博类型视图
 class JLComposeTypeView: UIView {
@@ -54,6 +55,8 @@ class JLComposeTypeView: UIView {
         //2> 添加视图
         vc.view .addSubview(self)
         
+        //3>开始动画
+        showCurrentView()
     }
     
     
@@ -98,12 +101,27 @@ class JLComposeTypeView: UIView {
             self.returnButton.isHidden = true
             self.returnButton.alpha = 1
         }
-
-        
     }
     //关闭视图
     @IBAction func close() {
         removeFromSuperview()
+    }
+}
+
+//MARK: - 动画方法扩展
+private extension JLComposeTypeView {
+    //动画显示当前视图
+    private func showCurrentView() {
+        
+        //1，创建动画
+        let anim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim.fromValue = 0
+        anim.toValue = 1
+        anim.duration = 0.5
+        
+        //2,添加到视图
+        pop_add(anim, forKey: nil)
+        
     }
 }
 
