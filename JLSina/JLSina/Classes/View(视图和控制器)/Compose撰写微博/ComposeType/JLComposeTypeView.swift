@@ -33,6 +33,10 @@ class JLComposeTypeView: UIView {
         ["imageName":"tabbar_compose_shooting" , "title":"拍摄"]
     ]
     
+    //完成回调
+    private var completionBlock: ((_ clsName: String?)->())?
+    
+    //MARK: - 实例化方法
     class func composeTypeView() -> JLComposeTypeView {
         let nib = UINib(nibName: "JLComposeTypeView", bundle: nil)
         
@@ -46,7 +50,11 @@ class JLComposeTypeView: UIView {
     }
     
     //显示当前视图
-    func show() {
+    //OC中的block 如果当前方法不能执行，通常使用属性记录，在需要的时候执行
+    func show(completion: @escaping (_ clsName: String?)->()) {
+        
+        //0,记录闭包
+        completionBlock = completion
         //1>将当前视图添加到跟视图控制器
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
@@ -61,7 +69,7 @@ class JLComposeTypeView: UIView {
     
     
     //MARK: 监听方法
-    @objc private func clickButton(button: JLComposeTypeButton) {
+    @objc private func clickButton(selectedButton: JLComposeTypeButton) {
 //        print("点我了 , (btn)")
         
         //1,判断当前显示视图
@@ -78,7 +86,7 @@ class JLComposeTypeView: UIView {
             
             //x,y在系统之使用CGPoint表示，如果要转换成id，需要使用‘NSValue’包装
             
-            let scale = (button == btn) ? 2 : 0.2
+            let scale = (selectedButton == btn) ? 2 : 0.2
             scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
             
             scaleAnim.duration = 0.5
@@ -97,6 +105,7 @@ class JLComposeTypeView: UIView {
                 alphaAnim.completionBlock = { _, _ in
                     //执行回调
                     print("完成回调，展现控制器")
+                    self.completionBlock?(selectedButton.clsName)
                 }
             }
         }
