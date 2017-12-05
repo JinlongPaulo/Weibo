@@ -35,6 +35,7 @@
 		2C876BC21FB5AB3700A5CB39 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C876BC71FB5AB3700A5CB39 /* SVProgressHUD.framework */; };
 		2C876BCA1FB5EEFA00A5CB39 /* JLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C876BC91FB5EEFA00A5CB39 /* JLUserAccount.swift */; };
 		2C8869A61FC2771300E0DD96 /* JLRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8869A51FC2771300E0DD96 /* JLRefreshControl.swift */; };
+		2C8E4D621FD669010053D88B /* JLComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E4D611FD669010053D88B /* JLComposeViewController.swift */; };
 		2C91B6521FBD23EC00FA8AE2 /* JLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91B6511FBD23EC00FA8AE2 /* JLStatusPictureView.swift */; };
 		2C91B6541FBD3E1200FA8AE2 /* JLStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91B6531FBD3E1200FA8AE2 /* JLStatusPicture.swift */; };
 		2C9640641FBDFF3800956F19 /* JLStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9640631FBDFF3700956F19 /* JLStatusRetweetedCell.xib */; };
@@ -106,6 +107,7 @@
 		2C876BC91FB5EEFA00A5CB39 /* JLUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLUserAccount.swift; sourceTree = "<group>"; };
 		2C8869A51FC2771300E0DD96 /* JLRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLRefreshControl.swift; sourceTree = "<group>"; };
 		2C8E1D471F7F3EC1000365A3 /* JLSina-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLSina-Bridging-Header.h"; sourceTree = "<group>"; };
+		2C8E4D611FD669010053D88B /* JLComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLComposeViewController.swift; sourceTree = "<group>"; };
 		2C91B6511FBD23EC00FA8AE2 /* JLStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusPictureView.swift; sourceTree = "<group>"; };
 		2C91B6531FBD3E1200FA8AE2 /* JLStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusPicture.swift; sourceTree = "<group>"; };
 		2C9640631FBDFF3700956F19 /* JLStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLStatusRetweetedCell.xib; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				2C15D1501FD13A5400E937E2 /* ComposeType */,
+				2C8E4D611FD669010053D88B /* JLComposeViewController.swift */,
 			);
 			path = "Compose撰写微博";
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				2CFC9CCC1FBC1C3700196F04 /* UIImageView+WebImage.swift in Sources */,
 				2CAAB55F1FA821A70021B432 /* NSArray+Log.m in Sources */,
 				2C8869A61FC2771300E0DD96 /* JLRefreshControl.swift in Sources */,
+				2C8E4D621FD669010053D88B /* JLComposeViewController.swift in Sources */,
 				2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */,
 				2CAAB5671FA821A70021B432 /* UILabel+CZAddition.m in Sources */,
 				2C876BCA1FB5EEFA00A5CB39 /* JLUserAccount.swift in Sources */,

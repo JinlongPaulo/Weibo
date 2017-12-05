@@ -21,7 +21,7 @@ class JLComposeTypeView: UIView {
     //返回前一页按钮
     @IBOutlet weak var returnButton: UIButton!
     private let buttonsInfo = [
-        ["imageName":"tabbar_compose_idea" , "title":"文字"] ,
+        ["imageName":"tabbar_compose_idea" , "title":"文字" , "clsName":"JLComposeViewController"] ,
         ["imageName":"tabbar_compose_photo" , "title":"照片/视频"] ,
         ["imageName":"tabbar_compose_weibo" , "title":"长微博"] ,
         ["imageName":"tabbar_compose_lbs" , "title":"签到"] ,
@@ -61,8 +61,8 @@ class JLComposeTypeView: UIView {
     
     
     //MARK: 监听方法
-    @objc private func clickButton() {
-        print("点我了")
+    @objc private func clickButton(btn: JLComposeTypeButton) {
+        print("点我了 , (btn)")
     }
     
     //点击更多按钮
@@ -260,8 +260,13 @@ private extension JLComposeTypeView {
 //                #selector(clickMore)
                 //OC中使用 NSSelectorFromString("clickMore")
                 btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            } else {
+                //FIXME: -
+                btn.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
             }
             
+            //4，设置要展现的类名 - 不需要任何判断，有了就设置，没有就不设置
+            btn.clsName = dict["clsName"]
         }
         
         //2,遍历视图子视图，布局按钮

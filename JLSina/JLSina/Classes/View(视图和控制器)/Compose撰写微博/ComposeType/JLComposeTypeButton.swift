@@ -15,6 +15,9 @@ class JLComposeTypeButton: UIControl {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    //点击按钮，要展现控制器的类名
+    var clsName: String?    
+    
     
     /// 使用图像名称和标题创建按钮，按钮布局从xib加载
 
