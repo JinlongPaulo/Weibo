@@ -122,6 +122,34 @@ private extension JLComposeTypeView {
         //2,添加到视图
         pop_add(anim, forKey: nil)
         
+        //3,添加按钮的方法
+        showButtons()
+    }
+    
+    //弹力显示所有按钮
+    private func showButtons() {
+        //1,获取所有 scrollview 的子视图的第0个视图
+        let v = scrollView.subviews[0]
+        
+        //2,遍历 v 中所有按钮
+        for (i ,btn) in v.subviews.enumerated() {
+            //1，创建动画
+            let anim: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            //2,设置动画属性
+            anim.fromValue = btn.center.y + 300
+            anim.toValue = btn.center.y
+            //弹力系数，取值范围[0~20]，数值越大，弹性越大，默认值为4
+            anim.springBounciness = 8
+            //弹力速度,取值范围[0~20]，数值越大，速度越快，默认值为12
+            anim.springSpeed = 8
+            
+            //设置动画启动时间
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(i) * 0.025
+            //3,添加动画
+            btn.pop_add(anim, forKey: nil)
+            
+        }
+        
     }
 }
 
