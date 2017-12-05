@@ -61,8 +61,35 @@ class JLComposeTypeView: UIView {
     
     
     //MARK: 监听方法
-    @objc private func clickButton(btn: JLComposeTypeButton) {
-        print("点我了 , (btn)")
+    @objc private func clickButton(button: JLComposeTypeButton) {
+//        print("点我了 , (btn)")
+        
+        //1,判断当前显示视图
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        
+        let v = scrollView.subviews[page]
+        
+        //2,遍历当前视图
+        // - 选中按钮放大，未选中按钮缩小
+        for btn in v.subviews {
+            
+            //1，缩放动画
+            let scaleAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+            
+            //x,y在系统之使用CGPoint表示，如果要转换成id，需要使用‘NSValue’包装
+            
+            let scale = (button == btn) ? 2 : 0.2
+            scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+            
+            scaleAnim.duration = 0.5
+            
+            btn.pop_add(scaleAnim, forKey: nil)
+            
+            //2,渐变动画
+            
+        }
+        
+        
     }
     
     //点击更多按钮
