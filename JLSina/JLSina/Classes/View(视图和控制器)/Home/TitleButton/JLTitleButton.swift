@@ -49,9 +49,11 @@ class JLTitleButton: UIButton {
         }
         print("\(titleLabel),\(imageView)")
         //将label的x向左移动imageView的宽度，
-        titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width, dy: 0)
+        //OC中不允许直接修改结构体内部的值
+        //Swift可以直接修改
+        titleLabel.frame.origin.x = 0
         //将imageView的x向右移动label的宽度
-        imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width , dy: 0)
+        imageView.frame.origin.x = titleLabel.bounds.width
     }
     
 }

@@ -179,7 +179,7 @@ private extension JLComposeTypeView {
             btn.layer.pop_add(anim, forKey: nil)
             
             //4,监听第0个按钮动画，是最后一个执行的
-            if i == 0{
+            if i == 0 {
                 anim.completionBlock = { _, _ in
                     self.hideCurrentView()
                 }
