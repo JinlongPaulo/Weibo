@@ -22,7 +22,13 @@ class JLStatus: NSObject {
     var created_at: String?
     
     //微博来源 - 发布微博使用的客户端
-    var source: String?
+    var source: String? {
+        didSet {
+            //重新计算来源切保存
+            //在didSet中，给source再次设置值，不会调用didSet
+            source = "来自于 " + (source?.JL_href()?.text ?? "")
+        }
+    }
     
     //转发数
     var reposts_count: Int = 0
