@@ -103,8 +103,11 @@ class JLRefreshControl: UIControl {
         
         print(height)
         
-        //---传递父视图高度
-        refreshView.parentViewHeight = height
+        //---传递父视图高度,如果正在刷新中，不传递
+        // --- 把代码放在'最合适'的位置
+        if refreshView.refreshState != .WillRefresh {
+            refreshView.parentViewHeight = height
+        }
         //判断临界点 - 只需要判断一次
         if sv.isDragging {
             
