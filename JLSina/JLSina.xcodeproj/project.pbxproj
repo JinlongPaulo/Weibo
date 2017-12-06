@@ -12,6 +12,7 @@
 		2C15D14E1FD1357100E937E2 /* JLMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */; };
 		2C15D1521FD13A9000E937E2 /* JLComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D1511FD13A9000E937E2 /* JLComposeTypeView.swift */; };
 		2C15D1541FD1408200E937E2 /* JLComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C15D1531FD1408200E937E2 /* JLComposeTypeView.xib */; };
+		2C19D4C91FD7D8A8009CD217 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C19D4C81FD7D8A8009CD217 /* String+Extensions.swift */; };
 		2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */; };
 		2C31997A1FC478F100B40ABB /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3199781FC478F100B40ABB /* RefreshView.xib */; };
 		2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3199791FC478F100B40ABB /* JLRefreshView.swift */; };
@@ -81,6 +82,7 @@
 		2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLMeituanRefreshView.swift; sourceTree = "<group>"; };
 		2C15D1511FD13A9000E937E2 /* JLComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLComposeTypeView.swift; sourceTree = "<group>"; };
 		2C15D1531FD1408200E937E2 /* JLComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLComposeTypeView.xib; sourceTree = "<group>"; };
+		2C19D4C81FD7D8A8009CD217 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		2C3199781FC478F100B40ABB /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		2C3199791FC478F100B40ABB /* JLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLRefreshView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		2C1D343D1F8F05F90036902A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2C19D4C81FD7D8A8009CD217 /* String+Extensions.swift */,
 				2CFC9CCD1FBC278400196F04 /* UIImage+Extensions.swift */,
 				2CAAB5431FA814DA0021B432 /* Bundle+Extensions.swift */,
 				2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */,
@@ -679,6 +682,7 @@
 				2CAAB5631FA821A70021B432 /* NSString+CZHash.m in Sources */,
 				2C6384AF1F7E4E7800F95FDF /* JLProfileViewController.swift in Sources */,
 				2CAAB5681FA821A70021B432 /* UIScreen+CZAddition.m in Sources */,
+				2C19D4C91FD7D8A8009CD217 /* String+Extensions.swift in Sources */,
 				2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */,
 				2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */,
 				2CAAB5651FA821A70021B432 /* UIButton+CZAddition.m in Sources */,

@@ -34,8 +34,10 @@ class JLStatusCell: UITableViewCell {
             retweetedLabel?.text = viewModel?.retweetedText
             
             //设置来源
-            print("来源\(String(describing: viewModel?.status.source))")
-            sourceLabel.text = viewModel?.status.source
+//            print("来源\(String(describing: viewModel?.status.source))")
+//            sourceLabel.text = viewModel?.status.source
+            sourceLabel.text = viewModel?.sourceStr
+            
         }
     }
     
