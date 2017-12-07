@@ -12,8 +12,11 @@ class JLStatusCell: UITableViewCell {
 
     var viewModel: JLStatusViewModel? {
         didSet {
-            //微博文本
-            statusLabel?.text = viewModel?.status.text
+            //微博正文文本
+            statusLabel?.attributedText = viewModel?.statusAttrText
+            
+            //设置被转发微博的文字
+            retweetedLabel?.attributedText = viewModel?.retweetedAttrText
             //姓名
             nameLabel.text = viewModel?.status.user?.screen_name
             //设置会员图标 - 直接获取属性，不需要计算
@@ -30,8 +33,6 @@ class JLStatusCell: UITableViewCell {
             //配图视图视图模型
             pictureView.viewModel = viewModel
             
-            //设置被转发微博的文字
-            retweetedLabel?.text = viewModel?.retweetedText
             
             //设置来源
 //            print("来源\(String(describing: viewModel?.status.source))")
