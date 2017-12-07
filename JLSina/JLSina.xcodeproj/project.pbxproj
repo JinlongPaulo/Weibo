@@ -13,6 +13,10 @@
 		2C15D1521FD13A9000E937E2 /* JLComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D1511FD13A9000E937E2 /* JLComposeTypeView.swift */; };
 		2C15D1541FD1408200E937E2 /* JLComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C15D1531FD1408200E937E2 /* JLComposeTypeView.xib */; };
 		2C19D4C91FD7D8A8009CD217 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C19D4C81FD7D8A8009CD217 /* String+Extensions.swift */; };
+		2C20B21C1FD9373000235D38 /* CZEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B2171FD9373000235D38 /* CZEmoticonManager.swift */; };
+		2C20B21D1FD9373000235D38 /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B2191FD9373000235D38 /* CZEmoticon.swift */; };
+		2C20B21E1FD9373000235D38 /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B21A1FD9373000235D38 /* CZEmoticonPackage.swift */; };
+		2C20B21F1FD9373000235D38 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C20B21B1FD9373000235D38 /* HMEmoticon.bundle */; };
 		2C30A6621FB42E3500DF8B46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */; };
 		2C31997A1FC478F100B40ABB /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3199781FC478F100B40ABB /* RefreshView.xib */; };
 		2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3199791FC478F100B40ABB /* JLRefreshView.swift */; };
@@ -83,6 +87,10 @@
 		2C15D1511FD13A9000E937E2 /* JLComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLComposeTypeView.swift; sourceTree = "<group>"; };
 		2C15D1531FD1408200E937E2 /* JLComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLComposeTypeView.xib; sourceTree = "<group>"; };
 		2C19D4C81FD7D8A8009CD217 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		2C20B2171FD9373000235D38 /* CZEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonManager.swift; sourceTree = "<group>"; };
+		2C20B2191FD9373000235D38 /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
+		2C20B21A1FD9373000235D38 /* CZEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonPackage.swift; sourceTree = "<group>"; };
+		2C20B21B1FD9373000235D38 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		2C3199781FC478F100B40ABB /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		2C3199791FC478F100B40ABB /* JLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLRefreshView.swift; sourceTree = "<group>"; };
@@ -228,6 +236,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2C20B2161FD9373000235D38 /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				2C20B2171FD9373000235D38 /* CZEmoticonManager.swift */,
+				2C20B2181FD9373000235D38 /* Model */,
+				2C20B21B1FD9373000235D38 /* HMEmoticon.bundle */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		2C20B2181FD9373000235D38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C20B2191FD9373000235D38 /* CZEmoticon.swift */,
+				2C20B21A1FD9373000235D38 /* CZEmoticonPackage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2C2FE0911FA9C06E006BAA9C /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +327,7 @@
 		2C63849A1F7E4CE800F95FDF /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				2C20B2161FD9373000235D38 /* Emoticon */,
 				2C8869A41FC276DB00E0DD96 /* JLRefreshControl */,
 				2CB564171FB0662F005FDA84 /* Network */,
 				2CAAB5451FA821A70021B432 /* Additions */,
@@ -565,6 +593,7 @@
 				2CD104C61FB9770000116BFC /* JLNewFeatureView.xib in Resources */,
 				2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */,
 				2CD104C41FB9637300116BFC /* JLWelcomeView.xib in Resources */,
+				2C20B21F1FD9373000235D38 /* HMEmoticon.bundle in Resources */,
 				2C31997A1FC478F100B40ABB /* RefreshView.xib in Resources */,
 				2C9640641FBDFF3800956F19 /* JLStatusRetweetedCell.xib in Resources */,
 				2CF142361FBB37B3009F6AEA /* JLStatusNormalCell.xib in Resources */,
@@ -655,6 +684,7 @@
 				2CAAB5621FA821A70021B432 /* NSString+CZBase64.m in Sources */,
 				2C6384A81F7E4E0B00F95FDF /* JLHomeViewController.swift in Sources */,
 				2CD104BE1FB9473800116BFC /* JLWelcomeView.swift in Sources */,
+				2C20B21D1FD9373000235D38 /* CZEmoticon.swift in Sources */,
 				2CAAB5661FA821A70021B432 /* UIColor+CZAddition.m in Sources */,
 				2C6384A61F7E4DBF00F95FDF /* JLBaseViewController.swift in Sources */,
 				2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */,
@@ -688,11 +718,13 @@
 				2CAAB5651FA821A70021B432 /* UIButton+CZAddition.m in Sources */,
 				2C5CBDAF1FD1538600A50E2E /* JLComposeTypeButton.swift in Sources */,
 				2CFDC3601FB18196003F60E6 /* JLStatusListViewModel.swift in Sources */,
+				2C20B21C1FD9373000235D38 /* CZEmoticonManager.swift in Sources */,
 				2CFC9CCA1FBBDB2200196F04 /* JLStatusViewModel.swift in Sources */,
 				2C91B6521FBD23EC00FA8AE2 /* JLStatusPictureView.swift in Sources */,
 				2CAAB56A1FA821A70021B432 /* UIViewController+CZAddition.m in Sources */,
 				2CD3D94B1FB9EE8900BB0188 /* JLWBOAuthViewController.swift in Sources */,
 				2CFC9CCE1FBC278400196F04 /* UIImage+Extensions.swift in Sources */,
+				2C20B21E1FD9373000235D38 /* CZEmoticonPackage.swift in Sources */,
 				2CAAB5611FA821A70021B432 /* NSObject+CZRuntime.m in Sources */,
 				2CAAB5691FA821A70021B432 /* UIView+CZAddition.m in Sources */,
 			);
