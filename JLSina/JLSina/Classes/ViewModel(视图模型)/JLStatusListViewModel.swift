@@ -145,7 +145,7 @@ class JLStatusListViewModel {
                     vm.updateSingleImageSize(image: image)
                 }
                 
-                print("缓存的图像是\(image)长度\(length)")
+//                print("缓存的图像是\(image)长度\(length)")
                 
                 //B>出组 - 放在回调的最后一句
                 group.leave()

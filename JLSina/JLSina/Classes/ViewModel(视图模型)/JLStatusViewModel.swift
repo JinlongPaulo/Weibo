@@ -120,8 +120,8 @@ class JLStatusViewModel: CustomStringConvertible {
         
         let viewSize = CGSize(width: UIScreen.cz_screenWidth() - 2 * margin, height: CGFloat(MAXFLOAT))
         
-        let originalFont = UIFont.systemFont(ofSize: 15)
-        let retweetedFont = UIFont.systemFont(ofSize: 14)
+//        let originalFont = UIFont.systemFont(ofSize: 15)
+//        let retweetedFont = UIFont.systemFont(ofSize: 14)
         
         
         //1,计算顶部位置

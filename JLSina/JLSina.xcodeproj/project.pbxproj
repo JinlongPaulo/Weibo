@@ -68,6 +68,7 @@
 		2CD104C61FB9770000116BFC /* JLNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD104C51FB9770000116BFC /* JLNewFeatureView.xib */; };
 		2CD3D94B1FB9EE8900BB0188 /* JLWBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D94A1FB9EE8800BB0188 /* JLWBOAuthViewController.swift */; };
 		2CD3D94E1FBA821B00BB0188 /* JLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D94D1FBA821B00BB0188 /* JLStatusCell.swift */; };
+		2CEB2F3A1FDA942B006886E4 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB2F391FDA942B006886E4 /* FFLabel.swift */; };
 		2CF142361FBB37B3009F6AEA /* JLStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF142351FBB37B3009F6AEA /* JLStatusNormalCell.xib */; };
 		2CF142381FBB3F0E009F6AEA /* JLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF142371FBB3F0E009F6AEA /* JLUser.swift */; };
 		2CFC9CCA1FBBDB2200196F04 /* JLStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC9CC91FBBDB2200196F04 /* JLStatusViewModel.swift */; };
@@ -158,6 +159,7 @@
 		2CD104C51FB9770000116BFC /* JLNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLNewFeatureView.xib; sourceTree = "<group>"; };
 		2CD3D94A1FB9EE8800BB0188 /* JLWBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLWBOAuthViewController.swift; sourceTree = "<group>"; };
 		2CD3D94D1FBA821B00BB0188 /* JLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusCell.swift; sourceTree = "<group>"; };
+		2CEB2F391FDA942B006886E4 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		2CF142351FBB37B3009F6AEA /* JLStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JLStatusNormalCell.xib; sourceTree = "<group>"; };
 		2CF142371FBB3F0E009F6AEA /* JLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLUser.swift; sourceTree = "<group>"; };
 		2CFC9CC91FBBDB2200196F04 /* JLStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusViewModel.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		2C63849A1F7E4CE800F95FDF /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				2CEB2F381FDA942B006886E4 /* FFLabel */,
 				2C20B2161FD9373000235D38 /* Emoticon */,
 				2C8869A41FC276DB00E0DD96 /* JLRefreshControl */,
 				2CB564171FB0662F005FDA84 /* Network */,
@@ -516,6 +519,14 @@
 			path = StatusCell;
 			sourceTree = "<group>";
 		};
+		2CEB2F381FDA942B006886E4 /* FFLabel */ = {
+			isa = PBXGroup;
+			children = (
+				2CEB2F391FDA942B006886E4 /* FFLabel.swift */,
+			);
+			path = FFLabel;
+			sourceTree = "<group>";
+		};
 		8B8E5651BF232DC0AAA02B18 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -690,6 +701,7 @@
 				2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */,
 				2C91B6541FBD3E1200FA8AE2 /* JLStatusPicture.swift in Sources */,
 				2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */,
+				2CEB2F3A1FDA942B006886E4 /* FFLabel.swift in Sources */,
 				2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */,
 				2C15D1521FD13A9000E937E2 /* JLComposeTypeView.swift in Sources */,
 				2CFC9CCC1FBC1C3700196F04 /* UIImageView+WebImage.swift in Sources */,
