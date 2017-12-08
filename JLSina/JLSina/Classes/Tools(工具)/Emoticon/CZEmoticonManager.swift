@@ -67,7 +67,9 @@ extension CZEmoticonManager {
         }
         
         //4,*****统一设置一遍字符串的属性，除了需要设置字体，还需要设置'颜色'
-        attrString.addAttributes([NSAttributedStringKey.font: font], range: NSRange(location: 0, length: attrString.length))
+        attrString.addAttributes([NSAttributedStringKey.font: font ,
+                                  NSAttributedStringKey.foregroundColor: UIColor.darkGray],
+                                 range: NSRange(location: 0, length: attrString.length))
         return attrString
     }
     
