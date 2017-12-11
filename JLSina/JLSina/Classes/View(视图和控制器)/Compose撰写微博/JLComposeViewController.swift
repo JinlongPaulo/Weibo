@@ -22,6 +22,9 @@ class JLComposeViewController: UIViewController {
     //发布按钮
     @IBOutlet var sendButton: UIButton!
     
+    //标题标签 - 换行热键 option + 回车
+    @IBOutlet var titleLabel: UILabel!
+    
     //MARK: - 视图生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,8 @@ private extension JLComposeViewController {
         
         //设置发布按钮
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
+        //设置标题视图
+        navigationItem.titleView = titleLabel
         sendButton.isEnabled = false
     }
 }
