@@ -61,6 +61,7 @@
 		2CAAB56F1FA84FAC0021B432 /* JLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */; };
 		2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */; };
 		2CB564191FB06670005FDA84 /* JLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB564181FB06670005FDA84 /* JLNetworkManager.swift */; };
+		2CBE50C21FDE305C00D821A4 /* JLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE50C11FDE305C00D821A4 /* JLWebViewController.swift */; };
 		2CD104BB1FB93A2000116BFC /* JLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104BA1FB93A2000116BFC /* JLTitleButton.swift */; };
 		2CD104BE1FB9473800116BFC /* JLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */; };
 		2CD104C21FB9496500116BFC /* JLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD104C11FB9496500116BFC /* JLNewFeatureView.swift */; };
@@ -152,6 +153,7 @@
 		2CAAB56E1FA84FAC0021B432 /* JLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDemoViewController.swift; sourceTree = "<group>"; };
 		2CAAB5701FA85CEC0021B432 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		2CB564181FB06670005FDA84 /* JLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNetworkManager.swift; sourceTree = "<group>"; };
+		2CBE50C11FDE305C00D821A4 /* JLWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLWebViewController.swift; sourceTree = "<group>"; };
 		2CD104BA1FB93A2000116BFC /* JLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLTitleButton.swift; sourceTree = "<group>"; };
 		2CD104BD1FB9473800116BFC /* JLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLWelcomeView.swift; sourceTree = "<group>"; };
 		2CD104C11FB9496500116BFC /* JLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLNewFeatureView.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				2CD3D94C1FBA81E400BB0188 /* StatusCell */,
 				2CD104B91FB93A0900116BFC /* TitleButton */,
 				2C6384A71F7E4E0B00F95FDF /* JLHomeViewController.swift */,
+				2CBE50C11FDE305C00D821A4 /* JLWebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				2C8869A61FC2771300E0DD96 /* JLRefreshControl.swift in Sources */,
 				2C8E4D621FD669010053D88B /* JLComposeViewController.swift in Sources */,
 				2CAAB5711FA85CEC0021B432 /* UIBarButtonItem+Extension.swift in Sources */,
+				2CBE50C21FDE305C00D821A4 /* JLWebViewController.swift in Sources */,
 				2CAAB5671FA821A70021B432 /* UILabel+CZAddition.m in Sources */,
 				2C876BCA1FB5EEFA00A5CB39 /* JLUserAccount.swift in Sources */,
 				2CD104C21FB9496500116BFC /* JLNewFeatureView.swift in Sources */,

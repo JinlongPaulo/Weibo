@@ -95,6 +95,10 @@ extension JLHomeViewController {
 extension JLHomeViewController: JLStatusCellDelegate {
     func statusCellDidSelectedURLString(cell: JLStatusCell, urlString: String) {
         print(urlString)
+        let vc = JLWebViewController()
+        vc.urlString = urlString
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
