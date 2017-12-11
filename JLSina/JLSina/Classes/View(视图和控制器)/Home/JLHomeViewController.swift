@@ -73,6 +73,9 @@ extension JLHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JLStatusCell
         //2,设置cell
         cell.viewModel = vm
+        
+        //设置代理,只是传递了一个指针
+        cell.delegate = self
         //3,返回cell
         return cell
     }
@@ -85,6 +88,13 @@ extension JLHomeViewController {
         //返回行高
         return vm.rowHeight
         
+    }
+}
+
+//  MARK: - JLStatusCellDelegate
+extension JLHomeViewController: JLStatusCellDelegate {
+    func statusCellDidSelectedURLString(cell: JLStatusCell, urlString: String) {
+        print(urlString)
     }
 }
 

@@ -109,6 +109,7 @@ extension JLStatusCell: FFLabelDelegate {
         if !text.hasPrefix("http://") {
             return
         }
+        
         //URLString? 插入问号，如果代理没有实现方法，就什么都不做
         //URLString！ 如果使用 ！。代理没有实现方法，仍然强行执行，会崩溃
         delegate?.statusCellDidSelectedURLString?(cell: self, urlString: text)
