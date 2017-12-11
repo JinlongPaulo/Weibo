@@ -34,7 +34,7 @@ extension JLWebViewController {
         //设置webView
         view.insertSubview(webView, belowSubview: navigationBar)
         webView.backgroundColor = UIColor.white
-        
+
         //设置contentInset
         webView.scrollView.contentInset.top = navigationBar.bounds.height
     }

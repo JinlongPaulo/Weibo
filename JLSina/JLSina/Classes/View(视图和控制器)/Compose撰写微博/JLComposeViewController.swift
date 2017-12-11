@@ -21,20 +21,44 @@ class JLComposeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.cz_random();
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", target: self, action: #selector(close))
+        setupUI()
     }
 
     @objc private func close() {
         dismiss(animated: true, completion: nil)
     }
+    
+    lazy var sendButton: UIButton = {
+       let btn = UIButton()
+        btn.setTitle("发布", for: [])
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        btn.setTitleColor(UIColor.white, for: [])
+        btn.setTitleColor(UIColor.gray, for: .disabled)
+        
+        //设置背景图片
+        btn.setBackgroundImage(UIImage(named: "common_button_orange"), for: [])
+        btn.setBackgroundImage(UIImage(named: "common_button_orange_highlighted"), for: .highlighted)
+        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .disabled)
+        
+        //设置大小
+        btn.frame = CGRect(x: 0, y: 0, width: 45, height: 35)
+        return btn
+    }()
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
+private extension JLComposeViewController {
+    func setupUI() {
+        view.backgroundColor = UIColor.white
+        setupNavtionBar()
     }
     
-
+    //设置导航栏
+    func setupNavtionBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", target: self, action: #selector(close))
+        
+        //设置发布按钮
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
+        sendButton.isEnabled = false
+    }
 }
