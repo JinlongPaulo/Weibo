@@ -24,7 +24,6 @@ class JLWebViewController: JLBaseViewController {
             webView.loadRequest(URLRequest(url: url))
         }
     }
-    
 }
 
 extension JLWebViewController {
