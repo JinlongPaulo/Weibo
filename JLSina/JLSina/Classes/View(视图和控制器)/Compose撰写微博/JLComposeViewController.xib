@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JLComposeViewController" customModule="JLSina" customModuleProvider="target">
             <connections>
+                <outlet property="sendButton" destination="XFK-MQ-Ixs" id="QfR-mW-IJ1"/>
                 <outlet property="textView" destination="aZB-E6-TG4" id="Pup-Y2-OvA"/>
                 <outlet property="toolBar" destination="WV3-3r-4Za" id="yJM-eO-3TU"/>
                 <outlet property="view" destination="FuY-rg-874" id="JpD-BJ-CX0"/>
@@ -50,5 +51,24 @@
             </constraints>
             <point key="canvasLocation" x="-99.5" y="62.5"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XFK-MQ-Ixs">
+            <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <state key="normal" title="发布" backgroundImage="common_button_orange"/>
+            <state key="disabled" backgroundImage="common_button_white_disable">
+                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            </state>
+            <state key="highlighted" backgroundImage="common_button_orange_highlighted"/>
+            <connections>
+                <action selector="postStatus" destination="-1" eventType="touchUpInside" id="whU-kr-cwB"/>
+            </connections>
+            <point key="canvasLocation" x="-414.5" y="76"/>
+        </button>
     </objects>
+    <resources>
+        <image name="common_button_orange" width="11" height="35"/>
+        <image name="common_button_orange_highlighted" width="11" height="35"/>
+        <image name="common_button_white_disable" width="11" height="35"/>
+    </resources>
 </document>

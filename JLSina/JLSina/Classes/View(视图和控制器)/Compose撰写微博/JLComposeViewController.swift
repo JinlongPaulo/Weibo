@@ -19,6 +19,10 @@ class JLComposeViewController: UIViewController {
     //底部工具栏
     @IBOutlet weak var toolBar: UIToolbar!
     
+    //发布按钮
+    @IBOutlet var sendButton: UIButton!
+    
+    //MARK: - 视图生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,22 +33,12 @@ class JLComposeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    lazy var sendButton: UIButton = {
-       let btn = UIButton()
-        btn.setTitle("发布", for: [])
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        btn.setTitleColor(UIColor.white, for: [])
-        btn.setTitleColor(UIColor.gray, for: .disabled)
+    //MARK: - 监听方法
+    //发布微博
+    @IBAction func postStatus() {
         
-        //设置背景图片
-        btn.setBackgroundImage(UIImage(named: "common_button_orange"), for: [])
-        btn.setBackgroundImage(UIImage(named: "common_button_orange_highlighted"), for: .highlighted)
-        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .disabled)
-        
-        //设置大小
-        btn.frame = CGRect(x: 0, y: 0, width: 45, height: 35)
-        return btn
-    }()
+    }
+    
 }
 
 private extension JLComposeViewController {
