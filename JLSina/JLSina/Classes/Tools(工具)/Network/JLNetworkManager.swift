@@ -66,10 +66,39 @@ class JLNetworkManager: AFHTTPSessionManager {
         }
         //2>设置参数字典,代码在此处，字典一定有值
          parameters!["access_token"] = token as AnyObject?
-        print("这个是啥\(token)")
         //调用request发起真正的网络请求方法
 //        request(URLString: URLString, parameters: parameters, completion: completion)
         request(method: method, URLString: URLString, parameters: parameters, completion: completion)
+    }
+    
+    ///封装AFN的上传文件方法
+    //上传文件必须是post方法，get只能获取数据，
+    /// - Parameters:
+    ///   - URLString: URLString
+    ///   - parameters: 参数字典
+    ///   - name: 接收上传的服务器字段(name: 咨询公司后台) 'pic'
+    ///   - data: 要上传的二进制数据
+    ///   - completion: 完成回调
+    func upload(URLString: String , parameters: [String:AnyObject]? , name: String , data: Data , completion: @escaping (_ json: AnyObject?,_ isSuccess: Bool) ->()) {
+        
+        post(URLString, parameters: parameters, constructingBodyWith: { (formData) in
+            
+            //FIXME: - 创建 formData
+            
+        }, progress: nil, success: { (_, json) in
+            
+            completion(json as AnyObject, true)
+            
+        }) { (task, error) in
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                
+                print("token过期")
+                //发送通知(本方法不知道被谁调用，谁接收到通知，谁处理)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: "bad token")
+            }
+            print("网络请求错误\(error)")
+            completion(nil, false)
+        }
     }
     
     //使用一个函数，封装AFN的 get 和 post 请求
