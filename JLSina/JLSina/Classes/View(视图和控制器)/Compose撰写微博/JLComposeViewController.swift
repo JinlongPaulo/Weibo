@@ -42,6 +42,18 @@ class JLComposeViewController: UIViewController {
                                                object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //激活键盘
+        textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+         super.viewWillDisappear(animated)
+        //关闭键盘
+        textView.resignFirstResponder()
+    }
+    
     //MARK: - 键盘监听
     @objc private func keyboardChanged(n: Notification) {
 //        print(n.userInfo)
