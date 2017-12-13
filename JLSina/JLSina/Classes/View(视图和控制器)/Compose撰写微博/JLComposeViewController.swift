@@ -116,7 +116,25 @@ class JLComposeViewController: UIViewController {
         }
     }
     
+    ///切换表情键盘
+    @objc private func emoticonKeyboard () {
+        //textView.inputView 就是文本框的输入视图
+        //如果使用系统默认的键盘，输入视图为 nil
+        
+        //1,测试键盘视图 - 视图的宽度可以随便，就是屏幕的宽度，
+        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
+        keyboardView.backgroundColor = UIColor.blue
+        //2,设置键盘视图
+        textView.inputView = (textView.inputView == nil) ? keyboardView : nil
+        
+        //3,!!!刷新键盘视图
+        textView.reloadInputViews()
+        
+    }
+    
 }
+
+
 
 
 //MARK: - UITextViewDelegate
@@ -176,6 +194,13 @@ private extension JLComposeViewController {
             btn.setImage(imageHL, for: .highlighted)
             
             btn.sizeToFit()
+            
+            //判断actionName
+            if let actionName = s["actionName"] {
+                //给按钮添加监听方法
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
+            
             
             //追加按钮
             items .append(UIBarButtonItem(customView: btn))
