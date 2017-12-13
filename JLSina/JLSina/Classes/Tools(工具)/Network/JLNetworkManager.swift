@@ -46,8 +46,16 @@ class JLNetworkManager: AFHTTPSessionManager {
     //用户微博id
     
     
-    //专门负责拼接token的网络请求方法
-    func tokenRequest(method: JLHttpMethod = .GET, URLString: String, parameters: [String:AnyObject]?, completion: @escaping (_ json: AnyObject?,_ isSuccess: Bool) ->()) {
+    ///专门负责拼接token的网络请求方法
+    ///
+    /// - Parameters:
+    ///   - method: GET/POST
+    ///   - URLString: URLString
+    ///   - parameters: 参数字典
+    ///   - name: 上传文件使用的字段名，默认 nil,就不是上传文件
+    ///   - data: 上传文件的二进制数据，默认 nil，不上传文件
+    ///   - completion: 完成回调
+    func tokenRequest(method: JLHttpMethod = .GET, URLString: String, parameters: [String:AnyObject]?, name: String? = nil , data:Data? = nil , completion: @escaping (_ json: AnyObject?,_ isSuccess: Bool) ->()) {
         
         //处理token字典
         //0>判断token是否为nil，直接返回,程序执行过程中，一般token不会为nil
@@ -68,9 +76,18 @@ class JLNetworkManager: AFHTTPSessionManager {
          parameters!["access_token"] = token as AnyObject?
         //调用request发起真正的网络请求方法
 //        request(URLString: URLString, parameters: parameters, completion: completion)
-        request(method: method, URLString: URLString, parameters: parameters, completion: completion)
+        //3，判断name 和 data
+        if let name = name ,
+           let data = data {
+            //上传文件
+            upload(URLString: URLString, parameters: parameters, name: name, data: data, completion: completion)
+        } else {
+            
+            request(method: method, URLString: URLString, parameters: parameters, completion: completion)
+        }
     }
     
+    //MARK: - 封装AFN方法，
     ///封装AFN的上传文件方法
     //上传文件必须是post方法，get只能获取数据，
     /// - Parameters:
