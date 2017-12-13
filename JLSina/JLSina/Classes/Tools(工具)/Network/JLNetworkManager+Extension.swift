@@ -64,16 +64,29 @@ extension JLNetworkManager {
 //FIXME: 新浪微博接口拼接问题，老接口换了
 extension JLNetworkManager {
     ///发布微博
-    func postStatus(text: String , completion:@escaping (_ result: [String:AnyObject]? , _ isSuccess: Bool)->()) -> () {
+    ///
+    /// - Parameters:
+    ///   - text: 要发布的文本
+    ///   - image: 要上传的图像 ，可以为nil，nil = 发布纯文本微博
+    ///   - completion: 完成回调
+    func postStatus(text: String , image: UIImage? , completion:@escaping (_ result: [String:AnyObject]? , _ isSuccess: Bool)->()) -> () {
         //1,url
         let urlString = "https://api.weibo.com/2/statuses/share.json"
         
         //2,参数字典
         let params = ["status":text]
         
+        //如果图像不为空，需要设置name和data
+        var name: String?
+        var data: Data?
+        
+        if image != nil {
+            name = "pic"
+            data = UIImagePNGRepresentation(image!)
+        }
+        
         //3,发起网络请求
-        tokenRequest(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-            
+        tokenRequest(method: .POST, URLString: urlString, parameters: params as [String : AnyObject], name: name, data: data) { (json, isSuccess) in
             completion(json as? [String: AnyObject] , isSuccess)
         }
         

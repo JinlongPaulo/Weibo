@@ -92,8 +92,11 @@ class JLComposeViewController: UIViewController {
         let tt = text + "www.epermarket.com"
         
         
-        //2,发布微博
-        JLNetworkManager.shared.postStatus(text: tt) { (result, isSuccess) in
+        //2,发布微博, 想法带图片的，只需设置图片有没有就行
+        //FIXME: - 临时测试发布带图片的微博
+        let image: UIImage? = nil //UIImage(named: "icon_small_kangaroo_loading_1")
+        
+        JLNetworkManager.shared.postStatus(text: tt , image:image ) { (result, isSuccess) in
             
 //            print(result)
             //修改指示器样式
