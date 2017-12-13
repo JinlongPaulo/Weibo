@@ -85,6 +85,18 @@ class JLComposeViewController: UIViewController {
     //MARK: - 监听方法
     //发布微博
     @IBAction func postStatus() {
+        //1,获取微博文字
+        guard let text = textView.text else {
+            return
+        }
+        let tt = text + "www.baidu.com"
+        
+        
+        //2,发布微博
+        JLNetworkManager.shared.postStatus(text: tt) { (result, isSuccess) in
+            
+            print(result)
+        }
         
     }
     

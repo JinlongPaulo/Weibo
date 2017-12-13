@@ -11,6 +11,10 @@ import AFNetworking
 
 //swift的枚举支持任意数据类型
 //switch / enum 在OC中都只是支持整数
+/*
+  - 如果日常开发中，发现网络请求返回状态码，405，不支持的网络请求方法
+  - 首先应该查找网络请求方法是否正确
+ */
 enum JLHttpMethod {
     case GET
     case POST
@@ -62,8 +66,10 @@ class JLNetworkManager: AFHTTPSessionManager {
         }
         //2>设置参数字典,代码在此处，字典一定有值
          parameters!["access_token"] = token as AnyObject?
+        print("这个是啥\(token)")
         //调用request发起真正的网络请求方法
-        request(URLString: URLString, parameters: parameters, completion: completion)
+//        request(URLString: URLString, parameters: parameters, completion: completion)
+        request(method: method, URLString: URLString, parameters: parameters, completion: completion)
     }
     
     //使用一个函数，封装AFN的 get 和 post 请求
