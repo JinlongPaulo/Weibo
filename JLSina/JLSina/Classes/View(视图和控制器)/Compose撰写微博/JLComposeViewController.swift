@@ -90,6 +90,15 @@ class JLComposeViewController: UIViewController {
     
 }
 
+extension JLComposeViewController: UITextViewDelegate {
+    
+    /// 文本视图文字变化
+
+    func textViewDidChange(_ textView: UITextView) {
+        sendButton.isEnabled = textView.hasText
+    }
+}
+
 private extension JLComposeViewController {
     func setupUI() {
         view.backgroundColor = UIColor.white
