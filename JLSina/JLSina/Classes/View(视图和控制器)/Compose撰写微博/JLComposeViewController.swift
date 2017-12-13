@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 //撰写微博控制器
 /*
  加载视图控制器的时候，如果XIB和控制器重名，默认的构造函数会优先加载XIB
@@ -89,15 +89,28 @@ class JLComposeViewController: UIViewController {
         guard let text = textView.text else {
             return
         }
-        let tt = text + "www.baidu.com"
+        let tt = text + "www.epermarket.com"
         
         
         //2,发布微博
         JLNetworkManager.shared.postStatus(text: tt) { (result, isSuccess) in
             
-            print(result)
+//            print(result)
+            //修改指示器样式
+            SVProgressHUD.setDefaultStyle(.dark)
+            let message = isSuccess ? "发布成功" : "网络不给力"
+            
+            SVProgressHUD.showInfo(withStatus: message)
+            //如果成功，延迟一段时间关闭当前窗口
+            //FIXME: 反向判断。！
+            if !isSuccess {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                    //恢复样式
+                    SVProgressHUD.setDefaultStyle(.light)
+                    self.close()
+                }
+            }
         }
-        
     }
     
 }
