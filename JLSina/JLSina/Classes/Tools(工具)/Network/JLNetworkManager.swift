@@ -84,6 +84,14 @@ class JLNetworkManager: AFHTTPSessionManager {
         post(URLString, parameters: parameters, constructingBodyWith: { (formData) in
             
             //FIXME: - 创建 formData
+            /*
+             1, data: 要上传的二进制数据
+             2, name: 服务器接收的字段名
+             3, fileName: 保存在服务器的文件名，大多数服务器可以乱写，
+                很多服务器上传图片完成后，会生成缩略图，中图，大图...
+             4, mimeType: 告诉服务器上传文件的类型，如果不想告诉，可以使用 application/octet-stream  image/jpg image/png image/gif
+             */
+            formData.appendPart(withFileData: data, name: name, fileName: "xxx", mimeType: "application/octet-stream")
             
         }, progress: nil, success: { (_, json) in
             
