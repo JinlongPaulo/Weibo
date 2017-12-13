@@ -17,10 +17,28 @@ class JLComposeTextView: UITextView {
     override func awakeFromNib() {
         setupUI()
     }
+    
+    //MARK: - 监听方法
+    @objc private func textChanged(n: Notification) {
+    
+        //如果有文本，不显示标签，否则显示
+        placeholderLabel.isHidden = self.hasText
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 private extension JLComposeTextView {
     func setupUI() {
+        
+        //0.注册通知
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(textChanged),
+                                               name: NSNotification.Name.UITextViewTextDidChange,
+                                               object: self)
         
         //1,设置占位标签
         placeholderLabel.text = "分享新鲜事..."
