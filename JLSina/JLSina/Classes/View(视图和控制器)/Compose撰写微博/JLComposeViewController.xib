@@ -15,6 +15,7 @@
                 <outlet property="textView" destination="aZB-E6-TG4" id="Pup-Y2-OvA"/>
                 <outlet property="titleLabel" destination="pcO-xc-9n2" id="5Ad-Ob-Q1C"/>
                 <outlet property="toolBar" destination="WV3-3r-4Za" id="yJM-eO-3TU"/>
+                <outlet property="toolBarBottomCons" destination="I18-MK-Nwz" id="Cxp-Br-vna"/>
                 <outlet property="view" destination="FuY-rg-874" id="JpD-BJ-CX0"/>
             </connections>
         </placeholder>
@@ -35,14 +36,12 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="1Z0-FA-v5Q"/>
                     </constraints>
-                    <items>
-                        <barButtonItem title="Item" id="8bi-cC-iAV"/>
-                    </items>
+                    <items/>
                 </toolbar>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="WV3-3r-4Za" secondAttribute="bottom" id="I18-MK-Nwz"/>
+                <constraint firstAttribute="bottom" secondItem="WV3-3r-4Za" secondAttribute="bottom" symbolic="YES" id="I18-MK-Nwz"/>
                 <constraint firstItem="aZB-E6-TG4" firstAttribute="leading" secondItem="FuY-rg-874" secondAttribute="leading" id="K8n-Jf-0H2"/>
                 <constraint firstAttribute="trailing" secondItem="aZB-E6-TG4" secondAttribute="trailing" id="Kkj-SR-I0i"/>
                 <constraint firstItem="aZB-E6-TG4" firstAttribute="top" secondItem="FuY-rg-874" secondAttribute="top" id="PDS-Cu-6hu"/>
