@@ -23,18 +23,29 @@ class CZEmoticonCell: UICollectionViewCell {
                 v.isHidden = true
             }
             
+            contentView.subviews.last?.isHidden = false
+            
             //2,遍历表情模型数组
             for (i,em) in (emoticons ?? []).enumerated() {
                 //1,取出按钮
                 if let btn = contentView.subviews[i] as? UIButton {
-                    //设置图像
+                    
+                    //设置图像 - 如果图像为nil，会清空图像，避免复用
                     btn.setImage(em.image, for: [])
                     
-                    //设置emoji 的字符串
+                    //设置emoji 的字符串 - 如果emoji为nil，会清空emoji，避免复用
                     btn.setTitle(em.emoji, for: [])
                     
                     btn.isHidden = false
                 }
+                
+                //取出末尾删除按钮
+                let removeButton = contentView.subviews.last as! UIButton
+                //设置图像
+                let image = UIImage.init(named: "compose_emotion_delete_highlighted", in: CZEmoticonManager.shared.bundle, compatibleWith: nil)
+                
+                removeButton.setImage(image, for: [])
+                
                 
             }
         }
