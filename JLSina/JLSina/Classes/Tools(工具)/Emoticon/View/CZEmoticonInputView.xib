@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ZCz-Xd-9kb" customClass="CZEmoticonInputView" customModule="表情键盘" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pRj-0J-3av">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                    <color key="backgroundColor" red="1" green="0.83571900840000002" blue="0.41609993169999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Dc-ZV-dPj">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-Hf-Mnj" userLabel="底部工具栏" customClass="CZEmoticonToolBar" customModule="表情键盘" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="213" width="375" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="9bR-Ro-vGN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="pRj-0J-3av" firstAttribute="leading" secondItem="ZCz-Xd-9kb" secondAttribute="leading" id="GPC-0T-Jhu"/>
+                <constraint firstAttribute="trailing" secondItem="NdG-Hf-Mnj" secondAttribute="trailing" id="YxH-Qn-qrY"/>
+                <constraint firstItem="NdG-Hf-Mnj" firstAttribute="top" secondItem="pRj-0J-3av" secondAttribute="bottom" id="eXv-tB-arl"/>
+                <constraint firstAttribute="trailing" secondItem="pRj-0J-3av" secondAttribute="trailing" id="mK1-Gt-XDx"/>
+                <constraint firstAttribute="bottom" secondItem="NdG-Hf-Mnj" secondAttribute="bottom" id="qco-Fb-l6Z"/>
+                <constraint firstItem="pRj-0J-3av" firstAttribute="top" secondItem="ZCz-Xd-9kb" secondAttribute="top" id="ubs-Ng-swO"/>
+                <constraint firstItem="NdG-Hf-Mnj" firstAttribute="leading" secondItem="ZCz-Xd-9kb" secondAttribute="leading" id="x2R-hz-3qF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="pRj-0J-3av" id="oWa-Dk-BPy"/>
+                <outlet property="toolBar" destination="NdG-Hf-Mnj" id="Oun-Ll-KHc"/>
+            </connections>
+            <point key="canvasLocation" x="-156.5" y="67.5"/>
+        </view>
+    </objects>
+</document>
