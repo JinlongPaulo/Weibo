@@ -16,6 +16,13 @@ class CZEmoticonCell: UICollectionViewCell {
     
     @IBOutlet weak var label: UILabel!
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("aa")
+    }
     override func awakeFromNib() {
         setupUI()
     }
@@ -24,7 +31,8 @@ class CZEmoticonCell: UICollectionViewCell {
 //MARK: - 设置界面
 private extension CZEmoticonCell {
     
-    //从xib加载，bounds是XIB中定义的大小，不是size的大小
+    // - 从xib加载，cell.bounds是XIB中定义的大小，不是size的大小
+    // - 从纯代码创建，cell.bounds就是布局属性中设置的itemSize
     func setupUI() {
         //连续创建21个按钮
         let rowCount = 3

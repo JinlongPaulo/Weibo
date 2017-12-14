@@ -28,8 +28,9 @@ class CZEmoticonInputView: UIView {
     override func awakeFromNib() {
         collectionView.backgroundColor = UIColor.white
         //注册可重用cell
-        let nib = UINib(nibName: "CZEmoticonCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: cellId)
+//        let nib = UINib(nibName: "CZEmoticonCell", bundle: nil)
+//        collectionView.register(nib, forCellWithReuseIdentifier: cellId)
+        collectionView.register(CZEmoticonCell.self, forCellWithReuseIdentifier: cellId)
     }
 }
 
@@ -41,7 +42,7 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CZEmoticonCell
         
         //2,设置cell
-        cell.label.text = "\(indexPath.section).\(indexPath.item)"
+//        cell.label.text = "\(indexPath.section).\(indexPath.item)"
         
         //3,返回cell
         return cell
