@@ -15,4 +15,29 @@ import UIKit
 class CZEmoticonCell: UICollectionViewCell {
     
     @IBOutlet weak var label: UILabel!
+    
+    override func awakeFromNib() {
+        setupUI()
+    }
+}
+
+//MARK: - 设置界面
+private extension CZEmoticonCell {
+    
+    //从xib加载，bounds是XIB中定义的大小，不是size的大小
+    func setupUI() {
+        //连续创建21个按钮
+        let rowCount = 3
+        let colCount = 7
+        
+        
+        for i in 0..<21 {
+            let row = i / colCount
+            let col = i % rowCount
+            
+            let btn = UIButton()
+            btn.backgroundColor = UIColor.red
+            contentView.addSubview(btn)
+        }
+    }
 }
