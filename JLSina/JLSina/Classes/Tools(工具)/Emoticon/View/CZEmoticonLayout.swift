@@ -14,6 +14,12 @@ class CZEmoticonLayout: UICollectionViewFlowLayout {
     //prepare 就是OC中的 prepareLayout
     override func prepare() {
         super.prepare()
+        //在此方法中，collectionView的大小已经确定
+        guard let collectionView = collectionView else {
+            return
+        }
+        itemSize = collectionView.bounds.size
+        
         //设定滚动方向
         //水平方向滚动，cell垂直布局
         //垂直方向滚动，cell水平方向布局
