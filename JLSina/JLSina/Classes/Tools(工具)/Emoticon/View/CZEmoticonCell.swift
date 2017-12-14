@@ -23,9 +23,10 @@ class CZEmoticonCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("aa")
     }
-    override func awakeFromNib() {
-        setupUI()
-    }
+    //XIB加载测试
+//    override func awakeFromNib() {
+//        setupUI()
+//    }
 }
 
 //MARK: - 设置界面
@@ -38,12 +39,26 @@ private extension CZEmoticonCell {
         let rowCount = 3
         let colCount = 7
         
+        //左右间距
+        let leftMargin: CGFloat = 8
+        //底部间距，为分页控件预留控件
+        let bottonMargin: CGFloat = 16
+        
+        let w = (bounds.width - 2 * leftMargin) / CGFloat(colCount)
+        let h = (bounds.height - bottonMargin) / CGFloat(rowCount)
+        
+        
         
         for i in 0..<21 {
             let row = i / colCount
-            let col = i % rowCount
+            let col = i % colCount
             
             let btn = UIButton()
+            //设置按钮大小
+            let x = leftMargin + CGFloat(col) * w
+            let y = CGFloat(row) * h
+            
+            btn.frame = CGRect(x: x, y: y, width: w, height: h)
             btn.backgroundColor = UIColor.red
             contentView.addSubview(btn)
         }
