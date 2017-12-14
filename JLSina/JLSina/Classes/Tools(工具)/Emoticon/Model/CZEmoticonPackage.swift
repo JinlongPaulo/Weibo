@@ -48,6 +48,12 @@ class CZEmoticonPackage: NSObject {
     //使用懒加载可以避免后续解包
     lazy var emoticons = [CZEmoticon]()
     
+    //表情页面数量
+    var numberOfPages: Int {
+        return (emoticons.count - 1) / 20 + 1
+    }
+    
+    
     override var description: String {
         return yy_modelDescription()
     }

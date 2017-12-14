@@ -53,7 +53,8 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
     }
     
     //返回每个分组中表情页的数量
+    //每个分组的表情包中，表情页面的数量 emoticons 数组 / 20
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return CZEmoticonManager.shared.packages[section].numberOfPages
     }
 }
