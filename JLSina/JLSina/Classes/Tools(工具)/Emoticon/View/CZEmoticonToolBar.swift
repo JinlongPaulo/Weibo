@@ -47,6 +47,26 @@ private extension CZEmoticonToolBar {
             btn.setTitleColor(UIColor.darkGray, for: .highlighted)
             btn.setTitleColor(UIColor.darkGray, for: .selected)
             
+            //设置按钮图片
+            let imageName = "compose_emotion_table_\(p.bgImageName ?? "")_normal"
+            let imageNameHL = "compose_emotion_table_\(p.bgImageName ?? "")_selected"
+            
+            var image = UIImage(named: imageName, in: manager.bundle, compatibleWith: nil)
+            var imageHL = UIImage(named: imageNameHL, in: manager.bundle, compatibleWith: nil)
+            
+            //拉伸图像
+            let size = image?.size ?? CGSize()
+            let inset = UIEdgeInsetsMake(size.height * 0.5, size.width * 0.5, size.height * 0.5, size.width * 0.5)
+            image = image?.resizableImage(withCapInsets: inset)
+            imageHL = imageHL?.resizableImage(withCapInsets: inset)
+            
+            btn.setBackgroundImage(image, for: [])
+            btn.setBackgroundImage(imageHL, for: .highlighted)
+            btn.setBackgroundImage(imageHL, for: .selected)
+            
+            
+            
+            
             btn.sizeToFit()
             //3,添加按钮
             addSubview(btn)

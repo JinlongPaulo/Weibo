@@ -17,7 +17,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pRj-0J-3av">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
-                    <color key="backgroundColor" red="1" green="0.83571900840000002" blue="0.41609993169999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Dc-ZV-dPj">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -27,13 +27,11 @@
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-Hf-Mnj" userLabel="底部工具栏" customClass="CZEmoticonToolBar" customModule="表情键盘" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="213" width="375" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="9bR-Ro-vGN"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="pRj-0J-3av" firstAttribute="leading" secondItem="ZCz-Xd-9kb" secondAttribute="leading" id="GPC-0T-Jhu"/>
                 <constraint firstAttribute="trailing" secondItem="NdG-Hf-Mnj" secondAttribute="trailing" id="YxH-Qn-qrY"/>
