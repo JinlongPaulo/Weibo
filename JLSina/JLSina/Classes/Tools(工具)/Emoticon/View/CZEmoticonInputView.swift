@@ -54,6 +54,6 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
     
     //返回每个分组中表情页的数量
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 8
     }
 }

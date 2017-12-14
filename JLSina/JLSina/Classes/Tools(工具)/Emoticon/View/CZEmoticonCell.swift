@@ -8,6 +8,10 @@
 
 import UIKit
 
+//表情的页面cell，
+//每一个cell用九宫格算法，自行添加20个表情,
+//每一个cell和CollectionView一样大小
+//最后一个位置，放置删除按钮
 class CZEmoticonCell: UICollectionViewCell {
     
     @IBOutlet weak var label: UILabel!
