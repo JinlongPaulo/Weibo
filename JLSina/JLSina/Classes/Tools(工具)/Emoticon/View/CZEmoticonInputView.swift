@@ -8,6 +8,9 @@
 
 import UIKit
 
+//可重用标识符
+private let cellId = "cellId"
+
 //表情输入视图
 class CZEmoticonInputView: UIView {
     
@@ -19,10 +22,36 @@ class CZEmoticonInputView: UIView {
         
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! CZEmoticonInputView
         
-        
         return v
-        
-        
     }
     
+    override func awakeFromNib() {
+        //注册可重用cell
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+    }
+}
+
+extension CZEmoticonInputView : UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        //1,取cell
+        let cell = collectionView .dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        
+        //2,设置cell
+        cell.backgroundColor = UIColor.yellow
+        
+        //3,返回cell
+        return cell
+    }
+    
+    //分组数量 - 返回表情包的数量
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return CZEmoticonManager.shared.packages.count
+    }
+    
+    //返回每个分组中表情页的数量
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
 }
