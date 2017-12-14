@@ -14,6 +14,14 @@ import UIKit
 //最后一个位置，放置删除按钮
 class CZEmoticonCell: UICollectionViewCell {
     
+    var emoticons:[CZEmoticon]? {
+        //当前页面表情模型数组，'最多'20个
+        didSet {
+            print("表情包数量\(emoticons?.count)")
+        }
+    }
+    
+    
     @IBOutlet weak var label: UILabel!
     
     override init(frame: CGRect) {

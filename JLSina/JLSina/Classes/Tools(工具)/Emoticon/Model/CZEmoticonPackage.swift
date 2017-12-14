@@ -48,9 +48,33 @@ class CZEmoticonPackage: NSObject {
     //使用懒加载可以避免后续解包
     lazy var emoticons = [CZEmoticon]()
     
-    //表情页面数量
+    ///表情页面数量
     var numberOfPages: Int {
         return (emoticons.count - 1) / 20 + 1
+    }
+    
+    ///从懒加载的表情包中，按照page截取最多20个表情模型的数组
+    //例如有25个模型
+    ///例如：page == 0，返回0~20个
+    ///page == 1，返回20~25个模型
+    func emoticon(page: Int) -> [CZEmoticon] {
+        
+        //每页的数量
+        let count = 20
+        let location = page * count
+        var length = count
+        
+        //判断数组是否越界
+        if location + length > emoticons.count {
+            length = emoticons.count - location
+        }
+        
+        
+        let range = NSRange(location: location, length: length)
+        
+        //截取数组的子数组
+        let subArray = (emoticons as NSArray).subarray(with: range)
+        return subArray as! [CZEmoticon]
     }
     
     

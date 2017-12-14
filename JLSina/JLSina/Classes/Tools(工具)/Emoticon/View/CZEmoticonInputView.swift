@@ -41,9 +41,8 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
         //1,取cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CZEmoticonCell
         
-        //2,设置cell
-//        cell.label.text = "\(indexPath.section).\(indexPath.item)"
-        
+        //2,设置cell - 传递对应页面的表情数组
+        cell.emoticons = CZEmoticonManager.shared.packages[indexPath.section].emoticon(page: indexPath.item)
         //3,返回cell
         return cell
     }
