@@ -17,7 +17,21 @@ class CZEmoticonCell: UICollectionViewCell {
     var emoticons:[CZEmoticon]? {
         //当前页面表情模型数组，'最多'20个
         didSet {
-            print("表情包数量\(emoticons?.count)")
+//            print("表情包数量\(emoticons?.count)")
+            //1,隐藏所有按钮
+            for v in contentView.subviews {
+                v.isHidden = true
+            }
+            
+            //2,遍历表情模型数组
+            for (i,em) in (emoticons ?? []).enumerated() {
+                //1,取出按钮
+                if let btn = contentView.subviews[i] as? UIButton {
+                    btn.setImage(em.image, for: [])
+                    btn.isHidden = false
+                }
+                
+            }
         }
     }
     
@@ -67,7 +81,7 @@ private extension CZEmoticonCell {
             let y = CGFloat(row) * h
             
             btn.frame = CGRect(x: x, y: y, width: w, height: h)
-            btn.backgroundColor = UIColor.red
+//            btn.backgroundColor = UIColor.red
             contentView.addSubview(btn)
         }
     }
