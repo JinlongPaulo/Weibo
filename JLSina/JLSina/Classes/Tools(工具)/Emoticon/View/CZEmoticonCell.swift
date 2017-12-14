@@ -65,6 +65,27 @@ class CZEmoticonCell: UICollectionViewCell {
 //    override func awakeFromNib() {
 //        setupUI()
 //    }
+    
+    //MARK: - 监听方法
+    /// 选中表情按钮
+    ///
+    /// - Parameter button:
+    @objc private func selectedEmoticonButton(button: UIButton) {
+        
+        //1,去 tag 0 ~ 20 ，20对应的是删除按钮
+        let tag = button.tag
+        
+        //2，根据tag,判断是否是删除按钮，如果不是删除按钮，取得表情
+        var em: CZEmoticon?
+        
+        if tag < (emoticons?.count)! {
+            em = emoticons?[tag]
+        }
+        
+        //3,em选中的按钮，如果为nil，是删除按钮
+//        print(em)
+        
+    }
 }
 
 //MARK: - 设置界面
@@ -100,6 +121,11 @@ private extension CZEmoticonCell {
             //设置按钮字体,lineHeight基本上和图片大小差不多
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 32)
             contentView.addSubview(btn)
+            
+            //设置按钮的tag
+            btn.tag = i
+            //添加监听方法
+            btn.addTarget(self, action: #selector(selectedEmoticonButton), for: .touchUpInside)
         }
     }
 }
