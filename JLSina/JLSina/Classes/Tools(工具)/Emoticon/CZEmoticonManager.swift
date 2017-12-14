@@ -18,6 +18,13 @@ class CZEmoticonManager {
     //表情包的懒加载数组
     lazy var packages = [CZEmoticonPackage]()
     
+    //整个表情素材的bundle
+    lazy var bundle: Bundle = {
+        let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
+        
+        return Bundle(path: path!)!
+    }()
+    
     //构造函数,如果在init之前增加修饰符，可以要求访问者，必须通过 shared 访问对象
     //OC需要重写allocWithZone方法
     private init() {

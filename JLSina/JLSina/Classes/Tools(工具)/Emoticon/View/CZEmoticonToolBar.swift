@@ -27,7 +27,6 @@ class CZEmoticonToolBar: UIView {
             btn.frame = rect.offsetBy(dx: CGFloat(i) * w, dy: 0)
         }
         
-        
     }
 }
 
