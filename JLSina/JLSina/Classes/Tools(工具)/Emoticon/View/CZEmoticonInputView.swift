@@ -43,6 +43,8 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
         
         //2,设置cell - 传递对应页面的表情数组
         cell.emoticons = CZEmoticonManager.shared.packages[indexPath.section].emoticon(page: indexPath.item)
+        //设置代理
+        cell.delegate = self
         //3,返回cell
         return cell
     }
@@ -56,5 +58,13 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
     //每个分组的表情包中，表情页面的数量 emoticons 数组 / 20
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return CZEmoticonManager.shared.packages[section].numberOfPages
+    }
+}
+
+//MARK: - CZEmoticonCellDelegate
+extension CZEmoticonInputView: CZEmoticonCellDelegate {
+    
+    func CZEmoticonCellDidSelectedEmoticon(cell: CZEmoticonCell, em: CZEmoticon?) {
+        print(em)
     }
 }
