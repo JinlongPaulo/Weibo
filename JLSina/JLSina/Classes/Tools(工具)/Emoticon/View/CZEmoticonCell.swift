@@ -8,11 +8,24 @@
 
 import UIKit
 
+//表情cell的协议
+@objc protocol CZEmoticonCellDelegate: NSObjectProtocol {
+    
+    
+    /// 表情cell选中表情模型
+    ///
+    /// - Parameter em: 表情模型 / nil 表示删除
+    func CZEmoticonCellDidSelectedEmoticon(cell: CZEmoticonCell ,em: CZEmoticon?)
+}
+
 //表情的页面cell，
 //每一个cell用九宫格算法，自行添加20个表情,
 //每一个cell和CollectionView一样大小
 //最后一个位置，放置删除按钮
 class CZEmoticonCell: UICollectionViewCell {
+    
+    //代理不能用let
+    weak var delegate: CZEmoticonCellDelegate?
     
     var emoticons:[CZEmoticon]? {
         //当前页面表情模型数组，'最多'20个
@@ -82,8 +95,9 @@ class CZEmoticonCell: UICollectionViewCell {
             em = emoticons?[tag]
         }
         
-        //3,em选中的按钮，如果为nil，是删除按钮
+        //3,em选中的模型，如果为nil，是删除按钮
 //        print(em)
+        delegate?.CZEmoticonCellDidSelectedEmoticon(cell: self, em: em)
         
     }
 }
