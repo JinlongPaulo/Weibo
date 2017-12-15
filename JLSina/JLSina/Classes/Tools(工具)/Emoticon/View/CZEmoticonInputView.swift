@@ -16,11 +16,17 @@ class CZEmoticonInputView: UIView {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var toolBar: UIView!
+    
+    //选中表情回调闭包属性
+    private var selectedEmoticonCallBack: ((_ emoticon: CZEmoticon?)->())?
     ///加载并且返回输入视图
-    class func inputView() -> CZEmoticonInputView {
+    class func inputView(selectedEmoticon: @escaping (_ emoticon: CZEmoticon?)->()) -> CZEmoticonInputView {
         let nib = UINib(nibName: "CZEmoticonInputView", bundle: nil)
         
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! CZEmoticonInputView
+        
+        //记录闭包
+        v.selectedEmoticonCallBack = selectedEmoticon
         
         return v
     }
@@ -28,8 +34,6 @@ class CZEmoticonInputView: UIView {
     override func awakeFromNib() {
         collectionView.backgroundColor = UIColor.white
         //注册可重用cell
-//        let nib = UINib(nibName: "CZEmoticonCell", bundle: nil)
-//        collectionView.register(nib, forCellWithReuseIdentifier: cellId)
         collectionView.register(CZEmoticonCell.self, forCellWithReuseIdentifier: cellId)
     }
 }
@@ -43,7 +47,7 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
         
         //2,设置cell - 传递对应页面的表情数组
         cell.emoticons = CZEmoticonManager.shared.packages[indexPath.section].emoticon(page: indexPath.item)
-        //设置代理
+        //设置代理 - 不适合用闭包
         cell.delegate = self
         //3,返回cell
         return cell
@@ -65,6 +69,8 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
 extension CZEmoticonInputView: CZEmoticonCellDelegate {
     
     func CZEmoticonCellDidSelectedEmoticon(cell: CZEmoticonCell, em: CZEmoticon?) {
-        print(em)
+//        print(em)
+        //执行闭包回调选中的表情
+        selectedEmoticonCallBack?(em)
     }
 }
