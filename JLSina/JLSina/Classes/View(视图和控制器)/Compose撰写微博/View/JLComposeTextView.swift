@@ -33,6 +33,39 @@ class JLComposeTextView: UITextView {
 
 //MARK: - 表情键盘专属方法
 extension JLComposeTextView {
+    
+    //返回 textView,对应的纯文本字符串[将属性图片转换成文字]
+    var emtionText: String {
+        //1,获取textView属性文本
+        guard let attrStr = attributedText else {
+            return ""
+        }
+        
+        //需要获得属性文本中的图片[附件 Attachment]
+        /*
+         1,遍历的范围
+         2,选项[]
+         3,闭包
+         */
+        
+        var result = String()
+        
+        attrStr.enumerateAttributes(in: NSMakeRange(0, attrStr.length), options: [], using: { (dict, range, _) in
+            
+            //如果字典中包含 NSAttachment Key 说明是图片，否则是文本
+            //下一个目标: 从attachment 中能够获得 chs 就可以了
+            if let attachment = ((dict as NSDictionary)["NSAttachment"]) as? CZEmoticonAttachment{
+                //                print("图片\(attachment)")
+                result += attachment.chs ?? ""
+            } else {
+                let subStr = (attrStr.string as NSString).substring(with: range)
+                result += subStr
+            }
+        })
+        
+        return result
+    }
+    
     /// 向文本视图插入表情符号[图文混排]
     ///
     /// - Parameter em: 选中的表情符号，nil表示删除

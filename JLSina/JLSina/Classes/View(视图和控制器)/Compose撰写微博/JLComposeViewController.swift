@@ -91,18 +91,14 @@ class JLComposeViewController: UIViewController {
     //MARK: - 监听方法
     //发布微博
     @IBAction func postStatus() {
-        //1,获取微博文字
-        guard let text = textView.text else {
-            return
-        }
-        let tt = text + "www.epermarket.com"
-        
+        //1,获取发送给服务器的表情微博文字
+        let text = textView.emtionText + "www.epermarket.com"
         
         //2,发布微博, 想法带图片的，只需设置图片有没有就行
         //FIXME: - 临时测试发布带图片的微博
         let image: UIImage? = nil //UIImage(named: "icon_small_kangaroo_loading_1")
         
-        JLNetworkManager.shared.postStatus(text: tt , image:image ) { (result, isSuccess) in
+        JLNetworkManager.shared.postStatus(text: text , image:image ) { (result, isSuccess) in
             
 //            print(result)
             //修改指示器样式
