@@ -71,7 +71,9 @@ class CZEmoticon: NSObject {
             return NSAttributedString(string: "")
         }
         //2,创建文本附件
-        let attachment = NSTextAttachment()
+        let attachment = CZEmoticonAttachment()
+        //记录属性文本文字
+        attachment.chs = chs
         attachment.image = image
         let height = font.lineHeight
         attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
