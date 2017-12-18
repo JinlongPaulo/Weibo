@@ -75,9 +75,14 @@ class CZEmoticon: NSObject {
         attachment.image = image
         let height = font.lineHeight
         attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
+        
 
         //3,返回图片属性文本
-        return NSAttributedString(attachment: attachment)
+        let attrStrM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        //设置文字属性
+        attrStrM.addAttributes([NSAttributedStringKey.font: font], range: NSMakeRange(0, 1))
+        //返回属性文本
+        return attrStrM
     }
 
     override var description: String {
