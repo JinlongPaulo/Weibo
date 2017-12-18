@@ -19,7 +19,7 @@ class JLComposeTextView: UITextView {
     }
     
     //MARK: - 监听方法
-    @objc private func textChanged(n: Notification) {
+    @objc private func textChanged() {
     
         //如果有文本，不显示标签，否则显示
         placeholderLabel.isHidden = self.hasText
@@ -31,11 +31,53 @@ class JLComposeTextView: UITextView {
     }
 }
 
-//extension JLComposeTextView: UITextViewDelegate {
-//    func textViewDidChange(_ textView: UITextView) {
-//        print("哈哈")
-//    }
-//}
+//MARK: - 表情键盘专属方法
+extension JLComposeTextView {
+    /// 向文本视图插入表情符号[图文混排]
+    ///
+    /// - Parameter em: 选中的表情符号，nil表示删除
+    func insertEmoticon(em: CZEmoticon?) {
+        
+        //1，em == nil 是删除按钮
+        guard let em = em else {
+            deleteBackward()
+            return
+        }
+        
+        //2, emoji字符串
+        if let emoji = em.emoji  ,
+            let textRange = selectedTextRange {
+            //UITextRange 仅用在此处!
+            replace(textRange, withText: emoji)
+            return
+        }
+        
+        //代码执行到此，都是图片表情，
+        //0,>获取表情中的图像属性文本
+        let imageText = em.imageText(font: font!)
+        
+        //1,>获取当前textView的属性文本 => 可变的
+        let attrStrM = NSMutableAttributedString(attributedString: attributedText)
+        
+        //2,>将图片属性文本添加到当前光标位置
+        attrStrM .replaceCharacters(in: selectedRange, with: imageText)
+        
+        //记录光标位置
+        let range = selectedRange
+        
+        //3,>重新设置属性文本
+        attributedText = attrStrM
+        
+        //恢复光标位置,length是选中字符的长度，插入文本之后，应该为0
+        selectedRange = NSMakeRange(range.location + 1, 0)
+        
+        //让代理执行文本变化方法 - 在需要的时候，通知代理执行协议方法!
+        delegate?.textViewDidChange?(self)
+        
+        //执行当前对象的文本变化方法
+        textChanged()
+    }
+}
 
 private extension JLComposeTextView {
     func setupUI() {

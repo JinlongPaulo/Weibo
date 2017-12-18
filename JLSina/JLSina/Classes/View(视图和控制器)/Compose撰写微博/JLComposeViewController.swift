@@ -14,21 +14,27 @@ import SVProgressHUD
  */
 class JLComposeViewController: UIViewController {
 
-    //文本编辑视图
-    @IBOutlet weak var textView: UITextView!
-    //底部工具栏
+    ///文本编辑视图
+    @IBOutlet weak var textView: JLComposeTextView!
+    ///底部工具栏
     @IBOutlet weak var toolBar: UIToolbar!
     
-    //发布按钮
+    ///发布按钮
     @IBOutlet var sendButton: UIButton!
     
     //标题标签 - 换行热键 option + 回车
-    //逐行选中文本并且设置属性
-    //如果要想调整行间距，增加空行，设置空行的字体，lineHeight
+    ///逐行选中文本并且设置属性
+    ///如果要想调整行间距，增加空行，设置空行的字体，lineHeight
     @IBOutlet var titleLabel: UILabel!
     
-    //工具栏底部约束
+    ///工具栏底部约束
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
+    
+    ///表情输入视图
+    lazy var emoticonView = CZEmoticonInputView.inputView { [weak self](emoticon) in
+        //FIXME: -
+        self?.textView.insertEmoticon(em: emoticon)
+    }
     //MARK: - 视图生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,10 +128,11 @@ class JLComposeViewController: UIViewController {
         //如果使用系统默认的键盘，输入视图为 nil
         
         //1,测试键盘视图 - 视图的宽度可以随便，就是屏幕的宽度，
-        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
-        keyboardView.backgroundColor = UIColor.blue
+//        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
+//        keyboardView.backgroundColor = UIColor.blue
+        
         //2,设置键盘视图
-        textView.inputView = (textView.inputView == nil) ? keyboardView : nil
+        textView.inputView = (textView.inputView == nil) ? emoticonView : nil
         
         //3,!!!刷新键盘视图
         textView.reloadInputViews()
