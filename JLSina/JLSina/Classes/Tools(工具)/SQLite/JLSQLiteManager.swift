@@ -42,6 +42,24 @@ class JLSQLiteManager {
         
         //打开数据库
         createTable()
+        
+        //注册通知 - 监听应用程序进入后台
+        //模仿SDWebImage
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(clearDBCache),
+                                               name: Notification.Name.UIApplicationDidEnterBackground,
+                                               object: nil)
+        
+    }
+    
+    deinit {
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    ///清理数据缓存
+    @objc private func clearDBCache() {
+        print("清理数据缓存")
     }
 }
 
