@@ -10,7 +10,7 @@ import Foundation
 import FMDB
 
 ///最大的数据库缓存时间，以s为单位
-private let maxCacheTime = -5 * 24 * 60 * 60
+private let maxDBCacheTime: TimeInterval = -5 * 24 * 60 * 60
 //SQLite 管理器
 /**
  1,数据库本质上是保存在沙盒中的一个文件，首先需要创建并且打开数据库
@@ -62,7 +62,9 @@ class JLSQLiteManager {
     
     ///清理数据缓存
     @objc private func clearDBCache() {
-        print("清理数据缓存")
+        let dateString = Date.cz_dateString(delta: maxDBCacheTime)
+        print("清理数据缓存\(dateString)")
+        
     }
 }
 
