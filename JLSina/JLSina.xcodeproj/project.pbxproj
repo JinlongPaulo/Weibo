@@ -18,6 +18,7 @@
 		2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3777181FAAF2FA00567432 /* JLVisitorView.swift */; };
 		2C4C94AB1FE8ED4B0086AAA3 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C94A91FE8ED4B0086AAA3 /* status.sql */; };
 		2C4C94AC1FE8ED4B0086AAA3 /* JLSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C94AA1FE8ED4B0086AAA3 /* JLSQLiteManager.swift */; };
+		2C4C94AE1FE8EE1E0086AAA3 /* JLStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C94AD1FE8EE1E0086AAA3 /* JLStatusListDAL.swift */; };
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
 		2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */; };
@@ -105,6 +106,7 @@
 		2C3777181FAAF2FA00567432 /* JLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVisitorView.swift; sourceTree = "<group>"; };
 		2C4C94A91FE8ED4B0086AAA3 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
 		2C4C94AA1FE8ED4B0086AAA3 /* JLSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLSQLiteManager.swift; sourceTree = "<group>"; };
+		2C4C94AD1FE8EE1E0086AAA3 /* JLStatusListDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStatusListDAL.swift; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6384921F7E407300F95FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				2CFDC35F1FB18196003F60E6 /* JLStatusListViewModel.swift */,
+				2C4C94AD1FE8EE1E0086AAA3 /* JLStatusListDAL.swift */,
 				2CFC9CC91FBBDB2200196F04 /* JLStatusViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
@@ -770,6 +773,7 @@
 				2CFDC35C1FB17DFE003F60E6 /* JLStatus.swift in Sources */,
 				2CCC7D961FE7948F0011D0D0 /* CZEmoticonLayout.swift in Sources */,
 				2CCC7D901FE7948F0011D0D0 /* CZEmoticonAttachment.swift in Sources */,
+				2C4C94AE1FE8EE1E0086AAA3 /* JLStatusListDAL.swift in Sources */,
 				2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */,
 				2CD104BB1FB93A2000116BFC /* JLTitleButton.swift in Sources */,
 				2CAAB5641FA821A70021B432 /* NSString+CZPath.m in Sources */,
