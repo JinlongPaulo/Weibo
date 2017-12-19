@@ -16,6 +16,8 @@
 		2C31997B1FC478F100B40ABB /* JLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3199791FC478F100B40ABB /* JLRefreshView.swift */; };
 		2C31997F1FC4809000B40ABB /* JLHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C31997E1FC4809000B40ABB /* JLHumanRefreshView.xib */; };
 		2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3777181FAAF2FA00567432 /* JLVisitorView.swift */; };
+		2C4C94AB1FE8ED4B0086AAA3 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C94A91FE8ED4B0086AAA3 /* status.sql */; };
+		2C4C94AC1FE8ED4B0086AAA3 /* JLSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C94AA1FE8ED4B0086AAA3 /* JLSQLiteManager.swift */; };
 		2C6384871F7E407300F95FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384861F7E407300F95FDF /* AppDelegate.swift */; };
 		2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A11F7E4D6E00F95FDF /* JLMainViewController.swift */; };
 		2C6384A41F7E4D9D00F95FDF /* JLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6384A31F7E4D9D00F95FDF /* JLNavigationController.swift */; };
@@ -101,6 +103,8 @@
 		2C3199791FC478F100B40ABB /* JLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLRefreshView.swift; sourceTree = "<group>"; };
 		2C31997E1FC4809000B40ABB /* JLHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLHumanRefreshView.xib; sourceTree = "<group>"; };
 		2C3777181FAAF2FA00567432 /* JLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLVisitorView.swift; sourceTree = "<group>"; };
+		2C4C94A91FE8ED4B0086AAA3 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
+		2C4C94AA1FE8ED4B0086AAA3 /* JLSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLSQLiteManager.swift; sourceTree = "<group>"; };
 		2C6384831F7E407300F95FDF /* JLSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6384861F7E407300F95FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6384921F7E407300F95FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -275,6 +279,25 @@
 			path = "VisitorView(访客视图)";
 			sourceTree = "<group>";
 		};
+		2C4C94A71FE8ED0D0086AAA3 /* UI框架 */ = {
+			isa = PBXGroup;
+			children = (
+				2CCC7D801FE7948F0011D0D0 /* Emoticon */,
+				2CEB2F381FDA942B006886E4 /* FFLabel */,
+				2C8869A41FC276DB00E0DD96 /* JLRefreshControl */,
+			);
+			path = "UI框架";
+			sourceTree = "<group>";
+		};
+		2C4C94A81FE8ED4B0086AAA3 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				2C4C94A91FE8ED4B0086AAA3 /* status.sql */,
+				2C4C94AA1FE8ED4B0086AAA3 /* JLSQLiteManager.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
 		2C63847A1F7E407300F95FDF = {
 			isa = PBXGroup;
 			children = (
@@ -329,10 +352,9 @@
 		2C63849A1F7E4CE800F95FDF /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
-				2CCC7D801FE7948F0011D0D0 /* Emoticon */,
-				2CEB2F381FDA942B006886E4 /* FFLabel */,
-				2C8869A41FC276DB00E0DD96 /* JLRefreshControl */,
-				2CB564171FB0662F005FDA84 /* Network */,
+				2C4C94A81FE8ED4B0086AAA3 /* SQLite */,
+				2CB564171FB0662F005FDA84 /* Network(网络) */,
+				2C4C94A71FE8ED0D0086AAA3 /* UI框架 */,
 				2CAAB5451FA821A70021B432 /* Additions */,
 				2C1D343D1F8F05F90036902A /* Extensions */,
 				2C30A6611FB42E3500DF8B46 /* WeiboCommon.swift */,
@@ -471,14 +493,14 @@
 			path = "测试";
 			sourceTree = "<group>";
 		};
-		2CB564171FB0662F005FDA84 /* Network */ = {
+		2CB564171FB0662F005FDA84 /* Network(网络) */ = {
 			isa = PBXGroup;
 			children = (
 				2C876BC81FB5EEFA00A5CB39 /* Model */,
 				2CB564181FB06670005FDA84 /* JLNetworkManager.swift */,
 				2CFDC3591FB150F2003F60E6 /* JLNetworkManager+Extension.swift */,
 			);
-			path = Network;
+			path = "Network(网络)";
 			sourceTree = "<group>";
 		};
 		2CC57BF51FE0F28900D95112 /* View */ = {
@@ -667,6 +689,7 @@
 				2CAAB56C1FA826C20021B432 /* Images.xcassets in Resources */,
 				2CC57C001FE0F2F600D95112 /* JLComposeTypeButton.xib in Resources */,
 				2CC57BFE1FE0F2F600D95112 /* JLComposeTypeView.xib in Resources */,
+				2C4C94AB1FE8ED4B0086AAA3 /* status.sql in Resources */,
 				2C15D14D1FD1357100E937E2 /* JLMeituanRefreshView.xib in Resources */,
 				2CCC7D941FE7948F0011D0D0 /* CZEmoticonInputView.xib in Resources */,
 				2CBE50E21FDE61A900D821A4 /* JLComposeViewController.xib in Resources */,
@@ -754,6 +777,7 @@
 				2CFC9CD01FBC3DE100196F04 /* JLStatusToolBar.swift in Sources */,
 				2CAAB5621FA821A70021B432 /* NSString+CZBase64.m in Sources */,
 				2C6384A81F7E4E0B00F95FDF /* JLHomeViewController.swift in Sources */,
+				2C4C94AC1FE8ED4B0086AAA3 /* JLSQLiteManager.swift in Sources */,
 				2CCC7D931FE7948F0011D0D0 /* CZEmoticonInputView.swift in Sources */,
 				2CCC7D911FE7948F0011D0D0 /* CZEmoticonPackage.swift in Sources */,
 				2CD104BE1FB9473800116BFC /* JLWelcomeView.swift in Sources */,

@@ -188,8 +188,8 @@ private extension JLComposeViewController {
                 continue
             }
             
-            let image = UIImage.init(named: imageName)
-            let imageHL = UIImage.init(named: imageName + "_highlighted")
+            let image = UIImage(named: imageName)
+            let imageHL = UIImage(named: imageName + "_highlighted")
             
             
             let btn = UIButton()
