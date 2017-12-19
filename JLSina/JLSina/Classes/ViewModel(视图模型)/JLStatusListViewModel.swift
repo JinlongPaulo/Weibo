@@ -43,13 +43,19 @@ class JLStatusListViewModel {
             return
         }
         
+        
         //since_id 取出数组中第一天微博的id
         let since_id = pullup ? 0 : (statusList.first?.status.id ?? 0)
         
         //上拉刷新,取出数组的最后的一条id
         let max_id = !pullup ? 0 : (statusList.last?.status.id ?? 0)
         
-        JLNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
+        //让数据访问层加载数据
+        JLStatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (list, isSuccess) in
+            
+//        }
+//        
+//        JLNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
             
             //0,判断网络请求是否成功
             if !isSuccess {
