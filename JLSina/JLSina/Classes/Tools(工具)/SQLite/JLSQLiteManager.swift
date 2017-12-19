@@ -8,6 +8,9 @@
 
 import Foundation
 import FMDB
+
+///最大的数据库缓存时间，以s为单位
+private let maxCacheTime = -5 * 24 * 60 * 60
 //SQLite 管理器
 /**
  1,数据库本质上是保存在沙盒中的一个文件，首先需要创建并且打开数据库
