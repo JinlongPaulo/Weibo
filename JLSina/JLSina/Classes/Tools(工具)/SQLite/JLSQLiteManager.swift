@@ -10,7 +10,7 @@ import Foundation
 import FMDB
 
 ///最大的数据库缓存时间，以s为单位
-private let maxDBCacheTime: TimeInterval = -5 * 24 * 60 * 60
+private let maxDBCacheTime: TimeInterval = -60//-5 * 24 * 60 * 60
 //SQLite 管理器
 /**
  1,数据库本质上是保存在沙盒中的一个文件，首先需要创建并且打开数据库
@@ -60,10 +60,27 @@ class JLSQLiteManager {
         NotificationCenter.default.removeObserver(self)
     }
     
-    ///清理数据缓存
+    /// 清理数据缓存
+    /// 注意细节:
+    /// - SQLite 的数据不断的增加数据,数据库文件的大小,会不断的增加
+    /// - 但是: 如果删除了数据，数据库的大小，不会变小！
+    /// - 如果要变小
+    /// 1> 将数据库文件复制一个新的版本， status.db.old
+    //  2> 新建一个空的数据库文件
+    //  3> 自己编写SQL,从 old 中将所有的数据读出，写入新的数据库!
     @objc private func clearDBCache() {
         let dateString = Date.cz_dateString(delta: maxDBCacheTime)
         print("清理数据缓存\(dateString)")
+        
+        //准备SQL
+        let sql = "DELETE FROM T_Status WHERE createTime < ?;"
+        
+        //执行sql
+        queue.inDatabase { (db) in
+            if db.executeUpdate(sql, withArgumentsIn: [dateString]) == true {
+                print("删除了\(db.changes)条记录")
+            }
+        }
         
     }
 }
