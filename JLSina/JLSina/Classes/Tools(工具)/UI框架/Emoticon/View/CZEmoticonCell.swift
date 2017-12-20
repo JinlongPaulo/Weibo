@@ -100,6 +100,12 @@ class CZEmoticonCell: UICollectionViewCell {
         delegate?.CZEmoticonCellDidSelectedEmoticon(cell: self, em: em)
         
     }
+    
+    /// 长按手势识别 - 是一个非常重要的手势
+    /// 可以保证一个对象监听两种点击手势，而且不需要考虑解决手势冲突
+    @objc private func longGesture(gusture: UILongPressGestureRecognizer) {
+        
+    }
 }
 
 //MARK: - 设置界面
@@ -140,6 +146,11 @@ private extension CZEmoticonCell {
             btn.tag = i
             //添加监听方法
             btn.addTarget(self, action: #selector(selectedEmoticonButton), for: .touchUpInside)
+            //添加长按手势
+            let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longGesture))
+            longPress.minimumPressDuration = 0.5
+            addGestureRecognizer(longPress)
+            
         }
     }
 }

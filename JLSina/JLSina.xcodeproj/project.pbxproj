@@ -553,12 +553,12 @@
 		2CCC7D861FE7948F0011D0D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2CCC7D8C1FE7948F0011D0D0 /* CZEmoticonCell.swift */,
 				2CCC7D871FE7948F0011D0D0 /* CZEmoticonCell.xib */,
 				2CCC7D881FE7948F0011D0D0 /* CZEmoticonInputView.swift */,
 				2CCC7D891FE7948F0011D0D0 /* CZEmoticonInputView.xib */,
 				2CCC7D8A1FE7948F0011D0D0 /* CZEmoticonToolBar.swift */,
 				2CCC7D8B1FE7948F0011D0D0 /* CZEmoticonLayout.swift */,
-				2CCC7D8C1FE7948F0011D0D0 /* CZEmoticonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

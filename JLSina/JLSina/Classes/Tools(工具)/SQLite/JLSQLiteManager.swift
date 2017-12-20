@@ -63,14 +63,14 @@ class JLSQLiteManager {
     /// 清理数据缓存
     /// 注意细节:
     /// - SQLite 的数据不断的增加数据,数据库文件的大小,会不断的增加
-    /// - 但是: 如果删除了数据，数据库的大小，不会变小！
+    /// - 但是: 如果删除了数据，数据库的大小，不会变小！(既然曾经到了那么大，以后也会到那么大)
     /// - 如果要变小
     /// 1> 将数据库文件复制一个新的版本， status.db.old
     //  2> 新建一个空的数据库文件
     //  3> 自己编写SQL,从 old 中将所有的数据读出，写入新的数据库!
     @objc private func clearDBCache() {
         let dateString = Date.cz_dateString(delta: maxDBCacheTime)
-        print("清理数据缓存\(dateString)")
+//        print("清理数据缓存\(dateString)")
         
         //准备SQL
         let sql = "DELETE FROM T_Status WHERE createTime < ?;"
