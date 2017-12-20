@@ -19,6 +19,9 @@ class CZEmoticonTipView: UIImageView {
         // [[UIImageView alloc] initWithImage: image] => 会根据视图大小设置图像视图的大小
         super.init(image: image)
         
+        //设置锚点
+        layer.anchorPoint = CGPoint(x: 0.5, y: 1.2)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

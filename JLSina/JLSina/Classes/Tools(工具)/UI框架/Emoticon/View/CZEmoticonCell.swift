@@ -123,6 +123,20 @@ class CZEmoticonCell: UICollectionViewCell {
             return
         }
         
+        //3,处理手势状态
+        switch gesture.state {
+        case .began , .changed:
+            
+            tipView.isHidden = false
+            
+            //坐标系的转换 -> 将按钮参照cell坐标系，转换到window的坐标位置
+            let center = self.convert(button.center, to: window)
+            
+            //设置提示视图的位置
+            tipView.center = center
+        default:
+            break
+        }
         print(button)
     }
     
