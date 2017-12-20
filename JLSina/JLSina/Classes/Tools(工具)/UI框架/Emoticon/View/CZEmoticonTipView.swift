@@ -11,6 +11,10 @@ import UIKit
 /// 表情选择提示视图
 class CZEmoticonTipView: UIImageView {
     
+    //MARK: - 私有控件
+    private lazy var tipButton = UIButton()
+    
+    //MARK: - 构造函数
     init() {
         
         let bundle = CZEmoticonManager.shared.bundle
@@ -22,6 +26,13 @@ class CZEmoticonTipView: UIImageView {
         //设置锚点
         layer.anchorPoint = CGPoint(x: 0.5, y: 1.2)
         
+        //添加按钮
+        tipButton.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
+        tipButton.frame = CGRect(x: 0, y: 8, width: 36, height: 36)
+        tipButton.center.x = bounds.width * 0.5
+        tipButton.setTitle("😁", for: [])
+        tipButton.titleLabel?.font = UIFont.systemFont(ofSize: 32)
+        addSubview(tipButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
