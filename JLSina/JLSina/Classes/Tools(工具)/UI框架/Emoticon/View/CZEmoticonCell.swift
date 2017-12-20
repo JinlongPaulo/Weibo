@@ -62,9 +62,25 @@ class CZEmoticonCell: UICollectionViewCell {
         super.init(frame: frame)
         setupUI()
     }
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("aa")
+        fatalError("init(coder:) has not been implemented")
     }
+    
+    /// 当视图从界面上删除,同样会调用此方法，newWindow == nil
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        
+        guard let w = newWindow else {
+            return
+        }
+        
+        // 将提示视图添加到窗口上
+        // 提示：在 iOS 6.0 之前，很多程序员都喜欢把控件往窗口添加
+        // 在现在开发，如果有地方，就不要用窗口!
+        w.addSubview(tipView)
+    }
+    
     //XIB加载测试
 //    override func awakeFromNib() {
 //        setupUI()
