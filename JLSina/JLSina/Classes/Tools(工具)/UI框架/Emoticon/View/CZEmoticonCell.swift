@@ -51,21 +51,12 @@ class CZEmoticonCell: UICollectionViewCell {
                     
                     btn.isHidden = false
                 }
-                
-                //取出末尾删除按钮
-                let removeButton = contentView.subviews.last as! UIButton
-                //设置图像
-                let image = UIImage.init(named: "compose_emotion_delete_highlighted", in: CZEmoticonManager.shared.bundle, compatibleWith: nil)
-                
-                removeButton.setImage(image, for: [])
-                
-                
             }
         }
     }
     
-    
-    @IBOutlet weak var label: UILabel!
+    ///标题选择提示视图
+    private lazy var tipView = CZEmoticonTipView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,13 +81,11 @@ class CZEmoticonCell: UICollectionViewCell {
         
         //2，根据tag,判断是否是删除按钮，如果不是删除按钮，取得表情
         var em: CZEmoticon?
-        
         if tag < (emoticons?.count)! {
             em = emoticons?[tag]
         }
         
         //3,em选中的模型，如果为nil，是删除按钮
-//        print(em)
         delegate?.CZEmoticonCellDidSelectedEmoticon(cell: self, em: em)
         
     }
@@ -105,6 +94,8 @@ class CZEmoticonCell: UICollectionViewCell {
     /// 可以保证一个对象监听两种点击手势，而且不需要考虑解决手势冲突
     @objc private func longGesture(gusture: UILongPressGestureRecognizer) {
         
+        //测试添加提示视图
+//        addSubview(tipView)
     }
 }
 
@@ -146,6 +137,13 @@ private extension CZEmoticonCell {
             btn.tag = i
             //添加监听方法
             btn.addTarget(self, action: #selector(selectedEmoticonButton), for: .touchUpInside)
+            
+            //取出末尾删除按钮
+            let removeButton = contentView.subviews.last as! UIButton
+            //设置图像
+            let image = UIImage.init(named: "compose_emotion_delete_highlighted", in: CZEmoticonManager.shared.bundle, compatibleWith: nil)
+            removeButton.setImage(image, for: [])
+            
             //添加长按手势
             let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longGesture))
             longPress.minimumPressDuration = 0.5

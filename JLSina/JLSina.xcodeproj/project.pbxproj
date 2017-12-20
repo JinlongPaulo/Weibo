@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C01CECC1FEA0CA900BCE13F /* CZEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C01CECB1FEA0CA900BCE13F /* CZEmoticonTipView.swift */; };
 		2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C04A9DB1FAC5B8A00E0B299 /* main.json */; };
 		2C15D14D1FD1357100E937E2 /* JLMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C15D14B1FD1357100E937E2 /* JLMeituanRefreshView.xib */; };
 		2C15D14E1FD1357100E937E2 /* JLMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */; };
@@ -68,7 +69,6 @@
 		2CCC7D8F1FE7948F0011D0D0 /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC7D831FE7948F0011D0D0 /* CZEmoticon.swift */; };
 		2CCC7D901FE7948F0011D0D0 /* CZEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC7D841FE7948F0011D0D0 /* CZEmoticonAttachment.swift */; };
 		2CCC7D911FE7948F0011D0D0 /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC7D851FE7948F0011D0D0 /* CZEmoticonPackage.swift */; };
-		2CCC7D921FE7948F0011D0D0 /* CZEmoticonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCC7D871FE7948F0011D0D0 /* CZEmoticonCell.xib */; };
 		2CCC7D931FE7948F0011D0D0 /* CZEmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC7D881FE7948F0011D0D0 /* CZEmoticonInputView.swift */; };
 		2CCC7D941FE7948F0011D0D0 /* CZEmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCC7D891FE7948F0011D0D0 /* CZEmoticonInputView.xib */; };
 		2CCC7D951FE7948F0011D0D0 /* CZEmoticonToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC7D8A1FE7948F0011D0D0 /* CZEmoticonToolBar.swift */; };
@@ -96,6 +96,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C01CECB1FEA0CA900BCE13F /* CZEmoticonTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZEmoticonTipView.swift; sourceTree = "<group>"; };
 		2C04A9DB1FAC5B8A00E0B299 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		2C15D14B1FD1357100E937E2 /* JLMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLMeituanRefreshView.xib; sourceTree = "<group>"; };
 		2C15D14C1FD1357100E937E2 /* JLMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLMeituanRefreshView.swift; sourceTree = "<group>"; };
@@ -173,7 +174,6 @@
 		2CCC7D831FE7948F0011D0D0 /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
 		2CCC7D841FE7948F0011D0D0 /* CZEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonAttachment.swift; sourceTree = "<group>"; };
 		2CCC7D851FE7948F0011D0D0 /* CZEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonPackage.swift; sourceTree = "<group>"; };
-		2CCC7D871FE7948F0011D0D0 /* CZEmoticonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZEmoticonCell.xib; sourceTree = "<group>"; };
 		2CCC7D881FE7948F0011D0D0 /* CZEmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonInputView.swift; sourceTree = "<group>"; };
 		2CCC7D891FE7948F0011D0D0 /* CZEmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZEmoticonInputView.xib; sourceTree = "<group>"; };
 		2CCC7D8A1FE7948F0011D0D0 /* CZEmoticonToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonToolBar.swift; sourceTree = "<group>"; };
@@ -533,9 +533,9 @@
 			isa = PBXGroup;
 			children = (
 				2CCC7D811FE7948F0011D0D0 /* CZEmoticonManager.swift */,
+				2CCC7D8D1FE7948F0011D0D0 /* HMEmoticon.bundle */,
 				2CCC7D821FE7948F0011D0D0 /* Model */,
 				2CCC7D861FE7948F0011D0D0 /* View */,
-				2CCC7D8D1FE7948F0011D0D0 /* HMEmoticon.bundle */,
 			);
 			path = Emoticon;
 			sourceTree = "<group>";
@@ -554,11 +554,11 @@
 			isa = PBXGroup;
 			children = (
 				2CCC7D8C1FE7948F0011D0D0 /* CZEmoticonCell.swift */,
-				2CCC7D871FE7948F0011D0D0 /* CZEmoticonCell.xib */,
 				2CCC7D881FE7948F0011D0D0 /* CZEmoticonInputView.swift */,
 				2CCC7D891FE7948F0011D0D0 /* CZEmoticonInputView.xib */,
 				2CCC7D8A1FE7948F0011D0D0 /* CZEmoticonToolBar.swift */,
 				2CCC7D8B1FE7948F0011D0D0 /* CZEmoticonLayout.swift */,
+				2C01CECB1FEA0CA900BCE13F /* CZEmoticonTipView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -686,7 +686,6 @@
 				2C31997F1FC4809000B40ABB /* JLHumanRefreshView.xib in Resources */,
 				2CD104C61FB9770000116BFC /* JLNewFeatureView.xib in Resources */,
 				2C04A9DC1FAC5B8A00E0B299 /* main.json in Resources */,
-				2CCC7D921FE7948F0011D0D0 /* CZEmoticonCell.xib in Resources */,
 				2CD104C41FB9637300116BFC /* JLWelcomeView.xib in Resources */,
 				2C31997A1FC478F100B40ABB /* RefreshView.xib in Resources */,
 				2C9640641FBDFF3800956F19 /* JLStatusRetweetedCell.xib in Resources */,
@@ -794,6 +793,7 @@
 				2CAAB5441FA814DA0021B432 /* Bundle+Extensions.swift in Sources */,
 				2CCC7D8F1FE7948F0011D0D0 /* CZEmoticon.swift in Sources */,
 				2C91B6541FBD3E1200FA8AE2 /* JLStatusPicture.swift in Sources */,
+				2C01CECC1FEA0CA900BCE13F /* CZEmoticonTipView.swift in Sources */,
 				2C3777191FAAF2FA00567432 /* JLVisitorView.swift in Sources */,
 				2CEB2F3A1FDA942B006886E4 /* FFLabel.swift in Sources */,
 				2C6384A21F7E4D6E00F95FDF /* JLMainViewController.swift in Sources */,
