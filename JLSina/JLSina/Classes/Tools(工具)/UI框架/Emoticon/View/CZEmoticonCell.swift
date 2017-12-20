@@ -79,6 +79,7 @@ class CZEmoticonCell: UICollectionViewCell {
         // 提示：在 iOS 6.0 之前，很多程序员都喜欢把控件往窗口添加
         // 在现在开发，如果有地方，就不要用窗口!
         w.addSubview(tipView)
+        tipView.isHidden = true
     }
     
     //XIB加载测试
@@ -108,10 +109,33 @@ class CZEmoticonCell: UICollectionViewCell {
     
     /// 长按手势识别 - 是一个非常重要的手势
     /// 可以保证一个对象监听两种点击手势，而且不需要考虑解决手势冲突
-    @objc private func longGesture(gusture: UILongPressGestureRecognizer) {
+    @objc private func longGesture(gesture: UILongPressGestureRecognizer) {
         
         //测试添加提示视图
 //        addSubview(tipView)
+        
+        //1,获取触摸位置
+        let location = gesture.location(in: self)
+        
+        //2,获取触摸位置对应的按钮
+        guard let button = buttonWithLocation(location: location) else {
+            
+            return
+        }
+        
+        print(button)
+    }
+    
+    private func buttonWithLocation(location: CGPoint) -> UIButton? {
+        
+        //遍历 contentView 所有子视图,如果子视图可见，同时在 location 确认是按钮
+        for btn in contentView.subviews as! [UIButton] {
+            //删除按钮同样需要处理
+            if btn.frame.contains(location) && !btn.isHidden && btn != contentView.subviews.last {
+                return btn
+            }
+        }
+        return nil
     }
 }
 
