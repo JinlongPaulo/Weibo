@@ -68,9 +68,22 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
 //MARK: - CZEmoticonCellDelegate
 extension CZEmoticonInputView: CZEmoticonCellDelegate {
     
+    
+    /// 选中的表情回调
+    ///
+    /// - Parameters:
+    ///   - cell: 分页cell
+    ///   - em: 选中的表情，删除键为nil
     func CZEmoticonCellDidSelectedEmoticon(cell: CZEmoticonCell, em: CZEmoticon?) {
 //        print(em)
         //执行闭包回调选中的表情
         selectedEmoticonCallBack?(em)
+        
+        //添加最近使用的表情
+        guard let em = em else {
+            return
+        }
+        
+        CZEmoticonManager.shared.recentEmoticon(em: em)
     }
 }

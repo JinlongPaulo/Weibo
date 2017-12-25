@@ -15,7 +15,7 @@ class CZEmoticonManager {
     //表情管理器的单例
     static let shared = CZEmoticonManager()
     
-    //表情包的懒加载数组
+    //表情包的懒加载数组 - 第一个数组是最近表情，加载之后，表情数组为空
     lazy var packages = [CZEmoticonPackage]()
     
     //整个表情素材的bundle
@@ -29,6 +29,29 @@ class CZEmoticonManager {
     //OC需要重写allocWithZone方法
     private init() {
         loadPackages()
+    }
+    
+    
+    /// 添加最近使用的表情
+    ///
+    /// - Parameter em: 选中的表情
+    func recentEmoticon(em: CZEmoticon) {
+        
+        //1,增加表情的使用次数
+        em.times += 1
+        //2,判断是否已经记录该表情，如果没有记录，添加记录
+        if !packages[0].emoticons.contains(em) {
+            packages[0].emoticons.append(em)
+        }
+        //3,根据使用次数排序，使用次数高，排序靠前
+        //对当前数组排序
+        packages[0].emoticons.sort { (em1, em2) -> Bool in
+            return em1.times > em2.times
+        }
+        //4,判断表情数组，是否超出20，如果超出，删除末尾的表情
+        if packages[0].emoticons.count > 20 {
+            packages[0].emoticons.removeSubrange(20..<packages[0].emoticons.count)
+        }
     }
 }
 
