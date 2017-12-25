@@ -134,6 +134,11 @@ class CZEmoticonCell: UICollectionViewCell {
             
             //设置提示视图的位置
             tipView.center = center
+            
+            //设置提示视图的表情模型
+            if button.tag < (emoticons?.count)! {
+                tipView.emoticon = emoticons?[button.tag]
+            }
         default:
             break
         }

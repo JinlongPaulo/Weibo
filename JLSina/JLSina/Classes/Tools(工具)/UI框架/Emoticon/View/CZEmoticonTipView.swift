@@ -11,6 +11,29 @@ import UIKit
 /// 表情选择提示视图
 class CZEmoticonTipView: UIImageView {
     
+    ///之前选择的表情
+    private var preEmoticon: CZEmoticon?
+
+    ///提示视图的表情模型
+    var emoticon: CZEmoticon? {
+        didSet {
+            ///判断表情是否变化
+            if emoticon == preEmoticon {
+                return
+            }
+            
+            //记录当前的表情
+            preEmoticon = emoticon
+            
+            //设置表情数据
+            tipButton.setTitle(emoticon?.emoji, for: [])
+            tipButton.setImage(emoticon?.image, for: [])
+            
+            //表情动画
+            print("设置表情...")
+        }
+    }
+    
     //MARK: - 私有控件
     private lazy var tipButton = UIButton()
     
