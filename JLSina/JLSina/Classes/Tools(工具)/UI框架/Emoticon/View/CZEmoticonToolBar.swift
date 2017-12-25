@@ -8,8 +8,21 @@
 
 import UIKit
 
+@objc protocol CZEmoticonToolBarDelegate: NSObjectProtocol {
+    
+    
+    /// 表情工具栏选中分组索引
+    ///
+    /// - Parameters:
+    ///   - toolBar: 工具栏
+    ///   - index: 索引
+    func emoticonToolBarDidSelectedItemIndex(toolBar: CZEmoticonToolBar , index: Int)
+}
 //表情键盘底部工具栏
 class CZEmoticonToolBar: UIView {
+    
+    ///代理
+    weak var delegate: CZEmoticonToolBarDelegate?
 
     override func awakeFromNib() {
         setupUI()
@@ -32,7 +45,8 @@ class CZEmoticonToolBar: UIView {
     //MARK: - 监听方法
     ///点击分组项按钮
     @objc private func clickItem(button: UIButton) {
-        
+        //通知代理执行协议方法
+        delegate?.emoticonToolBarDidSelectedItemIndex(toolBar: self, index: button.tag)
     }
 }
 

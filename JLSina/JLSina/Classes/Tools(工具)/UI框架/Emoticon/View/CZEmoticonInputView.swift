@@ -15,7 +15,7 @@ private let cellId = "cellId"
 class CZEmoticonInputView: UIView {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var toolBar: UIView!
+    @IBOutlet weak var toolBar: CZEmoticonToolBar!
     
     //选中表情回调闭包属性
     private var selectedEmoticonCallBack: ((_ emoticon: CZEmoticon?)->())?
@@ -35,6 +35,16 @@ class CZEmoticonInputView: UIView {
         collectionView.backgroundColor = UIColor.white
         //注册可重用cell
         collectionView.register(CZEmoticonCell.self, forCellWithReuseIdentifier: cellId)
+        
+        //设置工具栏代理
+        toolBar.delegate = self
+    }
+}
+
+extension CZEmoticonInputView : CZEmoticonToolBarDelegate {
+    
+    func emoticonToolBarDidSelectedItemIndex(toolBar: CZEmoticonToolBar, index: Int) {
+        
     }
 }
 
