@@ -120,10 +120,12 @@ class CZEmoticonCell: UICollectionViewCell {
         //2,获取触摸位置对应的按钮
         guard let button = buttonWithLocation(location: location) else {
             
+            tipView.isHidden = true
             return
         }
         
         //3,处理手势状态
+        //在处理手势细节的时候，不要试图一下把所有状态都处理完毕
         switch gesture.state {
         case .began , .changed:
             
@@ -139,6 +141,15 @@ class CZEmoticonCell: UICollectionViewCell {
             if button.tag < (emoticons?.count)! {
                 tipView.emoticon = emoticons?[button.tag]
             }
+        case .ended:
+            tipView.isHidden = true
+            
+            //执行选中按钮函数
+            selectedEmoticonButton(button: button)
+            break
+        case .cancelled, .failed:
+            tipView.isHidden = true
+            break
         default:
             break
         }
