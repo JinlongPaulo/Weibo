@@ -45,9 +45,13 @@ class CZEmoticonManager {
         }
         //3,根据使用次数排序，使用次数高，排序靠前
         //对当前数组排序
-        packages[0].emoticons.sort { (em1, em2) -> Bool in
-            return em1.times > em2.times
-        }
+//        packages[0].emoticons.sort { (em1, em2) -> Bool in
+//            return em1.times > em2.times
+//        }
+        //在Swift，如果闭包只有一个return,参数可以省略,参数名 用$... 替代
+        packages[0].emoticons.sort { $0.times > $1.times }
+        
+        
         //4,判断表情数组，是否超出20，如果超出，删除末尾的表情
         if packages[0].emoticons.count > 20 {
             packages[0].emoticons.removeSubrange(20..<packages[0].emoticons.count)
