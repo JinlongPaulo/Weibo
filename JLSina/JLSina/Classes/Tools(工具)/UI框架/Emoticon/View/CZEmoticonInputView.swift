@@ -45,6 +45,11 @@ extension CZEmoticonInputView : CZEmoticonToolBarDelegate {
     
     func emoticonToolBarDidSelectedItemIndex(toolBar: CZEmoticonToolBar, index: Int) {
         
+        //让collectionView 发生滚动 -> 每一个分组的第0页
+        let indexPath = IndexPath(item: 0, section: index)
+        
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        
     }
 }
 
