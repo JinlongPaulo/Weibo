@@ -23,6 +23,22 @@ class CZEmoticonToolBar: UIView {
     
     ///代理
     weak var delegate: CZEmoticonToolBarDelegate?
+    
+    
+    /// 选中组索引
+    var selectedIndex: Int = 0 {
+        didSet {
+            
+            //1,取消所有选中状态
+            for btn in subviews as! [UIButton] {
+                btn.isSelected = false
+            }
+            
+            //2,设置 index 对应的选中状态
+            (subviews[selectedIndex] as! UIButton).isSelected = true
+        }
+    }
+    
 
     override func awakeFromNib() {
         setupUI()
@@ -83,9 +99,6 @@ private extension CZEmoticonToolBar {
             btn.setBackgroundImage(image, for: [])
             btn.setBackgroundImage(imageHL, for: .highlighted)
             btn.setBackgroundImage(imageHL, for: .selected)
-            
-            
-            
             
             btn.sizeToFit()
             //3,添加按钮

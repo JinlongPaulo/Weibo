@@ -50,6 +50,8 @@ extension CZEmoticonInputView : CZEmoticonToolBarDelegate {
         
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         
+        //设置分组按钮的选中状态
+        toolBar.selectedIndex = index
     }
 }
 
