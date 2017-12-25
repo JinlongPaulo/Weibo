@@ -28,6 +28,12 @@ class CZEmoticonToolBar: UIView {
         }
         
     }
+    
+    //MARK: - 监听方法
+    ///点击分组项按钮
+    @objc private func clickItem(button: UIButton) {
+        
+    }
 }
 
 private extension CZEmoticonToolBar {
@@ -36,7 +42,7 @@ private extension CZEmoticonToolBar {
         //0,获取表情包管理单例
         let manager = CZEmoticonManager.shared
         //1,从表情包的分组名称->设置按钮
-        for p in manager.packages {
+        for (i, p) in manager.packages.enumerated() {
             //1,实例化按钮
             let btn = UIButton()
             
@@ -70,6 +76,15 @@ private extension CZEmoticonToolBar {
             btn.sizeToFit()
             //3,添加按钮
             addSubview(btn)
+            
+            //4,设置按钮tag
+            btn.tag = i
+            
+            //5,添加按钮监听方法
+            btn.addTarget(self, action: #selector(clickItem), for: .touchUpInside)
         }
+        
+        //默认选中第0个按钮
+        (subviews[0] as! UIButton).isSelected = true
     }
 }
