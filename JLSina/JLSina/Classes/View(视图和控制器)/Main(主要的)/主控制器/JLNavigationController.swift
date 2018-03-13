@@ -39,7 +39,6 @@ class JLNavigationController: UINavigationController {
             }
         }
         
-
         super.pushViewController(viewController, animated: true)
 
     }

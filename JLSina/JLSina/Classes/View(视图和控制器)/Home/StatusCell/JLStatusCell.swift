@@ -49,7 +49,6 @@ class JLStatusCell: UITableViewCell {
             //配图视图视图模型
             pictureView.viewModel = viewModel
             
-            
             //设置来源
 //            print("来源\(String(describing: viewModel?.status.source))")
             sourceLabel.text = viewModel?.status.source

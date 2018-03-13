@@ -51,7 +51,7 @@ class JLMainViewController: UITabBarController {
     
     //MARK: - 监听方法
     @objc private func userLogin(n: NSNotification) {
-        print("用户登录通知\(n)")
+//        print("用户登录通知\(n)") 
         
         var  when = DispatchTime.now()
         
@@ -76,7 +76,7 @@ class JLMainViewController: UITabBarController {
     
     //MARK: - 撰写微博
   @objc private func compostStatus() {
-        print("撰写微博")
+//        print("撰写微博")
     //FIXME: 0 > 判断是否登录
     
     //1>实例化视图
@@ -165,12 +165,12 @@ extension JLMainViewController: UITabBarControllerDelegate {
     //将要选择tabbarItem
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
-        print("将要切换到\(viewController)")
+//        print("将要切换到\(viewController)")
         
         //1,获取控制器在数组中的索引
         let idx = (childViewControllers as NSArray).index(of: viewController)
         //2,判断当前索引是首页，同时idx也是首页,重复点击首页按钮
-        if selectedIndex == 0 && idx == selectedIndex{
+        if selectedIndex == 0 && idx == selectedIndex {
 //            print("点击首页")
             //3>让表格滚动到顶部
             //a)获取到控制器
@@ -215,7 +215,7 @@ extension JLMainViewController {
         
         JLNetworkManager.shared.unreadCount { (count) in
             //设置首页tabbard的badgeNumber
-            print("检测到\(count)条新微薄")
+//            print("检测到\(count)条新微薄")
             self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
             //设置app的badgeNum,从iOS8.0之后，要用户授权之后才能显示
             UIApplication.shared.applicationIconBadgeNumber = count
